@@ -1,0 +1,646 @@
+/* =====================================================
+   FIYA CONTACT PAGE — Production Level Design
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+.fya-contact-page {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+  background: var(--fya-white);
+  color: var(--fya-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fya-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Labels */
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.fya-label-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.1em;
+}
+
+.fya-label-line {
+  width: 60px;
+  height: 2px;
+  background: var(--fya-gold);
+}
+
+.fya-label-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.fya-contact-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--fya-navy);
+  overflow: hidden;
+}
+
+.fya-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fya-hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.fya-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 58, 138, 0.85) 50%,
+    rgba(201, 151, 43, 0.3) 100%
+  );
+}
+
+.fya-contact-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.fya-hero-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.fya-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.fya-logo-white {
+  color: var(--fya-white);
+}
+
+.fya-logo-gold {
+  color: var(--fya-gold-light);
+}
+
+.fya-hero-tagline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-gold-line {
+  width: 40px;
+  height: 2px;
+  background: var(--fya-gold);
+}
+
+.fya-contact-hero-title {
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--fya-white);
+  margin-bottom: 2rem;
+}
+
+.fya-text-blue {
+  color: #60A5FA;
+}
+
+.fya-text-gold {
+  color: var(--fya-gold-light);
+}
+
+.fya-contact-hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* =====================================================
+   CONTACT INFO SECTION
+===================================================== */
+.fya-contact-info {
+  padding: 8rem 0;
+  background: var(--fya-white);
+}
+
+.fya-contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.fya-contact-card {
+  padding: 2rem;
+  background: var(--fya-off-white);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s;
+  border: 1px solid var(--fya-border);
+}
+
+.fya-contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fya-shadow-lg);
+  border-color: var(--fya-blue);
+}
+
+.fya-contact-card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--fya-blue) 0%, var(--fya-blue-light) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+}
+
+.fya-contact-card-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--fya-text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.fya-contact-card-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--fya-navy);
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+a.fya-contact-card-value:hover {
+  color: var(--fya-blue);
+}
+
+.fya-contact-card-detail {
+  font-size: 0.85rem;
+  color: var(--fya-text-light);
+}
+
+/* =====================================================
+   FORM SECTION
+===================================================== */
+.fya-contact-form-section {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+}
+
+.fya-form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  background: var(--fya-white);
+  border-radius: 12px;
+  padding: 4rem;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-form-heading {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.fya-form-description {
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.fya-form-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fya-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--fya-text);
+  font-weight: 500;
+}
+
+.fya-benefit svg {
+  color: var(--fya-gold);
+}
+
+.fya-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fya-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.fya-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fya-form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fya-text);
+  letter-spacing: 0.05em;
+}
+
+.fya-form-group input,
+.fya-form-group select,
+.fya-form-group textarea {
+  padding: 1rem;
+  border: 1px solid var(--fya-border);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: var(--fya-text);
+  background: var(--fya-white);
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.fya-form-group input:focus,
+.fya-form-group select:focus,
+.fya-form-group textarea:focus {
+  outline: none;
+  border-color: var(--fya-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.fya-form-group input::placeholder,
+.fya-form-group textarea::placeholder {
+  color: var(--fya-text-light);
+}
+
+.fya-form-success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #10B981;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.fya-form-error {
+  padding: 1rem;
+  background: #EF4444;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.fya-form-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  border: 2px solid var(--fya-gold);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.fya-form-submit-btn:hover {
+  background: transparent;
+  color: var(--fya-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201, 151, 43, 0.3);
+}
+
+.fya-form-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   LOCATION SECTION
+===================================================== */
+.fya-contact-location {
+  padding: 8rem 0;
+  background: var(--fya-white);
+}
+
+.fya-location-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fya-location-heading {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.fya-location-address {
+  color: var(--fya-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.fya-location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--fya-blue);
+  color: var(--fya-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.fya-location-link:hover {
+  gap: 1rem;
+  color: var(--fya-gold);
+  border-color: var(--fya-gold);
+}
+
+.fya-location-map {
+  position: relative;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-location-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-map-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 58, 138, 0.2),
+    rgba(15, 23, 42, 0.8)
+  );
+}
+
+.fya-map-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.fya-map-marker svg {
+  color: var(--fya-gold);
+  margin-bottom: 0.5rem;
+}
+
+.fya-map-marker span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.fya-map-marker small {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.15em;
+}
+
+/* =====================================================
+   FINAL CTA SECTION
+===================================================== */
+.fya-contact-final {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+}
+
+.fya-final-wrapper {
+  position: relative;
+  padding: 5rem;
+  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.fya-final-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(201, 151, 43, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%);
+}
+
+.fya-final-content {
+  position: relative;
+  z-index: 1;
+}
+
+.fya-final-logo {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--fya-gold-light);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.fya-final-heading {
+  color: white;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.fya-final-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.fya-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 2.5rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-gold);
+  border-radius: 4px;
+}
+
+.fya-btn-gold:hover {
+  background: transparent;
+  color: var(--fya-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(201, 151, 43, 0.3);
+}
+
+.fya-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background: transparent;
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.fya-btn-outline:hover {
+  border-color: var(--fya-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .fya-form-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .fya-location-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-contact-hero {
+    min-height: auto;
+    padding: 6rem 0;
+  }
+  
+  .fya-hero-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .fya-contact-hero-title {
+    font-size: 3rem;
+  }
+  
+  .fya-contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-form-wrapper {
+    padding: 2rem;
+  }
+  
+  .fya-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-cta-wrapper,
+  .fya-final-wrapper {
+    padding: 3rem 1.5rem;
+  }
+  
+  .fya-final-actions {
+    flex-direction: column;
+  }
+  
+  .fya-btn-gold,
+  .fya-btn-outline {
+    justify-content: center;
+  }
+}

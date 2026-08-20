@@ -1,0 +1,336 @@
+/* =====================================================
+   FIYA CONSULTATION CTA — Premium Blue/White/Gold
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+.fya-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+.fya-cta {
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+}
+
+/* Background */
+.fya-cta-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fya-cta-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 58, 138, 0.9) 50%,
+    rgba(201, 151, 43, 0.3) 100%
+  );
+}
+
+.fya-cta .fya-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.fya-cta-header {
+  margin-bottom: 4rem;
+}
+
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fya-section-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fya-gold-light);
+  letter-spacing: 0.1em;
+}
+
+.fya-section-label-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fya-section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+.fya-cta-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Left Side */
+.fya-cta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(201, 151, 43, 0.15);
+  border: 1px solid rgba(201, 151, 43, 0.3);
+  border-radius: 50px;
+  color: var(--fya-gold-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.fya-badge-icon {
+  font-size: 1rem;
+}
+
+.fya-cta-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--fya-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.fya-text-gold {
+  color: var(--fya-gold-light);
+}
+
+/* Right Side */
+.fya-cta-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.fya-cta-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.fya-cta-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.fya-feature-icon {
+  color: var(--fya-gold-light);
+  font-size: 1rem;
+}
+
+/* CTA Actions */
+.fya-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.fya-cta-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2.5rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-gold);
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.fya-cta-button-primary:hover {
+  background: transparent;
+  color: var(--fya-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(201, 151, 43, 0.3);
+}
+
+.fya-cta-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.fya-cta-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--fya-white);
+  transform: translateY(-2px);
+}
+
+.fya-button-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.fya-cta-button-primary:hover .fya-button-icon,
+.fya-cta-button-secondary:hover .fya-button-icon {
+  transform: translateX(3px);
+}
+
+/* =====================================================
+   BOTTOM INFO
+===================================================== */
+.fya-cta-bottom {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fya-bottom-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fya-bottom-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fya-bottom-value {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.fya-bottom-divider {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-cta-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .fya-cta-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-cta {
+    padding: 5rem 0;
+  }
+  
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-cta-title {
+    font-size: 2.5rem;
+  }
+  
+  .fya-cta-actions {
+    flex-direction: column;
+  }
+  
+  .fya-cta-button-primary,
+  .fya-cta-button-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .fya-cta-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .fya-bottom-divider {
+    width: 100%;
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-cta-title {
+    font-size: 2rem;
+  }
+  
+  .fya-cta-description {
+    font-size: 1rem;
+  }
+}

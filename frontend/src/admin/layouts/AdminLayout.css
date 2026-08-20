@@ -1,0 +1,452 @@
+/* AdminLayout.css - Production Level Design */
+
+/* CSS Variables */
+:root {
+  --layout-bg: #f8fafc;
+  --layout-bg-dark: #0f172a;
+  --content-padding: 1.5rem;
+  --content-padding-tablet: 1.25rem;
+  --content-padding-mobile: 1rem;
+  --content-padding-sm: 0.875rem;
+  --sidebar-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --overlay-bg-dark: rgba(0, 0, 0, 0.7);
+  --z-sidebar: 50;
+  --z-overlay: 45;
+  --z-menu-btn: 60;
+  --z-scroll-btn: 55;
+  --z-close-btn: 65;
+}
+
+/* Admin Layout Container */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--layout-bg);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Main Content Area */
+.admin-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  transition: margin-left var(--sidebar-transition);
+  position: relative;
+}
+
+/* Admin Content Section */
+.admin-content {
+  flex: 1;
+  padding: var(--content-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--layout-bg);
+  position: relative;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+/* Scrolling state - subtle visual feedback */
+.admin-content.is-scrolling {
+  scroll-behavior: auto;
+}
+
+/* Custom Scrollbar */
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.admin-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox Scrollbar */
+.admin-content {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: var(--z-overlay);
+  animation: overlayFadeIn 0.2s ease;
+  cursor: pointer;
+}
+
+/* Sidebar Wrapper */
+.admin-sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh;
+  z-index: var(--z-sidebar);
+  transform: translateX(0);
+  transition: transform var(--sidebar-transition);
+  will-change: transform;
+}
+
+/* Sidebar Close Button */
+.sidebar-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: -3.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #1e293b;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: var(--z-close-btn);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar-close-btn:hover {
+  background: #f1f5f9;
+  transform: scale(1.05);
+}
+
+.sidebar-close-btn:active {
+  transform: scale(0.95);
+}
+
+.sidebar-close-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  z-index: var(--z-menu-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.mobile-menu-btn:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.mobile-menu-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: var(--z-scroll-btn);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-top-btn:hover {
+  background: #f8fafc;
+  color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.scroll-top-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.scroll-top-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  :root {
+    --content-padding: var(--content-padding-tablet);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --content-padding: var(--content-padding-mobile);
+  }
+  
+  .admin-sidebar-wrapper {
+    transform: translateX(-100%);
+  }
+  
+  .admin-sidebar-wrapper.open {
+    transform: translateX(0);
+  }
+  
+  .admin-main {
+    margin-left: 0;
+  }
+  
+  .mobile-menu-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .scroll-top-btn {
+    bottom: 5.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --content-padding: var(--content-padding-sm);
+  }
+  
+  .mobile-menu-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .scroll-top-btn {
+    bottom: 5rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .sidebar-close-btn,
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  .admin-sidebar-wrapper {
+    position: sticky;
+    height: 100vh;
+    height: 100dvh;
+  }
+  
+  .scroll-top-btn {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .admin-layout,
+  .admin-content {
+    background: var(--layout-bg-dark);
+  }
+  
+  .admin-content::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+  
+  .admin-content::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+  
+  .admin-content {
+    scrollbar-color: #475569 transparent;
+  }
+  
+  .sidebar-close-btn {
+    background: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .sidebar-close-btn:hover {
+    background: #334155;
+  }
+  
+  .sidebar-overlay {
+    background: var(--overlay-bg-dark);
+  }
+  
+  .scroll-top-btn {
+    background: #1e293b;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+  
+  .scroll-top-btn:hover {
+    background: #334155;
+    color: #60a5fa;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+  .mobile-menu-btn:hover,
+  .scroll-top-btn:hover,
+  .sidebar-close-btn:hover {
+    transform: none;
+  }
+  
+  .mobile-menu-btn:active,
+  .scroll-top-btn:active,
+  .sidebar-close-btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .sidebar-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .mobile-menu-btn,
+  .scroll-top-btn,
+  .sidebar-close-btn {
+    border: 2px solid #ffffff;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .admin-sidebar-wrapper,
+  .mobile-menu-btn,
+  .scroll-top-btn,
+  .sidebar-close-btn,
+  .sidebar-overlay,
+  .admin-content {
+    transition: none;
+    animation: none;
+    scroll-behavior: auto;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .admin-layout {
+    display: block;
+  }
+  
+  .admin-sidebar-wrapper,
+  .mobile-menu-btn,
+  .scroll-top-btn,
+  .sidebar-close-btn,
+  .sidebar-overlay {
+    display: none !important;
+  }
+  
+  .admin-main {
+    margin-left: 0;
+  }
+  
+  .admin-content {
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+/* Safe Area Insets for iOS */
+@supports (padding: max(0px)) {
+  .admin-content {
+    padding-bottom: max(var(--content-padding), env(safe-area-inset-bottom));
+  }
+  
+  .mobile-menu-btn {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-menu-btn {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .admin-content {
+    padding-top: 0.75rem;
+  }
+}

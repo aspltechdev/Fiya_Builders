@@ -1,0 +1,416 @@
+/* =====================================================
+   FIYA HERO — Premium Blue/White/Gold Design
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+}
+
+.fya-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--fya-navy);
+  overflow: hidden;
+}
+
+/* =====================================================
+   BACKGROUND MEDIA
+===================================================== */
+.fya-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fya-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  transform: scale(1.05);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.fya-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 58, 138, 0.85) 50%,
+    rgba(201, 151, 43, 0.25) 100%
+  );
+}
+
+/* =====================================================
+   CONTENT CONTAINER
+===================================================== */
+.fya-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.fya-hero-content {
+  max-width: 800px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+.fya-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(201, 151, 43, 0.1);
+  border: 1px solid rgba(201, 151, 43, 0.3);
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.fya-hero-badge-icon {
+  color: var(--fya-gold-light);
+  font-size: 0.9rem;
+}
+
+.fya-hero-badge-text {
+  color: var(--fya-gold-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.fya-hero-badge-line {
+  width: 30px;
+  height: 1px;
+  background: rgba(201, 151, 43, 0.5);
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+.fya-hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--fya-white);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.fya-hero-title-highlight {
+  background: linear-gradient(135deg, var(--fya-gold-light) 0%, var(--fya-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+.fya-hero-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* =====================================================
+   CTA BUTTONS
+===================================================== */
+.fya-hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.fya-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-gold);
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.fya-hero-btn-primary:hover {
+  background: transparent;
+  color: var(--fya-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(201, 151, 43, 0.3);
+}
+
+.fya-hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.fya-hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--fya-white);
+  transform: translateY(-2px);
+}
+
+.fya-hero-btn-text {
+  display: inline-block;
+}
+
+.fya-hero-btn-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.fya-hero-btn-primary:hover .fya-hero-btn-icon,
+.fya-hero-btn-secondary:hover .fya-hero-btn-icon {
+  transform: translateX(3px);
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+.fya-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.fya-hero-stat {
+  text-align: left;
+}
+
+.fya-hero-stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--fya-gold-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fya-hero-stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+.fya-hero-stat-divider {
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =====================================================
+   BOTTOM BAR
+===================================================== */
+.fya-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 3rem;
+}
+
+.fya-hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-hero-scroll-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.fya-hero-scroll-icon {
+  font-size: 0.9rem;
+  animation: scrollBounce 2s infinite;
+  color: var(--fya-gold);
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.fya-hero-location {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fya-hero-location-icon {
+  color: var(--fya-gold);
+  font-size: 1rem;
+}
+
+.fya-hero-location-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.fya-hero-location-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fya-hero-location-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.fya-hero-index {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fya-hero-index-current {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+}
+
+.fya-hero-index-line {
+  width: 40px;
+  height: 2px;
+  background: var(--fya-gold);
+}
+
+.fya-hero-index-total {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .fya-hero-stat-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-hero-container {
+    padding: 6rem 1.5rem 2rem;
+  }
+  
+  .fya-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .fya-hero-description {
+    font-size: 1rem;
+  }
+  
+  .fya-hero-actions {
+    flex-direction: column;
+  }
+  
+  .fya-hero-btn-primary,
+  .fya-hero-btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .fya-hero-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .fya-hero-stat-divider {
+    display: none;
+  }
+  
+  .fya-hero-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .fya-hero-badge {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-hero-title {
+    font-size: 2rem;
+  }
+  
+  .fya-hero-stat-value {
+    font-size: 1.8rem;
+  }
+}

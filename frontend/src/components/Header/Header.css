@@ -1,0 +1,525 @@
+/* =====================================================
+   FIYA HEADER — Simple Production Design
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+  --fya-header-height: 80px;
+  --fya-topbar-height: 45px;
+}
+
+.fya-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   TOP BAR - Clean and Professional
+===================================================== */
+.fya-topbar {
+  background: var(--fya-navy);
+  color: #FFFFFF;
+  height: var(--fya-topbar-height);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1001;
+  border-bottom: 2px solid var(--fya-gold);
+}
+
+.fya-topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.fya-topbar-left,
+.fya-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fya-topbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.fya-topbar-link:hover {
+  color: var(--fya-gold-light);
+}
+
+.fya-topbar-icon {
+  color: var(--fya-gold-light);
+  font-size: 0.85rem;
+}
+
+.fya-topbar-text {
+  letter-spacing: 0.02em;
+}
+
+.fya-topbar-separator {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.8rem;
+}
+
+/* =====================================================
+   MAIN HEADER - Bold and Clear
+===================================================== */
+.fya-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--fya-white);
+  transition: all 0.3s ease;
+  height: var(--fya-header-height);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.fya-header--scrolled {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+.fya-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Logo - Prominent and Clear */
+.fya-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fya-logo-box {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.fya-logo-main {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fya-blue);
+  letter-spacing: -0.02em;
+}
+
+.fya-logo-sub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.25em;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Navigation - Simple and Clear */
+.fya-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.fya-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fya-nav-item {
+  position: relative;
+}
+
+.fya-nav-link {
+  text-decoration: none;
+  color: var(--fya-text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.fya-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--fya-gold);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.fya-nav-link:hover {
+  color: var(--fya-blue);
+}
+
+.fya-nav-link:hover::after {
+  width: 100%;
+}
+
+.fya-nav-link--active {
+  color: var(--fya-blue);
+}
+
+.fya-nav-link--active::after {
+  width: 100%;
+  background: var(--fya-gold);
+}
+
+.fya-nav-text {
+  display: inline-block;
+}
+
+/* Header Actions - Clear CTA */
+.fya-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.fya-btn-consultation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--fya-blue);
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-blue);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.fya-btn-consultation:hover {
+  background: var(--fya-gold);
+  border-color: var(--fya-gold);
+  color: var(--fya-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201, 151, 43, 0.4);
+}
+
+.fya-btn-text {
+  display: inline-block;
+}
+
+.fya-btn-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.fya-btn-consultation:hover .fya-btn-icon {
+  transform: translateX(3px);
+}
+
+.fya-btn-block {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Mobile Toggle - Visible */
+.fya-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  background: var(--fya-blue);
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--fya-white);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+}
+
+.fya-toggle:hover {
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+}
+
+/* =====================================================
+   MOBILE OVERLAY
+===================================================== */
+.fya-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.fya-overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =====================================================
+   MOBILE NAVIGATION - Simple and Clear
+===================================================== */
+.fya-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 380px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--fya-white);
+  z-index: 999;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.fya-mobile-nav--open {
+  right: 0;
+}
+
+.fya-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--fya-gray);
+}
+
+.fya-mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fya-mobile-close {
+  width: 44px;
+  height: 44px;
+  background: #EF4444;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fya-white);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.1rem;
+}
+
+.fya-mobile-close:hover {
+  background: #DC2626;
+  transform: rotate(90deg);
+}
+
+.fya-mobile-list {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.fya-mobile-item {
+  margin-bottom: 0.25rem;
+}
+
+.fya-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  color: var(--fya-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.fya-mobile-link:hover {
+  background: var(--fya-off-white);
+  color: var(--fya-blue);
+}
+
+.fya-mobile-link--active {
+  background: var(--fya-blue);
+  color: var(--fya-white);
+}
+
+.fya-mobile-link--active:hover {
+  background: var(--fya-blue);
+  color: var(--fya-white);
+}
+
+.fya-mobile-link-text {
+  display: inline-block;
+}
+
+.fya-mobile-link-arrow {
+  font-size: 0.9rem;
+  color: var(--fya-text-light);
+  transition: transform 0.3s;
+}
+
+.fya-mobile-link:hover .fya-mobile-link-arrow {
+  transform: translateX(5px);
+  color: var(--fya-blue);
+}
+
+.fya-mobile-link--active .fya-mobile-link-arrow {
+  color: var(--fya-white);
+}
+
+.fya-mobile-footer {
+  padding: 1.5rem;
+  border-top: 2px solid var(--fya-gray);
+}
+
+.fya-mobile-contact {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fya-mobile-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--fya-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.fya-mobile-contact-link:hover {
+  background: var(--fya-off-white);
+  color: var(--fya-blue);
+}
+
+.fya-mobile-contact-icon {
+  color: var(--fya-gold);
+  font-size: 1rem;
+}
+
+.fya-mobile-contact-text {
+  display: inline-block;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1200px) {
+  .fya-nav-list {
+    gap: 1.5rem;
+  }
+  
+  .fya-nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fya-nav {
+    display: none;
+  }
+  
+  .fya-toggle {
+    display: flex;
+  }
+  
+  .fya-header-actions .fya-btn-consultation {
+    display: none;
+  }
+  
+  .fya-topbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-container {
+    padding: 0 1rem;
+  }
+  
+  .fya-header {
+    height: 70px;
+  }
+  
+  .fya-logo-main {
+    font-size: 1.6rem;
+  }
+  
+  .fya-logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .fya-mobile-nav {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-logo-main {
+    font-size: 1.4rem;
+  }
+  
+  .fya-toggle {
+    width: 42px;
+    height: 42px;
+  }
+}

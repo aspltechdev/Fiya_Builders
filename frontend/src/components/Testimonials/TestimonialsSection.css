@@ -1,0 +1,426 @@
+/* =====================================================
+   FIYA TESTIMONIALS — Premium Blue/White/Gold
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+.fya-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   TESTIMONIALS SECTION
+===================================================== */
+.fya-testimonials {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.fya-testimonials-header {
+  margin-bottom: 4rem;
+}
+
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.fya-section-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.1em;
+}
+
+.fya-section-label-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fya-section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, var(--fya-border) 100%);
+}
+
+.fya-testimonials-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--fya-navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.fya-text-gold {
+  color: var(--fya-gold);
+}
+
+/* =====================================================
+   MAIN TESTIMONIAL
+===================================================== */
+.fya-testimonials-main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: var(--fya-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--fya-shadow-lg);
+  margin-bottom: 3rem;
+  transition: all 0.3s;
+}
+
+.fya-testimonials-animating {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Client Image */
+.fya-testimonial-image {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.fya-testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-testimonial-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 58, 138, 0.1) 0%,
+    rgba(15, 23, 42, 0.6) 100%
+  );
+}
+
+.fya-testimonial-quote-icon {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--fya-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fya-navy);
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(201, 151, 43, 0.3);
+}
+
+/* Content */
+.fya-testimonial-content {
+  padding: 3rem;
+}
+
+.fya-testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.fya-rating-star {
+  color: var(--fya-gold);
+  font-size: 1.2rem;
+}
+
+.fya-testimonial-quote {
+  font-size: 1.5rem;
+  color: var(--fya-navy);
+  line-height: 1.6;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0 0 2rem;
+}
+
+/* Client Info */
+.fya-testimonial-client {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.fya-testimonial-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fya-client-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fya-navy);
+}
+
+.fya-client-role {
+  font-size: 0.9rem;
+  color: var(--fya-blue);
+  font-weight: 500;
+}
+
+.fya-client-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--fya-text-muted);
+}
+
+.fya-location-icon {
+  color: var(--fya-gold);
+}
+
+/* Project Type Badge */
+.fya-project-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--fya-off-white);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fya-blue);
+  white-space: nowrap;
+}
+
+.fya-project-icon {
+  color: var(--fya-gold);
+}
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+.fya-testimonials-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.fya-testimonials-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 300px;
+}
+
+.fya-progress-number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--fya-text-muted);
+}
+
+.fya-progress-track {
+  flex: 1;
+  height: 3px;
+  background: var(--fya-gray-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fya-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--fya-blue) 0%, var(--fya-gold) 100%);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+
+.fya-testimonials-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.fya-nav-btn {
+  width: 50px;
+  height: 50px;
+  background: var(--fya-white);
+  border: 2px solid var(--fya-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fya-navy);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.fya-nav-btn:hover {
+  background: var(--fya-blue);
+  border-color: var(--fya-blue);
+  color: var(--fya-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.fya-testimonials-footer {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-testimonials-footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 151, 43, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.fya-footer-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-gold-light);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fya-footer-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, rgba(201, 151, 43, 0.1) 100%);
+}
+
+.fya-footer-text {
+  font-size: 1.1rem;
+  color: var(--fya-white);
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-testimonials-main {
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+  
+  .fya-testimonial-quote {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-testimonials {
+    padding: 5rem 0;
+  }
+  
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-testimonials-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-testimonial-image {
+    min-height: 300px;
+  }
+  
+  .fya-testimonial-content {
+    padding: 2rem;
+  }
+  
+  .fya-testimonial-client {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .fya-testimonials-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
+  .fya-footer-line {
+    width: 100%;
+    flex: none;
+  }
+  
+  .fya-footer-text {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-testimonials-title {
+    font-size: 2rem;
+  }
+  
+  .fya-testimonial-quote {
+    font-size: 1.1rem;
+  }
+  
+  .fya-testimonials-controls {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+}

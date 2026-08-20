@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  COMPLETED
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Hero {
+  id          Int      @id @default(autoincrement())
+  title       String
+  subtitle    String?
+  description String?
+  buttonText  String?
+  buttonLink  String?
+  image       String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model About {
+  id          Int      @id @default(autoincrement())
+  title       String
+  subtitle    String?
+  description String
+  image       String?
+  experience  Int?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  description String?
+  image       String?
+  icon        String?
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id           Int      @id @default(autoincrement())
+  title        String
+  slug         String   @unique
+  category     String?
+  location     String?
+  year         Int?
+  description  String?
+  featuredImage String?
+  isFeatured   Boolean  @default(false)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  gallery ProjectImage[]
+}
+
+model ProjectImage {
+  id        Int      @id @default(autoincrement())
+  image     String
+  projectId Int
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Gallery {
+  id        Int      @id @default(autoincrement())
+  title     String?
+  image     String
+  category  String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  designation String?
+  company     String?
+  message     String
+  image       String?
+  rating      Int      @default(5)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ContactEnquiry {
+  id        Int            @id @default(autoincrement())
+  name      String
+  email     String?
+  phone     String
+  subject   String?
+  message   String?
+  status    EnquiryStatus  @default(NEW)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+model SEO {
+  id          Int      @id @default(autoincrement())
+  page        String   @unique
+  title       String?
+  description String?
+  keywords    String?
+  ogImage     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model WebsiteSetting {
+  id           Int      @id @default(autoincrement())
+  companyName  String?
+  logo         String?
+  favicon      String?
+  phone        String?
+  email        String?
+  address      String?
+  whatsapp     String?
+  mapUrl       String?
+  facebook     String?
+  instagram    String?
+  linkedin     String?
+  youtube      String?
+  website      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

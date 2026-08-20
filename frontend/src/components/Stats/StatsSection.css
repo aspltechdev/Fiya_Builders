@@ -1,0 +1,376 @@
+/* =====================================================
+   FIYA STATS SECTION — Image-Based Design
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+.fya-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   STATS SECTION
+===================================================== */
+.fya-stats {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.fya-stats-header {
+  margin-bottom: 3rem;
+}
+
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fya-section-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.1em;
+}
+
+.fya-section-label-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fya-section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, var(--fya-border) 100%);
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+.fya-stats-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.fya-stats-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--fya-navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.fya-text-gold {
+  color: var(--fya-gold);
+}
+
+.fya-stats-description {
+  font-size: 1.1rem;
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  max-width: 400px;
+  text-align: right;
+}
+
+/* =====================================================
+   STATS GRID WITH IMAGES
+===================================================== */
+.fya-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.fya-stat-card {
+  background: var(--fya-white);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid var(--fya-border);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.fya-stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--fya-shadow-lg);
+  border-color: var(--fya-blue);
+}
+
+/* Stat Image */
+.fya-stat-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.fya-stat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.fya-stat-card:hover .fya-stat-image img {
+  transform: scale(1.05);
+}
+
+.fya-stat-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(15, 23, 42, 0.7) 100%
+  );
+}
+
+/* Number Badge */
+.fya-stat-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 45px;
+  height: 45px;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(201, 151, 43, 0.4);
+  z-index: 2;
+}
+
+/* Stat Content */
+.fya-stat-content {
+  padding: 2rem;
+}
+
+.fya-stat-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--fya-navy);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.fya-stat-card:hover .fya-stat-value {
+  color: var(--fya-blue);
+}
+
+.fya-stat-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fya-blue);
+  margin-bottom: 0.5rem;
+}
+
+.fya-stat-description {
+  font-size: 0.85rem;
+  color: var(--fya-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Stat Footer */
+.fya-stat-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fya-stat-line {
+  flex: 1;
+  height: 2px;
+  background: var(--fya-border);
+  transition: background 0.3s;
+}
+
+.fya-stat-arrow {
+  color: var(--fya-text-light);
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.fya-stat-card:hover .fya-stat-arrow {
+  color: var(--fya-gold);
+  transform: translateX(5px);
+}
+
+.fya-stat-card:hover .fya-stat-line {
+  background: var(--fya-gold);
+}
+
+/* =====================================================
+   FOOTER WITH IMAGE
+===================================================== */
+.fya-stats-footer {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-stats-footer-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fya-stats-footer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-stats-footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 58, 138, 0.9) 50%,
+    rgba(201, 151, 43, 0.3) 100%
+  );
+}
+
+.fya-stats-footer-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.fya-stats-footer-label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--fya-gold-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.fya-stats-footer-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, rgba(201, 151, 43, 0.1) 100%);
+}
+
+.fya-stats-footer-text {
+  font-size: 1.5rem;
+  color: var(--fya-white);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .fya-stats-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .fya-stats-description {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-stats {
+    padding: 5rem 0;
+  }
+  
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-stats-footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
+  .fya-stats-footer-line {
+    width: 100%;
+    flex: none;
+  }
+  
+  .fya-stats-footer-text {
+    font-size: 1.2rem;
+  }
+  
+  .fya-stat-value {
+    font-size: 2.5rem;
+  }
+  
+  .fya-stat-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-stats-title {
+    font-size: 2rem;
+  }
+  
+  .fya-stat-image {
+    height: 180px;
+  }
+  
+  .fya-stats-footer-content {
+    padding: 1.5rem;
+  }
+}

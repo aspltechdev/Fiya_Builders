@@ -1,0 +1,973 @@
+/* =====================================================
+   FIYA PREMIUM COLOR SYSTEM — Blue/White/Gold
+===================================================== */
+:root {
+  /* Primary Colors */
+  --fya-blue: #1E3A8A; /* Deep corporate blue */
+  --fya-blue-light: #2563EB; /* Bright blue for accents */
+  --fya-navy: #0F172A; /* Dark navy for text */
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  
+  /* Gold Accents */
+  --fya-gold: #C9972B; /* Premium gold */
+  --fya-gold-light: #E5B84B; /* Light gold for gradients */
+  --fya-gold-dark: #A67C1E; /* Dark gold for depth */
+  
+  /* Text Colors */
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  
+  /* Functional */
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+/* =====================================================
+   GLOBAL RESET & TYPOGRAPHY
+===================================================== */
+.fya-about-page {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+  background: var(--fya-white);
+  color: var(--fya-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fya-about-page h1,
+.fya-about-page h2,
+.fya-about-page h3 {
+  font-family: 'Archivo', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--fya-navy);
+}
+
+.fya-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   SECTION LABELS
+===================================================== */
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fya-label-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.1em;
+}
+
+.fya-label-line {
+  width: 60px;
+  height: 2px;
+  background: var(--fya-gold);
+}
+
+.fya-label-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.fya-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  background: var(--fya-navy);
+  overflow: hidden;
+}
+
+.fya-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.fya-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.fya-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 58, 138, 0.85) 50%,
+    rgba(201, 151, 43, 0.3) 100%
+  );
+}
+
+.fya-hero-container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.fya-hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fya-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.fya-logo-blue {
+  color: var(--fya-white);
+}
+
+.fya-logo-gold {
+  color: var(--fya-gold-light);
+}
+
+.fya-hero-tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-gold-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--fya-gold);
+  border-radius: 50%;
+}
+
+.fya-hero-main {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fya-hero-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fya-badge-line {
+  width: 40px;
+  height: 1px;
+  background: var(--fya-gold);
+}
+
+.fya-hero-title {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--fya-white);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fya-title-blue {
+  color: #60A5FA;
+}
+
+.fya-title-gold {
+  color: var(--fya-gold-light);
+}
+
+.fya-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.fya-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.fya-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-gold);
+}
+
+.fya-btn-primary:hover {
+  background: transparent;
+  color: var(--fya-gold);
+}
+
+.fya-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.fya-btn-secondary:hover {
+  border-color: var(--fya-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fya-hero-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fya-hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fya-hero-counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fya-counter-line {
+  width: 40px;
+  height: 1px;
+  background: var(--fya-gold);
+}
+
+/* =====================================================
+   INTRO SECTION
+===================================================== */
+.fya-intro {
+  padding: 8rem 0;
+  background: var(--fya-white);
+}
+
+.fya-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.fya-intro-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  margin-top: 1rem;
+}
+
+.fya-intro-description {
+  font-size: 1.1rem;
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.fya-intro-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.fya-stat-item {
+  padding: 1.5rem;
+  background: var(--fya-off-white);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.fya-stat-item:hover {
+  background: var(--fya-gray);
+  transform: translateY(-2px);
+  box-shadow: var(--fya-shadow);
+}
+
+.fya-stat-icon {
+  color: var(--fya-blue);
+  margin-bottom: 0.5rem;
+}
+
+.fya-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fya-navy);
+  margin-bottom: 0.25rem;
+}
+
+.fya-stat-label {
+  font-size: 0.85rem;
+  color: var(--fya-text-muted);
+}
+
+/* =====================================================
+   PHILOSOPHY SECTION
+===================================================== */
+.fya-philosophy {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+}
+
+.fya-philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fya-philosophy-images {
+  position: relative;
+}
+
+.fya-philosophy-main-image {
+  position: relative;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-philosophy-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 58, 138, 0.1),
+    rgba(30, 58, 138, 0.4)
+  );
+}
+
+.fya-image-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.fya-caption-line {
+  width: 30px;
+  height: 2px;
+  background: var(--fya-gold);
+}
+
+.fya-philosophy-accent {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  width: 150px;
+  height: 150px;
+  background: var(--fya-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-accent-box {
+  text-align: center;
+  color: white;
+}
+
+.fya-accent-icon {
+  margin: 0 auto 0.5rem;
+  color: var(--fya-gold-light);
+}
+
+.fya-accent-box span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.fya-accent-box small {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fya-philosophy-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.fya-text-blue {
+  color: var(--fya-blue);
+}
+
+.fya-text-gold {
+  color: var(--fya-gold);
+}
+
+.fya-philosophy-text {
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.fya-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--fya-blue);
+  text-decoration: none;
+  color: var(--fya-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.fya-link-arrow:hover {
+  gap: 1rem;
+  color: var(--fya-gold);
+  border-color: var(--fya-gold);
+}
+
+/* =====================================================
+   SHOWCASE SECTION
+===================================================== */
+.fya-showcase {
+  padding: 8rem 0;
+  background: var(--fya-white);
+}
+
+.fya-showcase-header {
+  margin-bottom: 4rem;
+}
+
+.fya-showcase-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-top: 1rem;
+}
+
+.fya-showcase-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.fya-project-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--fya-gray);
+}
+
+.fya-project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+
+.fya-project-card:hover img {
+  transform: scale(1.05);
+}
+
+.fya-project-large {
+  grid-row: span 2;
+  min-height: 500px;
+}
+
+.fya-project-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.9),
+    transparent
+  );
+  color: white;
+}
+
+.fya-project-category {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--fya-gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.fya-project-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.fya-project-location {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =====================================================
+   EXPERIENCE SECTION
+===================================================== */
+.fya-experience {
+  padding: 8rem 0;
+  background: var(--fya-navy);
+  color: white;
+}
+
+.fya-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fya-experience-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 2px solid rgba(201, 151, 43, 0.3);
+}
+
+.fya-number-value {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--fya-gold-light);
+  line-height: 1;
+}
+
+.fya-number-plus {
+  color: var(--fya-gold);
+  margin: 1rem 0;
+}
+
+.fya-number-suffix {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-experience-content .fya-section-label {
+  color: white;
+}
+
+.fya-experience-title {
+  color: white;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.fya-experience-text {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.fya-experience-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.fya-metric {
+  text-align: center;
+}
+
+.fya-metric-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--fya-gold-light);
+  margin-bottom: 0.25rem;
+}
+
+.fya-metric-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =====================================================
+   VALUES SECTION
+===================================================== */
+.fya-values {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+}
+
+.fya-values-header {
+  margin-bottom: 4rem;
+}
+
+.fya-values-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-top: 1rem;
+}
+
+.fya-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.fya-value-card {
+  position: relative;
+  padding: 3rem;
+  background: var(--fya-white);
+  border-radius: 8px;
+  border: 1px solid var(--fya-border);
+  transition: all 0.3s;
+}
+
+.fya-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fya-shadow-lg);
+  border-color: var(--fya-blue);
+}
+
+.fya-value-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--fya-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.fya-value-number {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--fya-gray-light);
+}
+
+.fya-value-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.fya-value-text {
+  color: var(--fya-text-muted);
+  line-height: 1.7;
+}
+
+/* =====================================================
+   TEAM SECTION
+===================================================== */
+.fya-team {
+  padding: 8rem 0;
+  background: var(--fya-white);
+}
+
+.fya-team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fya-team-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.fya-team-text {
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.fya-team-image {
+  position: relative;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--fya-shadow-lg);
+}
+
+.fya-team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-team-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 58, 138, 0.6),
+    transparent
+  );
+}
+
+.fya-team-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  color: var(--fya-navy);
+  font-weight: 600;
+}
+
+.fya-team-badge svg {
+  color: var(--fya-blue);
+}
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+.fya-cta {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+}
+
+.fya-cta-box {
+  position: relative;
+  padding: 5rem;
+  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.fya-cta-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(201, 151, 43, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(201, 151, 43, 0.1) 0%, transparent 50%);
+}
+
+.fya-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.fya-cta-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--fya-gold-light);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.fya-cta-title {
+  color: white;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.fya-cta-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+.fya-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.fya-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--fya-gold);
+  color: var(--fya-navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-gold);
+}
+
+.fya-btn-gold:hover {
+  background: transparent;
+  color: var(--fya-gold);
+}
+
+.fya-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.fya-btn-outline:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-showcase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .fya-project-large {
+    grid-column: span 2;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-hero-container {
+    padding: 1.5rem;
+  }
+  
+  .fya-hero-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .fya-intro-grid,
+  .fya-philosophy-grid,
+  .fya-experience-grid,
+  .fya-team-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .fya-intro-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .fya-values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-project-large {
+    grid-column: auto;
+  }
+  
+  .fya-experience-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-philosophy-accent {
+    right: 1rem;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .fya-cta-box {
+    padding: 3rem 1.5rem;
+  }
+  
+  .fya-cta-actions {
+    flex-direction: column;
+  }
+  
+  .fya-btn-gold,
+  .fya-btn-outline {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,460 @@
+/* =====================================================
+   FIYA WHY CHOOSE US — Premium Blue/White/Gold
+===================================================== */
+:root {
+  --fya-blue: #1E3A8A;
+  --fya-blue-light: #2563EB;
+  --fya-navy: #0F172A;
+  --fya-white: #FFFFFF;
+  --fya-off-white: #F8FAFC;
+  --fya-gray: #F1F5F9;
+  --fya-gray-light: #E2E8F0;
+  --fya-gold: #C9972B;
+  --fya-gold-light: #E5B84B;
+  --fya-gold-dark: #A67C1E;
+  --fya-text: #1E293B;
+  --fya-text-muted: #64748B;
+  --fya-text-light: #94A3B8;
+  --fya-border: #E2E8F0;
+  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+}
+
+.fya-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* =====================================================
+   WHY CHOOSE US SECTION
+===================================================== */
+.fya-why {
+  padding: 8rem 0;
+  background: var(--fya-off-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-why::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* =====================================================
+   TOP LABEL
+===================================================== */
+.fya-why-top {
+  margin-bottom: 4rem;
+}
+
+.fya-section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fya-section-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fya-gold);
+  letter-spacing: 0.1em;
+}
+
+.fya-section-label-text {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fya-section-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--fya-gold) 0%, var(--fya-border) 100%);
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+.fya-why-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.fya-why-small-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.fya-label-star {
+  color: var(--fya-gold);
+  font-size: 0.9rem;
+}
+
+.fya-why-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--fya-navy);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.fya-text-gold {
+  color: var(--fya-gold);
+}
+
+.fya-why-intro-copy {
+  max-width: 400px;
+}
+
+.fya-why-description {
+  font-size: 1.1rem;
+  color: var(--fya-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.fya-why-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--fya-text);
+  font-weight: 600;
+}
+
+.fya-mark-icon {
+  color: var(--fya-gold);
+  font-size: 1.2rem;
+}
+
+/* =====================================================
+   REASONS GRID
+===================================================== */
+.fya-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.fya-why-card {
+  background: var(--fya-white);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.3s;
+  border: 1px solid var(--fya-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fya-blue) 0%, var(--fya-gold) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.fya-why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--fya-shadow-lg);
+  border-color: var(--fya-blue);
+}
+
+.fya-why-card:hover::before {
+  transform: scaleX(1);
+}
+
+.fya-why-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.fya-why-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+}
+
+.fya-why-icon--blue {
+  background: linear-gradient(135deg, var(--fya-blue) 0%, var(--fya-blue-light) 100%);
+  color: var(--fya-white);
+}
+
+.fya-why-icon--gold {
+  background: linear-gradient(135deg, var(--fya-gold) 0%, var(--fya-gold-light) 100%);
+  color: var(--fya-navy);
+}
+
+.fya-why-card-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--fya-gray-light);
+  line-height: 1;
+}
+
+.fya-why-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--fya-navy);
+  margin-bottom: 1rem;
+}
+
+.fya-why-card-description {
+  color: var(--fya-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.fya-why-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fya-why-card-line {
+  flex: 1;
+  height: 2px;
+  background: var(--fya-border);
+  transition: background 0.3s;
+}
+
+.fya-why-card-arrow {
+  color: var(--fya-text-light);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.fya-why-card:hover .fya-why-card-arrow {
+  color: var(--fya-gold);
+  transform: translateX(5px);
+}
+
+.fya-why-card:hover .fya-why-card-line {
+  background: var(--fya-gold);
+}
+
+/* =====================================================
+   STATS BAND
+===================================================== */
+.fya-why-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-why-stats::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201, 151, 43, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.fya-stat-card {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fya-stat-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fya-gold-light);
+  font-size: 1.2rem;
+}
+
+.fya-stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--fya-white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fya-stat-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.05em;
+}
+
+/* =====================================================
+   BOTTOM CTA
+===================================================== */
+.fya-why-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  background: var(--fya-white);
+  border-radius: 12px;
+  border: 1px solid var(--fya-border);
+  box-shadow: var(--fya-shadow);
+}
+
+.fya-bottom-content {
+  flex: 1;
+}
+
+.fya-bottom-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--fya-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.fya-bottom-text {
+  font-size: 1.3rem;
+  color: var(--fya-navy);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fya-why-bottom-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--fya-blue);
+  color: var(--fya-white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s;
+  border: 2px solid var(--fya-blue);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.fya-why-bottom-link:hover {
+  background: var(--fya-gold);
+  border-color: var(--fya-gold);
+  color: var(--fya-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(201, 151, 43, 0.3);
+}
+
+.fya-why-bottom-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.fya-why-bottom-link:hover .fya-why-bottom-icon {
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1024px) {
+  .fya-why-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fya-why-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .fya-why-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fya-why {
+    padding: 5rem 0;
+  }
+  
+  .fya-container {
+    padding: 0 1.5rem;
+  }
+  
+  .fya-why-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .fya-why-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .fya-why-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fya-why-title {
+    font-size: 2rem;
+  }
+  
+  .fya-stat-value {
+    font-size: 2rem;
+  }
+  
+  .fya-bottom-text {
+    font-size: 1.1rem;
+  }
+}
