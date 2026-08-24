@@ -1,3 +1,180 @@
+// // import express from "express";
+
+// // import {
+// //   getTestimonials,
+// //   getAllTestimonials,
+// //   getTestimonialById,
+// //   createTestimonial,
+// //   updateTestimonial,
+// //   toggleTestimonialStatus,
+// //   deleteTestimonial,
+// // } from "../controllers/testimonial.controller.js";
+
+// // import {
+// //   authenticate,
+// //   authorize,
+// // } from "../middleware/auth.middleware.js";
+
+// // const router = express.Router();
+
+// // /*
+// // |--------------------------------------------------------------------------
+// // | Public Routes
+// // |--------------------------------------------------------------------------
+// // */
+
+// // // Active testimonials
+// // router.get(
+// //   "/",
+// //   getTestimonials
+// // );
+
+// // /*
+// // |--------------------------------------------------------------------------
+// // | Admin Routes
+// // |--------------------------------------------------------------------------
+// // */
+
+// // // Get all
+// // router.get(
+// //   "/admin/all",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   getAllTestimonials
+// // );
+
+// // // Get by ID
+// // router.get(
+// //   "/admin/:id",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   getTestimonialById
+// // );
+
+// // // Create
+// // router.post(
+// //   "/",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   createTestimonial
+// // );
+
+// // // Update
+// // router.put(
+// //   "/:id",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   updateTestimonial
+// // );
+
+// // // Toggle active/inactive
+// // router.patch(
+// //   "/:id/toggle",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   toggleTestimonialStatus
+// // );
+
+// // // Delete
+// // router.delete(
+// //   "/:id",
+// //   authenticate,
+// //   authorize("ADMIN"),
+// //   deleteTestimonial
+// // );
+
+// // export default router;
+
+// // backend/src/routes/testimonial.routes.js
+// import express from "express";
+
+// import {
+//   getTestimonials,
+//   getAllTestimonials,
+//   getTestimonialById,
+//   createTestimonial,
+//   updateTestimonial,
+//   toggleTestimonialStatus,
+//   deleteTestimonial,
+// } from "../controllers/testimonial.controller.js";
+
+// import {
+//   authenticate,
+//   authorize,
+// } from "../middleware/auth.middleware.js";
+
+// import { uploadSingle } from "../middleware/upload.middleware.js";
+
+// const router = express.Router();
+
+// /*
+// |--------------------------------------------------------------------------
+// | Public Routes
+// |--------------------------------------------------------------------------
+// */
+
+// // Active testimonials
+// router.get("/", getTestimonials);
+
+// /*
+// |--------------------------------------------------------------------------
+// | Admin Routes
+// |--------------------------------------------------------------------------
+// */
+
+// // Get all
+// router.get(
+//   "/admin/all",
+//   authenticate,
+//   authorize("ADMIN"),
+//   getAllTestimonials
+// );
+
+// // Get by ID
+// router.get(
+//   "/admin/:id",
+//   authenticate,
+//   authorize("ADMIN"),
+//   getTestimonialById
+// );
+
+// // ✅ Create - with image upload
+// router.post(
+//   "/",
+//   authenticate,
+//   authorize("ADMIN"),
+//   uploadSingle("testimonials", "image"), // Folder: 'testimonials', Field: 'image'
+//   createTestimonial
+// );
+
+// // ✅ Update - with image upload
+// router.put(
+//   "/:id",
+//   authenticate,
+//   authorize("ADMIN"),
+//   uploadSingle("testimonials", "image"), // Folder: 'testimonials', Field: 'image'
+//   updateTestimonial
+// );
+
+// // Toggle active/inactive
+// router.patch(
+//   "/:id/toggle",
+//   authenticate,
+//   authorize("ADMIN"),
+//   toggleTestimonialStatus
+// );
+
+// // Delete
+// router.delete(
+//   "/:id",
+//   authenticate,
+//   authorize("ADMIN"),
+//   deleteTestimonial
+// );
+
+// export default router;
+
+// backend/src/routes/testimonial.routes.js
 import express from "express";
 
 import {
@@ -15,6 +192,8 @@ import {
   authorize,
 } from "../middleware/auth.middleware.js";
 
+import { uploadSingle } from "../middleware/upload.middleware.js";
+
 const router = express.Router();
 
 /*
@@ -23,10 +202,14 @@ const router = express.Router();
 |--------------------------------------------------------------------------
 */
 
-// Active testimonials
-router.get(
-  "/",
-  getTestimonials
+// ✅ Get active testimonials for website
+router.get("/", getTestimonials);
+
+// ✅ Submit testimonial (public - no auth required)
+router.post(
+  "/submit",
+  uploadSingle("testimonials", "image"),
+  createTestimonial
 );
 
 /*
@@ -35,7 +218,7 @@ router.get(
 |--------------------------------------------------------------------------
 */
 
-// Get all
+// ✅ Get all testimonials (admin)
 router.get(
   "/admin/all",
   authenticate,
@@ -51,33 +234,26 @@ router.get(
   getTestimonialById
 );
 
-// Create
-router.post(
-  "/",
-  authenticate,
-  authorize("ADMIN"),
-  createTestimonial
-);
-
-// Update
+// Update testimonial (admin)
 router.put(
-  "/:id",
+  "/admin/:id",
   authenticate,
   authorize("ADMIN"),
+  uploadSingle("testimonials", "image"),
   updateTestimonial
 );
 
-// Toggle active/inactive
+// Toggle active/inactive (admin)
 router.patch(
-  "/:id/toggle",
+  "/admin/:id/toggle",
   authenticate,
   authorize("ADMIN"),
   toggleTestimonialStatus
 );
 
-// Delete
+// Delete (admin)
 router.delete(
-  "/:id",
+  "/admin/:id",
   authenticate,
   authorize("ADMIN"),
   deleteTestimonial
