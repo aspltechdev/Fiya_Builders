@@ -1,449 +1,627 @@
-/* =====================================================
-   FIYA SERVICES SECTION — Premium Blue/White/Gold
-===================================================== */
+/* ================================================================
+   FIYA BUILDERS - SERVICES SECTION
+   Unique Class Prefix: fya-
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
 :root {
-  --fya-blue: #1E3A8A;
-  --fya-blue-light: #2563EB;
-  --fya-navy: #0F172A;
-  --fya-white: #FFFFFF;
-  --fya-off-white: #F8FAFC;
-  --fya-gray: #F1F5F9;
-  --fya-gray-light: #E2E8F0;
-  --fya-gold: #C9972B;
-  --fya-gold-light: #E5B84B;
-  --fya-gold-dark: #A67C1E;
-  --fya-text: #1E293B;
-  --fya-text-muted: #64748B;
-  --fya-text-light: #94A3B8;
-  --fya-border: #E2E8F0;
-  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
-  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+  --fya-color-red: #D71920;
+  --fya-color-red-dark: #B81218;
+  --fya-color-gold: #C9972B;
+  --fya-color-blue: #3D5D96;
+  --fya-color-black: #111111;
+  --fya-color-charcoal: #1A1A1A;
+  --fya-color-white: #FFFFFF;
+  --fya-color-gray: #777777;
+  --fya-color-gray-light: #E5E5E3;
+  --fya-color-gray-lighter: #F5F5F3;
+  --fya-color-bg: #FAFAF8;
+  --fya-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-radius: 12px;
+  --fya-radius-lg: 16px;
+}
+
+/* ================================================================
+   SERVICES SECTION
+   ================================================================ */
+
+.fya-services {
+  padding: 100px 0 80px;
+  background: var(--fya-color-white);
+  position: relative;
 }
 
 .fya-container {
-  max-width: 1320px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 40px;
 }
 
-/* =====================================================
-   SERVICES SECTION
-===================================================== */
-.fya-services {
-  padding: 8rem 0;
-  background: var(--fya-off-white);
-  position: relative;
-  overflow: hidden;
-}
-
-.fya-services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 10% 10%, rgba(30, 58, 138, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 90% 90%, rgba(201, 151, 43, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-/* =====================================================
+/* ================================================================
    HEADER
-===================================================== */
-.fya-services-header {
-  margin-bottom: 4rem;
+   ================================================================ */
+
+.fya-services__header {
+  margin-bottom: 60px;
 }
 
-.fya-section-label {
+.fya-services__label {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.fya-section-number {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--fya-gold);
-  letter-spacing: 0.1em;
-}
-
-.fya-section-label-text {
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  color: var(--fya-text-muted);
+.fya-services__number {
+  font-family: var(--fya-font);
+  font-size: 14px;
   font-weight: 600;
+  color: var(--fya-color-red);
+  letter-spacing: 1px;
+}
+
+.fya-services__label-text {
+  font-family: var(--fya-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fya-color-gray);
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.fya-section-line {
+.fya-services__line {
   flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, var(--fya-gold) 0%, var(--fya-border) 100%);
+  height: 1px;
+  background: var(--fya-color-gray-light);
+  max-width: 100px;
 }
 
-.fya-services-heading {
+.fya-services__heading {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  gap: 3rem;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.fya-services-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+.fya-services__title {
+  font-family: var(--fya-font);
+  font-size: 42px;
   font-weight: 700;
-  color: var(--fya-navy);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  color: var(--fya-color-black);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
-.fya-text-gold {
-  color: var(--fya-gold);
+.fya-services__highlight {
+  color: var(--fya-color-red);
+  position: relative;
 }
 
-.fya-text-blue {
-  color: var(--fya-blue);
+.fya-services__highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--fya-color-red);
+  opacity: 0.15;
+  border-radius: 2px;
 }
 
-.fya-services-subtitle {
-  font-size: 1.1rem;
-  color: var(--fya-text-muted);
-  line-height: 1.8;
-  max-width: 400px;
-  text-align: right;
+.fya-services__subtitle {
+  font-family: var(--fya-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fya-color-gray);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 460px;
 }
 
-/* =====================================================
+/* ================================================================
+   LOADING
+   ================================================================ */
+
+.fya-services__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 300px;
+  font-family: var(--fya-font);
+  color: var(--fya-color-gray);
+}
+
+.fya-services__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--fya-color-gray-light);
+  border-top-color: var(--fya-color-red);
+  border-radius: 50%;
+  animation: fyaSpin 0.8s linear infinite;
+}
+
+@keyframes fyaSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================================
    SERVICES GRID
-===================================================== */
-.fya-services-grid {
+   ================================================================ */
+
+.fya-services__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 24px;
+  margin-bottom: 60px;
 }
 
-.fya-service-card {
-  background: var(--fya-white);
-  border-radius: 12px;
+/* ================================================================
+   SERVICE CARD
+   ================================================================ */
+
+.fya-services__card {
+  background: var(--fya-color-white);
+  border-radius: var(--fya-radius-lg);
   overflow: hidden;
-  transition: all 0.3s;
-  border: 1px solid var(--fya-border);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--fya-color-gray-light);
+  transition: all var(--fya-transition);
+  display: flex;
+  flex-direction: column;
 }
 
-.fya-service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--fya-shadow-lg);
-  border-color: var(--fya-blue);
+.fya-services__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
+  border-color: var(--fya-color-red);
 }
 
-/* Service Image */
-.fya-service-image {
+/* Card Image */
+.fya-services__card-image {
   position: relative;
-  height: 250px;
+  aspect-ratio: 16/9;
   overflow: hidden;
+  background: var(--fya-color-gray-lighter);
 }
 
-.fya-service-image img {
+.fya-services__card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform var(--fya-transition);
 }
 
-.fya-service-card:hover .fya-service-image img {
+.fya-services__card:hover .fya-services__card-img {
   transform: scale(1.05);
 }
 
-.fya-service-image-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--fya-blue) 0%, var(--fya-navy) 100%);
-  color: var(--fya-gold-light);
-  font-size: 3rem;
-}
-
-.fya-service-image-overlay {
+.fya-services__card-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15, 23, 42, 0.1) 0%,
-    rgba(15, 23, 42, 0.5) 100%
+    transparent 50%,
+    rgba(17, 17, 17, 0.4) 100%
   );
 }
 
-/* Icon Badge */
-.fya-service-icon-badge {
+/* Card Badge */
+.fya-services__card-badge {
   position: absolute;
-  bottom: -25px;
-  left: 2rem;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--fya-blue) 0%, var(--fya-blue-light) 100%);
-  border-radius: 12px;
+  bottom: 12px;
+  left: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--fya-gold-light);
-  font-size: 1.5rem;
-  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3);
-  border: 3px solid var(--fya-white);
+  width: 40px;
+  height: 40px;
+  background: var(--fya-color-red);
+  color: var(--fya-color-white);
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(215, 25, 32, 0.25);
 }
 
-/* Service Content */
-.fya-service-content {
-  padding: 3rem 2rem 2rem;
-  position: relative;
+/* Card Placeholder */
+.fya-services__card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--fya-color-gray-lighter);
+  color: var(--fya-color-gray);
+  font-size: 40px;
 }
 
-.fya-service-number {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--fya-gray-light);
-  line-height: 1;
+/* Card Content */
+.fya-services__card-content {
+  padding: 20px 24px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.fya-service-title {
-  font-size: 1.3rem;
+.fya-services__card-number {
+  font-family: var(--fya-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-color-red);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.fya-services__card-title {
+  font-family: var(--fya-font);
+  font-size: 18px;
   font-weight: 700;
-  color: var(--fya-navy);
-  margin-bottom: 0.75rem;
-  margin-top: 0.5rem;
+  color: var(--fya-color-black);
+  margin: 0 0 8px;
+  line-height: 1.2;
 }
 
-.fya-service-description {
-  color: var(--fya-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+.fya-services__card-description {
+  font-family: var(--fya-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fya-color-gray);
+  line-height: 1.6;
+  margin: 0 0 14px;
 }
 
 /* Features */
-.fya-service-features {
+.fya-services__card-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem;
+  margin: 0 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 6px;
 }
 
-.fya-service-feature {
+.fya-services__card-feature {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--fya-text);
-  font-size: 0.85rem;
-  font-weight: 500;
+  gap: 8px;
+  font-family: var(--fya-font);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--fya-color-gray);
 }
 
-.fya-feature-icon {
-  color: var(--fya-gold);
-  font-size: 0.85rem;
+.fya-services__feature-icon {
+  color: var(--fya-color-red);
+  font-size: 12px;
   flex-shrink: 0;
 }
 
-/* Service Link */
-.fya-service-link {
+/* Card Link */
+.fya-services__card-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--fya-blue);
+  gap: 8px;
+  font-family: var(--fya-font);
+  font-size: 13px;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  transition: all 0.3s;
-  position: relative;
+  color: var(--fya-color-black);
+  text-decoration: none;
+  transition: all var(--fya-transition);
+  margin-top: auto;
 }
 
-.fya-service-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--fya-gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
+.fya-services__card-link:hover {
+  color: var(--fya-color-red);
 }
 
-.fya-service-link:hover {
-  color: var(--fya-gold);
+.fya-services__card-arrow {
+  transition: transform var(--fya-transition);
+  font-size: 13px;
 }
 
-.fya-service-link:hover::after {
-  transform: scaleX(1);
+.fya-services__card-link:hover .fya-services__card-arrow {
+  transform: translateX(4px);
 }
 
-.fya-service-arrow {
-  font-size: 0.9rem;
-  transition: transform 0.3s;
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+.fya-services__footer {
+  padding-top: 40px;
+  border-top: 1px solid var(--fya-color-gray-light);
 }
 
-.fya-service-link:hover .fya-service-arrow {
-  transform: translateX(5px);
-}
-
-/* Loading State */
-.fya-services-loading {
+.fya-services__footer-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 4rem;
-  color: var(--fya-text-muted);
-  font-size: 1rem;
-}
-
-.fya-loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid var(--fya-gray-light);
-  border-top-color: var(--fya-blue);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* =====================================================
-   FOOTER STATEMENT
-===================================================== */
-.fya-services-footer {
-  margin-top: 5rem;
-  padding: 3rem;
-  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-}
-
-.fya-services-footer::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(201, 151, 43, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-}
-
-.fya-services-footer-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  gap: 32px;
 }
 
-.fya-services-footer-text {
-  font-size: 1.8rem;
-  color: var(--fya-white);
+.fya-services__footer-text {
+  font-family: var(--fya-font);
+  font-size: 28px;
   font-weight: 700;
-  line-height: 1.4;
+  color: var(--fya-color-black);
+  line-height: 1.2;
   margin: 0;
 }
 
-.fya-services-footer-link {
+.fya-services__footer-highlight {
+  color: var(--fya-color-blue);
+}
+
+.fya-services__footer-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: var(--fya-gold);
-  color: var(--fya-navy);
+  gap: 10px;
+  padding: 12px 28px;
+  background: var(--fya-color-black);
+  color: var(--fya-color-white);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  transition: all 0.3s;
-  border: 2px solid var(--fya-gold);
-  border-radius: 6px;
+  border-radius: var(--fya-radius);
+  font-family: var(--fya-font);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all var(--fya-transition);
   white-space: nowrap;
 }
 
-.fya-services-footer-link:hover {
-  background: transparent;
-  color: var(--fya-gold);
+.fya-services__footer-link:hover {
+  background: var(--fya-color-charcoal);
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(201, 151, 43, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-===================================================== */
+.fya-services__footer-link svg {
+  transition: transform var(--fya-transition);
+}
+
+.fya-services__footer-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .fya-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .fya-services {
+    padding: 80px 0 60px;
   }
-  
-  .fya-services-heading {
+
+  .fya-container {
+    padding: 0 32px;
+  }
+
+  .fya-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fya-services__heading {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 16px;
   }
-  
-  .fya-services-subtitle {
-    text-align: left;
+
+  .fya-services__title {
+    font-size: 36px;
+  }
+
+  .fya-services__subtitle {
+    max-width: 100%;
+  }
+
+  .fya-services__footer-text {
+    font-size: 24px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .fya-services {
-    padding: 5rem 0;
+    padding: 60px 0 40px;
   }
-  
+
   .fya-container {
-    padding: 0 1.5rem;
+    padding: 0 20px;
   }
-  
-  .fya-services-grid {
+
+  .fya-services__header {
+    margin-bottom: 40px;
+  }
+
+  .fya-services__number {
+    font-size: 12px;
+  }
+
+  .fya-services__label-text {
+    font-size: 10px;
+  }
+
+  .fya-services__line {
+    max-width: 60px;
+  }
+
+  .fya-services__title {
+    font-size: 28px;
+  }
+
+  .fya-services__subtitle {
+    font-size: 14px;
+  }
+
+  .fya-services__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
   }
-  
-  .fya-services-footer-content {
+
+  .fya-services__card-title {
+    font-size: 16px;
+  }
+
+  .fya-services__card-description {
+    font-size: 13px;
+  }
+
+  .fya-services__footer-content {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 20px;
   }
-  
-  .fya-services-footer-text {
-    font-size: 1.5rem;
+
+  .fya-services__footer-text {
+    font-size: 20px;
   }
-  
-  .fya-service-image {
-    height: 200px;
+
+  .fya-services__footer-link {
+    padding: 10px 20px;
+    font-size: 13px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
-  .fya-services-title {
-    font-size: 2rem;
+  .fya-services {
+    padding: 40px 0 30px;
   }
-  
-  .fya-service-content {
-    padding: 2.5rem 1.5rem 1.5rem;
+
+  .fya-container {
+    padding: 0 16px;
   }
-  
-  .fya-service-icon-badge {
-    left: 1.5rem;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
+
+  .fya-services__title {
+    font-size: 24px;
+  }
+
+  .fya-services__card {
+    border-radius: var(--fya-radius);
+  }
+
+  .fya-services__card-content {
+    padding: 16px 18px 20px;
+  }
+
+  .fya-services__card-feature {
+    font-size: 11px;
+  }
+
+  .fya-services__footer-text {
+    font-size: 18px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-services__card,
+  .fya-services__card-img,
+  .fya-services__card-link,
+  .fya-services__card-arrow,
+  .fya-services__footer-link {
+    transition: none !important;
+  }
+
+  .fya-services__spinner {
+    animation: none !important;
+    border-top-color: var(--fya-color-red);
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fya-color-bg: #111111;
+    --fya-color-gray-light: #2D2D2D;
+    --fya-color-gray-lighter: #1A1A1A;
+  }
+
+  .fya-services {
+    background: var(--fya-color-black);
+  }
+
+  .fya-services__title {
+    color: #FFFFFF;
+  }
+
+  .fya-services__subtitle {
+    color: #999999;
+  }
+
+  .fya-services__card {
+    background: #1A1A1A;
+    border-color: #2D2D2D;
+  }
+
+  .fya-services__card:hover {
+    border-color: var(--fya-color-red);
+  }
+
+  .fya-services__card-title {
+    color: #FFFFFF;
+  }
+
+  .fya-services__card-description {
+    color: #999999;
+  }
+
+  .fya-services__card-feature {
+    color: #999999;
+  }
+
+  .fya-services__card-link {
+    color: #E5E5E5;
+  }
+
+  .fya-services__card-link:hover {
+    color: var(--fya-color-red);
+  }
+
+  .fya-services__footer-text {
+    color: #FFFFFF;
+  }
+
+  .fya-services__footer-link {
+    background: var(--fya-color-red);
+  }
+
+  .fya-services__footer-link:hover {
+    background: var(--fya-color-red-dark);
+  }
+
+  .fya-services__card-placeholder {
+    background: #2D2D2D;
+    color: #666666;
+  }
+
+  .fya-services__footer {
+    border-top-color: #2D2D2D;
+  }
+
+  .fya-services__label-text {
+    color: #999999;
+  }
+
+  .fya-services__line {
+    background: #2D2D2D;
   }
 }

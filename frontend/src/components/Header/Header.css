@@ -1,302 +1,330 @@
-/* =====================================================
-   FIYA HEADER — Simple Production Design
-===================================================== */
+/* ================================================================
+   FIYA BUILDERS - HEADER (MINIMAL VERSION)
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
 :root {
-  --fya-blue: #1E3A8A;
-  --fya-blue-light: #2563EB;
-  --fya-navy: #0F172A;
-  --fya-white: #FFFFFF;
-  --fya-off-white: #F8FAFC;
-  --fya-gray: #F1F5F9;
-  --fya-gray-light: #E2E8F0;
-  --fya-gold: #C9972B;
-  --fya-gold-light: #E5B84B;
-  --fya-gold-dark: #A67C1E;
-  --fya-text: #1E293B;
-  --fya-text-muted: #64748B;
-  --fya-text-light: #94A3B8;
-  --fya-border: #E2E8F0;
-  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
-  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
-  --fya-header-height: 80px;
-  --fya-topbar-height: 45px;
+  --fya-color-red: #D71920;
+  --fya-color-red-dark: #B81218;
+  --fya-color-white: #FFFFFF;
+  --fya-color-black: #111111;
+  --fya-color-gray: #666666;
+  --fya-color-gray-light: #E5E5E3;
+  --fya-color-gray-lighter: #F5F5F3;
+  --fya-topbar-height: 32px;
+  --fya-header-height: 72px;
+  --fya-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-transition: 0.25s ease;
 }
 
-.fya-container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
+/* ================================================================
+   TOP BAR - Minimal
+   ================================================================ */
 
-/* =====================================================
-   TOP BAR - Clean and Professional
-===================================================== */
 .fya-topbar {
-  background: var(--fya-navy);
-  color: #FFFFFF;
+  background: var(--fya-color-black);
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--fya-font);
+  font-size: 11px;
   height: var(--fya-topbar-height);
   display: flex;
   align-items: center;
   position: relative;
   z-index: 1001;
-  border-bottom: 2px solid var(--fya-gold);
 }
 
-.fya-topbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.fya-topbar__container {
+  max-width: 1280px;
   width: 100%;
-}
-
-.fya-topbar-left,
-.fya-topbar-right {
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
 }
 
-.fya-topbar-link {
+.fya-topbar__left {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #FFFFFF;
+  gap: 12px;
+}
+
+.fya-topbar__link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.3s;
+  transition: color var(--fya-transition);
+  white-space: nowrap;
+  font-size: 10px;
 }
 
-.fya-topbar-link:hover {
-  color: var(--fya-gold-light);
+.fya-topbar__link:hover {
+  color: var(--fya-color-white);
 }
 
-.fya-topbar-icon {
-  color: var(--fya-gold-light);
-  font-size: 0.85rem;
+.fya-topbar__icon {
+  font-size: 10px;
+  opacity: 0.5;
 }
 
-.fya-topbar-text {
-  letter-spacing: 0.02em;
+.fya-topbar__divider {
+  color: rgba(255, 255, 255, 0.08);
 }
 
-.fya-topbar-separator {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.8rem;
-}
+/* ================================================================
+   MAIN HEADER
+   ================================================================ */
 
-/* =====================================================
-   MAIN HEADER - Bold and Clear
-===================================================== */
 .fya-header {
   position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
-  background: var(--fya-white);
-  transition: all 0.3s ease;
+  background: var(--fya-color-white);
+  border-bottom: 1px solid var(--fya-color-gray-light);
   height: var(--fya-header-height);
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  transition: all var(--fya-transition);
 }
 
 .fya-header--scrolled {
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.97);
 }
 
-.fya-header-content {
+.fya-header__container {
+  max-width: 1280px;
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
+  gap: 8px;
 }
 
-/* Logo - Prominent and Clear */
+/* ================================================================
+   LOGO
+   ================================================================ */
+
 .fya-logo {
-  text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 14px;
+  text-decoration: none;
   flex-shrink: 0;
 }
 
-.fya-logo-box {
+.fya-logo__image {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.fya-logo__content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   line-height: 1;
 }
 
-.fya-logo-main {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--fya-blue);
-  letter-spacing: -0.02em;
-}
-
-.fya-logo-sub {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--fya-gold);
-  letter-spacing: 0.25em;
-  margin-left: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-/* Navigation - Simple and Clear */
-.fya-nav {
-  flex: 1;
+.fya-logo__mark {
   display: flex;
-  justify-content: center;
+  align-items: baseline;
+  gap: 3px;
 }
 
-.fya-nav-list {
+.fya-logo__primary {
+  font-family: var(--fya-font);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--fya-color-red);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.fya-logo__secondary {
+  font-family: var(--fya-font);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--fya-color-black);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.fya-logo__tagline {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--fya-color-gray);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+
+.fya-nav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  flex: 1;
+  justify-content: center;
+  margin: 0 4px;
+  min-width: 0;
+}
+
+.fya-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.fya-nav-item {
+.fya-nav__item {
   position: relative;
-}
-
-.fya-nav-link {
-  text-decoration: none;
-  color: var(--fya-text);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: all 0.3s;
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.fya-nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--fya-gold);
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-.fya-nav-link:hover {
-  color: var(--fya-blue);
-}
-
-.fya-nav-link:hover::after {
-  width: 100%;
-}
-
-.fya-nav-link--active {
-  color: var(--fya-blue);
-}
-
-.fya-nav-link--active::after {
-  width: 100%;
-  background: var(--fya-gold);
-}
-
-.fya-nav-text {
-  display: inline-block;
-}
-
-/* Header Actions - Clear CTA */
-.fya-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
   flex-shrink: 0;
 }
 
-.fya-btn-consultation {
+.fya-nav__link {
+  display: block;
+  padding: 8px 16px;
+  font-family: var(--fya-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fya-color-gray);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all var(--fya-transition);
+  white-space: nowrap;
+  position: relative;
+}
+
+.fya-nav__link:hover {
+  color: var(--fya-color-black);
+  background: var(--fya-color-gray-lighter);
+}
+
+.fya-nav__link--active {
+  color: var(--fya-color-red);
+  font-weight: 600;
+}
+
+/* Active underline */
+.fya-nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2.5px;
+  background: var(--fya-color-red);
+  border-radius: 2px;
+}
+
+/* ================================================================
+   HEADER ACTIONS
+   ================================================================ */
+
+.fya-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   BUTTON
+   ================================================================ */
+
+.fya-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 1.75rem;
-  background: var(--fya-blue);
-  color: var(--fya-white);
+  gap: 8px;
+  padding: 9px 20px;
+  font-family: var(--fya-font);
+  font-size: 13px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  transition: all 0.3s;
-  border: 2px solid var(--fya-blue);
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--fya-transition);
   white-space: nowrap;
+  letter-spacing: 0.2px;
 }
 
-.fya-btn-consultation:hover {
-  background: var(--fya-gold);
-  border-color: var(--fya-gold);
-  color: var(--fya-navy);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(201, 151, 43, 0.4);
+.fya-btn--primary {
+  background: var(--fya-color-red);
+  color: var(--fya-color-white);
+  box-shadow: 0 2px 12px rgba(215, 25, 32, 0.15);
 }
 
-.fya-btn-text {
-  display: inline-block;
+.fya-btn--primary:hover {
+  background: var(--fya-color-red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(215, 25, 32, 0.25);
 }
 
-.fya-btn-icon {
-  font-size: 0.9rem;
-  transition: transform 0.3s;
+.fya-btn--block {
+  width: 100%;
+  justify-content: center;
+  padding: 12px 20px;
 }
 
-.fya-btn-consultation:hover .fya-btn-icon {
+.fya-btn__icon {
+  transition: transform var(--fya-transition);
+  font-size: 12px;
+}
+
+.fya-btn--primary:hover .fya-btn__icon {
   transform: translateX(3px);
 }
 
-.fya-btn-block {
-  width: 100%;
-  justify-content: center;
-  padding: 1rem;
-}
+/* ================================================================
+   MOBILE TOGGLE
+   ================================================================ */
 
-/* Mobile Toggle - Visible */
 .fya-toggle {
   display: none;
-  width: 48px;
-  height: 48px;
-  background: var(--fya-blue);
-  border: none;
-  border-radius: 8px;
   align-items: center;
   justify-content: center;
-  color: var(--fya-white);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fya-color-black);
+  font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s;
-  font-size: 1.2rem;
+  transition: all var(--fya-transition);
+  flex-shrink: 0;
 }
 
 .fya-toggle:hover {
-  background: var(--fya-gold);
-  color: var(--fya-navy);
+  background: var(--fya-color-gray-lighter);
 }
 
-/* =====================================================
-   MOBILE OVERLAY
-===================================================== */
+/* ================================================================
+   MOBILE MENU
+   ================================================================ */
+
 .fya-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
-  z-index: 998;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s;
-  backdrop-filter: blur(5px);
+  transition: all var(--fya-transition);
 }
 
 .fya-overlay--visible {
@@ -304,183 +332,233 @@
   visibility: visible;
 }
 
-/* =====================================================
-   MOBILE NAVIGATION - Simple and Clear
-===================================================== */
 .fya-mobile-nav {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 380px;
-  max-width: 90vw;
-  height: 100vh;
-  background: var(--fya-white);
-  z-index: 999;
-  transition: right 0.3s ease;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  max-width: 320px;
+  background: var(--fya-color-white);
+  transform: translateX(100%);
+  transition: transform var(--fya-transition);
   display: flex;
   flex-direction: column;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.06);
 }
 
 .fya-mobile-nav--open {
-  right: 0;
+  transform: translateX(0);
 }
 
-.fya-mobile-header {
+.fya-mobile-nav__header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  border-bottom: 2px solid var(--fya-gray);
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--fya-color-gray-light);
+  flex-shrink: 0;
 }
 
-.fya-mobile-logo {
+.fya-mobile-nav__logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
+  text-decoration: none;
 }
 
-.fya-mobile-close {
-  width: 44px;
-  height: 44px;
-  background: #EF4444;
-  border: none;
-  border-radius: 8px;
+.fya-mobile-nav__logo-image {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+.fya-mobile-nav__logo-text {
+  font-family: var(--fya-font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fya-color-black);
+}
+
+.fya-mobile-nav__close {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--fya-white);
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fya-color-gray);
+  font-size: 18px;
   cursor: pointer;
-  transition: all 0.3s;
-  font-size: 1.1rem;
+  transition: all var(--fya-transition);
 }
 
-.fya-mobile-close:hover {
-  background: #DC2626;
-  transform: rotate(90deg);
+.fya-mobile-nav__close:hover {
+  background: var(--fya-color-gray-lighter);
+  color: var(--fya-color-black);
 }
 
-.fya-mobile-list {
-  flex: 1;
+.fya-mobile-nav__list {
   list-style: none;
+  padding: 8px 12px;
   margin: 0;
-  padding: 1.5rem;
+  flex: 1;
   overflow-y: auto;
 }
 
-.fya-mobile-item {
-  margin-bottom: 0.25rem;
+.fya-mobile-nav__item {
+  border-bottom: 1px solid var(--fya-color-gray-lighter);
 }
 
-.fya-mobile-link {
+.fya-mobile-nav__item:last-child {
+  border-bottom: none;
+}
+
+.fya-mobile-nav__link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.25rem;
+  padding: 12px 12px;
   text-decoration: none;
-  color: var(--fya-text);
-  font-size: 1.05rem;
+  font-family: var(--fya-font);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fya-color-gray);
+  transition: all var(--fya-transition);
+  border-radius: 4px;
+}
+
+.fya-mobile-nav__link:hover {
+  background: var(--fya-color-gray-lighter);
+  color: var(--fya-color-black);
+}
+
+.fya-mobile-nav__link--active {
+  color: var(--fya-color-red);
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s;
+  background: #FEE2E2;
 }
 
-.fya-mobile-link:hover {
-  background: var(--fya-off-white);
-  color: var(--fya-blue);
+.fya-mobile-nav__arrow {
+  font-size: 12px;
+  opacity: 0.3;
 }
 
-.fya-mobile-link--active {
-  background: var(--fya-blue);
-  color: var(--fya-white);
+.fya-mobile-nav__footer {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--fya-color-gray-light);
+  flex-shrink: 0;
+  background: var(--fya-color-gray-lighter);
 }
 
-.fya-mobile-link--active:hover {
-  background: var(--fya-blue);
-  color: var(--fya-white);
-}
-
-.fya-mobile-link-text {
-  display: inline-block;
-}
-
-.fya-mobile-link-arrow {
-  font-size: 0.9rem;
-  color: var(--fya-text-light);
-  transition: transform 0.3s;
-}
-
-.fya-mobile-link:hover .fya-mobile-link-arrow {
-  transform: translateX(5px);
-  color: var(--fya-blue);
-}
-
-.fya-mobile-link--active .fya-mobile-link-arrow {
-  color: var(--fya-white);
-}
-
-.fya-mobile-footer {
-  padding: 1.5rem;
-  border-top: 2px solid var(--fya-gray);
-}
-
-.fya-mobile-contact {
-  margin-top: 1.5rem;
+.fya-mobile-nav__contact {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.fya-mobile-contact-link {
+.fya-mobile-nav__contact-link {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
+  color: var(--fya-color-gray);
   text-decoration: none;
-  color: var(--fya-text);
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: all 0.3s;
+  font-family: var(--fya-font);
+  font-size: 13px;
 }
 
-.fya-mobile-contact-link:hover {
-  background: var(--fya-off-white);
-  color: var(--fya-blue);
+.fya-mobile-nav__contact-link:hover {
+  color: var(--fya-color-black);
 }
 
-.fya-mobile-contact-icon {
-  color: var(--fya-gold);
-  font-size: 1rem;
-}
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
 
-.fya-mobile-contact-text {
-  display: inline-block;
-}
+/* Small Desktop - 1024px */
+@media (max-width: 1024px) {
+  .fya-topbar__container,
+  .fya-header__container {
+    padding: 0 16px;
+  }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-===================================================== */
-@media (max-width: 1200px) {
-  .fya-nav-list {
-    gap: 1.5rem;
+  .fya-nav__link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .fya-btn {
+    padding: 7px 16px;
+    font-size: 12px;
+  }
+
+  .fya-btn__icon {
+    font-size: 11px;
+  }
+
+  .fya-logo__image {
+    height: 38px;
+  }
+
+  .fya-logo__primary {
+    font-size: 19px;
+  }
+
+  .fya-logo__secondary {
+    font-size: 17px;
   }
   
-  .fya-nav-link {
-    font-size: 0.9rem;
+  .fya-logo__tagline {
+    font-size: 8px;
   }
 }
 
-@media (max-width: 1024px) {
+/* Tablet - 850px */
+@media (max-width: 850px) {
   .fya-nav {
     display: none;
   }
-  
+
   .fya-toggle {
     display: flex;
   }
+
+  .fya-header__container {
+    gap: 4px;
+  }
+
+  /* Hide button text, show only icon */
+  .fya-btn span {
+    display: none;
+  }
+
+  .fya-btn {
+    padding: 8px 12px;
+    gap: 0;
+  }
+
+  .fya-btn__icon {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .fya-logo__image {
+    height: 32px;
+  }
+
+  .fya-logo__primary {
+    font-size: 17px;
+  }
+
+  .fya-logo__secondary {
+    font-size: 15px;
+  }
   
-  .fya-header-actions .fya-btn-consultation {
+  .fya-logo__tagline {
     display: none;
   }
   
@@ -489,37 +567,98 @@
   }
 }
 
+/* Mobile - 768px */
 @media (max-width: 768px) {
-  .fya-container {
-    padding: 0 1rem;
-  }
-  
   .fya-header {
-    height: 70px;
+    height: 62px;
+  }
+
+  .fya-header__container {
+    padding: 0 12px;
+  }
+
+  .fya-logo {
+    gap: 8px;
   }
   
-  .fya-logo-main {
-    font-size: 1.6rem;
+  .fya-logo__image {
+    height: 28px;
   }
-  
-  .fya-logo-sub {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
+
+  .fya-logo__primary {
+    font-size: 15px;
   }
-  
+
+  .fya-logo__secondary {
+    font-size: 13px;
+  }
+
+  .fya-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .fya-btn {
+    padding: 6px 10px;
+  }
+
+  .fya-btn__icon {
+    font-size: 14px;
+  }
+
   .fya-mobile-nav {
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
   }
 }
 
+/* Small Mobile - 480px */
 @media (max-width: 480px) {
-  .fya-logo-main {
-    font-size: 1.4rem;
+  .fya-header {
+    height: 56px;
   }
-  
+
+  .fya-header__container {
+    padding: 0 10px;
+  }
+
+  .fya-logo__image {
+    height: 24px;
+  }
+
+  .fya-logo__primary {
+    font-size: 14px;
+  }
+
+  .fya-logo__secondary {
+    font-size: 12px;
+  }
+
   .fya-toggle {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .fya-btn {
+    padding: 5px 8px;
+  }
+
+  .fya-btn__icon {
+    font-size: 12px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-header,
+  .fya-btn,
+  .fya-nav__link,
+  .fya-overlay,
+  .fya-mobile-nav {
+    transition: none !important;
   }
 }

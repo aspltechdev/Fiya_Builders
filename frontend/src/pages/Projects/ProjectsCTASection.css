@@ -1,0 +1,607 @@
+/* ================================================================
+   FIYA BUILDERS - PROJECTS CTA SECTION
+   Unique Class Prefix: fya-prj-cta
+   Brand Colors: Red #D71920, Gold #C9972B, White, Black, Gray
+   Matching About Page Pattern
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-prj-cta-red: #D71920;
+  --fya-prj-cta-red-dark: #B81218;
+  --fya-prj-cta-gold: #C9972B;
+  --fya-prj-cta-black: #111111;
+  --fya-prj-cta-charcoal: #1A1A1A;
+  --fya-prj-cta-white: #FFFFFF;
+  --fya-prj-cta-gray: #777777;
+  --fya-prj-cta-bg: #FAFAF8;
+  --fya-prj-cta-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-prj-cta-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-prj-cta-radius-lg: 16px;
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+
+.fya-prj-cta {
+  padding: 80px 0;
+  background: var(--fya-prj-cta-bg);
+  position: relative;
+}
+
+.fya-prj-cta::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-prj-cta__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================================================
+   CTA BOX
+   ================================================================ */
+
+.fya-prj-cta__box {
+  position: relative;
+  border-radius: var(--fya-prj-cta-radius-lg);
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+
+.fya-prj-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fya-prj-cta__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fyaPrjCtaZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes fyaPrjCtaZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.04); }
+}
+
+.fya-prj-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 17, 17, 0.88) 0%,
+    rgba(17, 17, 17, 0.5) 50%,
+    rgba(17, 17, 17, 0.75) 100%
+  );
+  backdrop-filter: blur(2px);
+}
+
+.fya-prj-cta__pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: 
+    radial-gradient(circle at 20% 50%, #FFFFFF 1px, transparent 1px),
+    radial-gradient(circle at 80% 50%, #FFFFFF 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* ================================================================
+   CONTENT
+   ================================================================ */
+
+.fya-prj-cta__content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 80px;
+  max-width: 780px;
+}
+
+/* ================================================================
+   HEADER / BADGE
+   ================================================================ */
+
+.fya-prj-cta__header {
+  margin-bottom: 16px;
+}
+
+.fya-prj-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px 6px 14px;
+  background: rgba(215, 25, 32, 0.12);
+  border: 1px solid rgba(215, 25, 32, 0.15);
+  border-radius: 50px;
+  font-family: var(--fya-prj-cta-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: #D71920;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.fya-prj-cta__badge-dot {
+  width: 6px;
+  height: 6px;
+  background: #D71920;
+  border-radius: 50%;
+  animation: fyaPrjCtaPulse 2s ease-in-out infinite;
+}
+
+@keyframes fyaPrjCtaPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* ================================================================
+   TITLE
+   ================================================================ */
+
+.fya-prj-cta__title {
+  font-family: var(--fya-prj-cta-font);
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  letter-spacing: -1.5px;
+}
+
+.fya-prj-cta__highlight {
+  color: #D71920;
+  position: relative;
+}
+
+.fya-prj-cta__highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #D71920;
+  opacity: 0.15;
+  border-radius: 2px;
+}
+
+/* ================================================================
+   DESCRIPTION
+   ================================================================ */
+
+.fya-prj-cta__description {
+  font-family: var(--fya-prj-cta-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  margin: 0 0 24px;
+  max-width: 520px;
+}
+
+/* ================================================================
+   FEATURES
+   ================================================================ */
+
+.fya-prj-cta__features {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.fya-prj-cta__feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fya-prj-cta-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fya-prj-cta__feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.12);
+  color: #D71920;
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   ACTIONS / BUTTONS
+   ================================================================ */
+
+.fya-prj-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.fya-prj-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: var(--fya-prj-cta-font);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fya-prj-cta__btn--primary {
+  background: #D71920;
+  color: #FFFFFF;
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.3);
+}
+
+.fya-prj-cta__btn--primary:hover {
+  background: #B81218;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.4);
+}
+
+.fya-prj-cta__btn--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.fya-prj-cta__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.fya-prj-cta__btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.fya-prj-cta__btn--primary:hover .fya-prj-cta__btn-icon {
+  transform: translateX(4px);
+}
+
+.fya-prj-cta__btn--secondary:hover .fya-prj-cta__btn-icon {
+  transform: translateX(4px);
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+.fya-prj-cta__footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fya-prj-cta__footer-text {
+  font-family: var(--fya-prj-cta-font);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.3px;
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-prj-cta__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-prj-cta__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-prj-cta__animate--delay-1 { transition-delay: 0.1s; }
+.fya-prj-cta__animate--delay-2 { transition-delay: 0.2s; }
+.fya-prj-cta__animate--delay-3 { transition-delay: 0.3s; }
+.fya-prj-cta__animate--delay-4 { transition-delay: 0.4s; }
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-prj-cta {
+    padding: 60px 0;
+  }
+
+  .fya-prj-cta__container {
+    padding: 0 32px;
+  }
+
+  .fya-prj-cta__content {
+    padding: 48px 56px;
+  }
+
+  .fya-prj-cta__title {
+    font-size: 38px;
+  }
+
+  .fya-prj-cta__features {
+    gap: 16px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-prj-cta {
+    padding: 40px 0;
+  }
+
+  .fya-prj-cta__container {
+    padding: 0 20px;
+  }
+
+  .fya-prj-cta__box {
+    min-height: auto;
+    border-radius: 12px;
+  }
+
+  .fya-prj-cta__content {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+
+  .fya-prj-cta__title {
+    font-size: 28px;
+  }
+
+  .fya-prj-cta__description {
+    font-size: 14px;
+  }
+
+  .fya-prj-cta__features {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .fya-prj-cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fya-prj-cta__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+
+  .fya-prj-cta__badge {
+    font-size: 10px;
+    padding: 4px 14px 4px 10px;
+  }
+
+  .fya-prj-cta__footer-text {
+    font-size: 12px;
+  }
+
+  .fya-prj-cta::before {
+    display: none;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-prj-cta {
+    padding: 30px 0;
+  }
+
+  .fya-prj-cta__container {
+    padding: 0 16px;
+  }
+
+  .fya-prj-cta__content {
+    padding: 24px 16px;
+  }
+
+  .fya-prj-cta__title {
+    font-size: 24px;
+  }
+
+  .fya-prj-cta__description {
+    font-size: 13px;
+  }
+
+  .fya-prj-cta__btn {
+    font-size: 11px;
+    padding: 10px 20px;
+  }
+
+  .fya-prj-cta__badge {
+    font-size: 9px;
+    padding: 4px 12px 4px 8px;
+  }
+
+  .fya-prj-cta__feature-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .fya-prj-cta__feature-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .fya-prj-cta__footer-text {
+    font-size: 11px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-prj-cta__image {
+    animation: none;
+  }
+
+  .fya-prj-cta__badge-dot {
+    animation: none;
+  }
+
+  .fya-prj-cta__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-prj-cta__animate--delay-1,
+  .fya-prj-cta__animate--delay-2,
+  .fya-prj-cta__animate--delay-3,
+  .fya-prj-cta__animate--delay-4 {
+    transition-delay: 0s;
+  }
+
+  .fya-prj-cta__btn {
+    transition: none !important;
+  }
+
+  .fya-prj-cta__btn-icon {
+    transition: none !important;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-prj-cta {
+    background: var(--fya-prj-cta-black);
+  }
+
+  .fya-prj-cta::before {
+    background: radial-gradient(circle, rgba(215, 25, 32, 0.04) 0%, transparent 70%);
+  }
+
+  .fya-prj-cta__overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .fya-prj-cta__badge {
+    background: rgba(215, 25, 32, 0.08);
+    border-color: rgba(215, 25, 32, 0.1);
+  }
+
+  .fya-prj-cta__feature-icon {
+    background: rgba(215, 25, 32, 0.08);
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-prj-cta {
+    padding: 40px 0;
+    background: #111111 !important;
+  }
+
+  .fya-prj-cta__bg {
+    display: none !important;
+  }
+
+  .fya-prj-cta__overlay {
+    display: none !important;
+  }
+
+  .fya-prj-cta__pattern {
+    display: none !important;
+  }
+
+  .fya-prj-cta__box {
+    border: 1px solid #333333 !important;
+    box-shadow: none !important;
+  }
+
+  .fya-prj-cta__title {
+    color: #FFFFFF !important;
+  }
+
+  .fya-prj-cta__description {
+    color: #999999 !important;
+  }
+
+  .fya-prj-cta__btn--primary {
+    background: #D71920 !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-prj-cta__btn--secondary {
+    border: 1px solid #FFFFFF !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-prj-cta__badge {
+    color: #D71920 !important;
+  }
+
+  .fya-prj-cta__footer-text {
+    color: #666666 !important;
+  }
+
+  .fya-prj-cta__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

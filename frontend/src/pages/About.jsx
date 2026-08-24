@@ -1,44 +1,59 @@
-// import { useEffect, useState } from "react";
+// // src/pages/About/AboutPage.jsx
+// import { useEffect, useState, useRef } from "react";
 // import {
 //   ArrowDown,
 //   ArrowUpRight,
 //   Plus,
+//   Award,
+//   Building2,
+//   Users,
+//   Target,
+//   Quote,
+//   Crown,
+//   Briefcase,
+//   Clock,
+//   CheckCircle,
+//   Star,
+//   ChevronRight,
+//   Calendar,
+//   MapPin,
+//   Mail,
+//   Phone,
+//   Play,
+//   ExternalLink,
 // } from "lucide-react";
 
 // import api from "../services/api.js";
-
 // import "./AboutPage.css";
 
 // const API_URL =
-//   import.meta.env.VITE_API_URL?.replace(
-//     "/api",
-//     ""
-//   ) || "http://localhost:5000";
+//   import.meta.env.VITE_API_URL?.replace("/api", "") ||
+//   "http://localhost:5000";
 
 // const AboutPage = () => {
 //   const [about, setAbout] = useState(null);
 //   const [loading, setLoading] = useState(true);
 
+//   // Refs for scroll animations
+//   const heroRef = useRef(null);
+//   const introRef = useRef(null);
+//   const founderRef = useRef(null);
+//   const philosophyRef = useRef(null);
+//   const experienceRef = useRef(null);
+//   const valuesRef = useRef(null);
+//   const ctaRef = useRef(null);
+
 //   useEffect(() => {
 //     loadAbout();
+//     initScrollAnimations();
 //   }, []);
 
 //   const loadAbout = async () => {
 //     try {
-//       const response = await api.get(
-//         "/about"
-//       );
-
-//       setAbout(
-//         response.data?.data ||
-//           response.data ||
-//           null
-//       );
+//       const response = await api.get("/about");
+//       setAbout(response.data?.data || response.data || null);
 //     } catch (error) {
-//       console.error(
-//         "About Page Error:",
-//         error
-//       );
+//       console.error("About Page Error:", error);
 //     } finally {
 //       setLoading(false);
 //     }
@@ -46,463 +61,454 @@
 
 //   const getImageUrl = (image) => {
 //     if (!image) return "";
-
-//     if (
-//       image.startsWith("http://") ||
-//       image.startsWith("https://")
-//     ) {
+//     if (image.startsWith("http://") || image.startsWith("https://")) {
 //       return image;
 //     }
-
 //     return `${API_URL}${image}`;
 //   };
 
-//   const title =
-//     about?.title ||
+//   // Scroll-triggered animations
+//   const initScrollAnimations = () => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add("fya-about__animate--visible");
+//           }
+//         });
+//       },
+//       {
+//         threshold: 0.15,
+//         rootMargin: "0px 0px -50px 0px",
+//       }
+//     );
+
+//     document.querySelectorAll(".fya-about__animate").forEach((el) => {
+//       observer.observe(el);
+//     });
+
+//     return () => observer.disconnect();
+//   };
+
+//   const title = about?.title ||
 //     "We don't just build structures. We build what comes next.";
-
-//   const subtitle =
-//     about?.subtitle ||
-//     "ABOUT FIYA BUILDERS";
-
-//   const description =
-//     about?.description ||
+//   const subtitle = about?.subtitle || "ABOUT FIYA BUILDERS";
+//   const description = about?.description ||
 //     "FIYA Builders brings together construction expertise, engineering precision and thoughtful execution to create spaces that are built for today and designed to last.";
+//   const experience = about?.experience || "10";
+//   const founderQuote = about?.founderQuote ||
+//     "Building is not just about structures; it's about creating lasting value for communities and generations to come.";
+//   const founderName = about?.founderName || "Founder";
+//   const founderTitle = about?.founderTitle || "Founder & Chairman";
 
-//   const experience =
-//     about?.experience || "10";
+//   const defaultImages = {
+//     hero: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80",
+//     philosophy: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
+//     founder: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+//   };
+
+//   const stats = [
+//     { value: "250+", label: "Projects Completed", icon: Building2 },
+//     { value: experience + "+", label: "Years Experience", icon: Award },
+//     { value: "150+", label: "Team Members", icon: Users },
+//     { value: "98%", label: "Client Satisfaction", icon: Target },
+//   ];
+
+//   const milestones = [
+//     { year: "2014", title: "Founded", description: "FIYA Builders established" },
+//     { year: "2016", title: "First Project", description: "Completed first residential project" },
+//     { year: "2018", title: "Expansion", description: "Entered commercial construction" },
+//     { year: "2020", title: "ISO Certified", description: "Achieved ISO 9001 certification" },
+//     { year: "2022", title: "100+ Projects", description: "Reached 100 completed projects" },
+//     { year: "2024", title: "New Horizons", description: "Expanded to 3 cities" },
+//   ];
+
+//   const values = [
+//     {
+//       number: "01",
+//       title: "Quality",
+//       description: "We believe quality is not an extra feature. It is the foundation of every project we undertake.",
+//       icon: Target,
+//     },
+//     {
+//       number: "02",
+//       title: "Integrity",
+//       description: "Clear communication and honest execution define how we work with our clients.",
+//       icon: Award,
+//     },
+//     {
+//       number: "03",
+//       title: "Precision",
+//       description: "From planning to finishing, attention to detail remains central to our process.",
+//       icon: Building2,
+//     },
+//     {
+//       number: "04",
+//       title: "Responsibility",
+//       description: "We take ownership of every stage of a project through completion.",
+//       icon: Users,
+//     },
+//   ];
 
 //   return (
-//     <main className="fiya-about-page">
+//     <main className="fya-about">
 
 //       {/* ==================================================
-//           HERO
+//           HERO SECTION — Cinematic
 //       ================================================== */}
+//       <section className="fya-about__hero" ref={heroRef}>
+//         <div className="fya-about__hero-bg">
+//           <img
+//             src={getImageUrl(about?.image) || defaultImages.hero}
+//             alt="FIYA Builders Architecture"
+//             className="fya-about__hero-image"
+//           />
+//           <div className="fya-about__hero-gradient" />
+//           <div className="fya-about__hero-overlay-text">
+//             <span className="fya-about__hero-overlay-letter">E</span>
+//             <span className="fya-about__hero-overlay-letter">X</span>
+//             <span className="fya-about__hero-overlay-letter">C</span>
+//             <span className="fya-about__hero-overlay-letter">E</span>
+//             <span className="fya-about__hero-overlay-letter">L</span>
+//             <span className="fya-about__hero-overlay-letter">L</span>
+//             <span className="fya-about__hero-overlay-letter">E</span>
+//             <span className="fya-about__hero-overlay-letter">N</span>
+//             <span className="fya-about__hero-overlay-letter">C</span>
+//             <span className="fya-about__hero-overlay-letter">E</span>
+//           </div>
+//         </div>
 
-//       <section className="fiya-about-page-hero">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-label">
-
-//             <span>
-//               01
-//             </span>
-
-//             <span>
-//               {subtitle}
-//             </span>
-
-//             <span className="fiya-about-page-line" />
-
+//         <div className="fya-container fya-about__hero-container">
+//           <div className="fya-about__hero-top fya-about__animate">
+//             <div className="fya-about__hero-label">
+//               <span className="fya-about__hero-number">01</span>
+//               <span className="fya-about__hero-label-text">{subtitle}</span>
+//               <span className="fya-about__hero-line" />
+//             </div>
 //           </div>
 
-
-//           <div className="fiya-about-page-hero-content">
-
-//             <h1>
+//           <div className="fya-about__hero-main fya-about__animate fya-about__animate--delay-1">
+//             <h1 className="fya-about__hero-title">
 //               Building with
 //               <br />
-//               <span>purpose.</span>
+//               <span className="fya-about__hero-highlight">purpose.</span>
 //             </h1>
-
-//             <p>
-//               Construction shaped by
-//               experience, precision and a
+//             <p className="fya-about__hero-subtitle">
+//               Construction shaped by experience, precision and a
 //               commitment to doing things right.
 //             </p>
-
+//             <div className="fya-about__hero-actions">
+//               <a href="/projects" className="fya-about__hero-btn fya-about__hero-btn--primary">
+//                 Explore Our Work
+//                 <ArrowUpRight size={18} />
+//               </a>
+//               <a href="/contact" className="fya-about__hero-btn fya-about__hero-btn--secondary">
+//                 Get Consultation
+//               </a>
+//             </div>
 //           </div>
 
-
-//           <div className="fiya-about-page-scroll">
-
-//             <ArrowDown
-//               size={16}
-//               strokeWidth={1.4}
-//             />
-
-//             <span>
-//               SCROLL TO EXPLORE
-//             </span>
-
+//           <div className="fya-about__hero-bottom fya-about__animate fya-about__animate--delay-2">
+//             <div className="fya-about__hero-scroll">
+//               <ArrowDown size={16} strokeWidth={1.5} />
+//               <span>SCROLL TO EXPLORE</span>
+//             </div>
+//             <div className="fya-about__hero-counter">
+//               <span className="fya-about__counter-current">01</span>
+//               <span className="fya-about__counter-line" />
+//               <span className="fya-about__counter-total">06</span>
+//             </div>
 //           </div>
-
 //         </div>
-
 //       </section>
 
-
 //       {/* ==================================================
-//           INTRO
+//           INTRO SECTION
 //       ================================================== */}
-
-//       <section className="fiya-about-page-intro">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-intro-grid">
-
-//             <div className="fiya-about-page-intro-number">
-//               01
+//       <section className="fya-about__intro" ref={introRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__intro-grid">
+//             <div className="fya-about__intro-left fya-about__animate">
+//               <span className="fya-about__intro-number">01</span>
+//               <h2 className="fya-about__intro-title">{title}</h2>
 //             </div>
-
-//             <div className="fiya-about-page-intro-content">
-
-//               <span>
-//                 WHO WE ARE
-//               </span>
-
-//               <h2>
-//                 {title}
-//               </h2>
-
-//               <p>
-//                 {description}
-//               </p>
-
+//             <div className="fya-about__intro-right fya-about__animate fya-about__animate--delay-1">
+//               <p className="fya-about__intro-description">{description}</p>
+//               <div className="fya-about__intro-stats">
+//                 {stats.map((stat, index) => (
+//                   <div key={index} className="fya-about__stat-item">
+//                     <stat.icon className="fya-about__stat-icon" />
+//                     <span className="fya-about__stat-value">{stat.value}</span>
+//                     <span className="fya-about__stat-label">{stat.label}</span>
+//                   </div>
+//                 ))}
+//               </div>
 //             </div>
-
 //           </div>
-
 //         </div>
-
 //       </section>
 
-
 //       {/* ==================================================
-//           IMAGE / STORY
+//           FOUNDER'S STORY — Premium with Image
 //       ================================================== */}
+//       <section className="fya-about__founder" ref={founderRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__founder-top">
+//             <div className="fya-about__section-label fya-about__animate">
+//               <span className="fya-about__label-number">02</span>
+//               <span className="fya-about__label-line" />
+//               <span className="fya-about__label-text">FOUNDER'S STORY</span>
+//             </div>
+//             <h2 className="fya-about__founder-title fya-about__animate fya-about__animate--delay-1">
+//               Building a Legacy
+//               <br />
+//               <span className="fya-about__text-red">From Vision to Reality</span>
+//             </h2>
+//           </div>
 
-//       <section className="fiya-about-page-story">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-story-grid">
-
-//             <div className="fiya-about-page-story-image">
-
-//               {about?.image ? (
+//           <div className="fya-about__founder-grid">
+//             <div className="fya-about__founder-image-wrapper fya-about__animate">
+//               <div className="fya-about__founder-image">
 //                 <img
-//                   src={getImageUrl(
-//                     about.image
-//                   )}
-//                   alt="FIYA Builders"
+//                   src={defaultImages.founder}
+//                   alt={founderName}
+//                   className="fya-about__founder-img"
 //                 />
-//               ) : (
-//                 <div className="fiya-about-page-placeholder">
-//                   FIYA
+//                 <div className="fya-about__founder-overlay" />
+//                 <div className="fya-about__founder-badge">
+//                   <Crown size={18} />
+//                   <span>Founded 2014</span>
 //                 </div>
-//               )}
+//                 <div className="fya-about__founder-play">
+//                   <Play size={24} />
+//                 </div>
+//               </div>
+//             </div>
 
-//               <div className="fiya-about-page-image-meta">
-
-//                 <span>
-//                   FIYA / 01
-//                 </span>
-
-//                 <span>
-//                   PONDICHERRY · INDIA
-//                 </span>
-
+//             <div className="fya-about__founder-content fya-about__animate fya-about__animate--delay-1">
+//               <div className="fya-about__founder-quote">
+//                 <Quote className="fya-about__quote-icon" />
+//                 <p className="fya-about__quote-text">
+//                   "{founderQuote}"
+//                 </p>
+//                 <div className="fya-about__quote-author">
+//                   <strong>{founderName}</strong>
+//                   <span>{founderTitle}</span>
+//                 </div>
 //               </div>
 
+//               <p className="fya-about__founder-text">
+//                 What started as a small construction firm with a handful of
+//                 dedicated workers has grown into one of the most trusted
+//                 names in the industry. Through every challenge and success,
+//                 our founder's vision has remained unchanged: to build with
+//                 integrity, precision and lasting value.
+//               </p>
+
+//               <div className="fya-about__founder-milestones">
+//                 {milestones.map((milestone, index) => (
+//                   <div key={index} className="fya-about__milestone fya-about__animate fya-about__animate--delay-${(index + 2) * 0.1}">
+//                     <span className="fya-about__milestone-year">{milestone.year}</span>
+//                     <div className="fya-about__milestone-content">
+//                       <strong className="fya-about__milestone-title">{milestone.title}</strong>
+//                       <span className="fya-about__milestone-desc">{milestone.description}</span>
+//                     </div>
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* ==================================================
+//           PHILOSOPHY — Cinematic with Large Image
+//       ================================================== */}
+//       <section className="fya-about__philosophy" ref={philosophyRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__philosophy-top">
+//             <div className="fya-about__section-label fya-about__animate">
+//               <span className="fya-about__label-number">03</span>
+//               <span className="fya-about__label-line" />
+//               <span className="fya-about__label-text">OUR PHILOSOPHY</span>
+//             </div>
+//           </div>
+
+//           <div className="fya-about__philosophy-grid">
+//             <div className="fya-about__philosophy-image-wrapper fya-about__animate fya-about__animate--delay-1">
+//               <img
+//                 src={getImageUrl(about?.image) || defaultImages.philosophy}
+//                 alt="Our Philosophy"
+//                 className="fya-about__philosophy-img"
+//               />
+//               <div className="fya-about__philosophy-overlay" />
+//               <div className="fya-about__philosophy-caption">
+//                 <span className="fya-about__caption-line" />
+//                 <span>OUR APPROACH TO EXCELLENCE</span>
+//               </div>
+//               <div className="fya-about__philosophy-badge">
+//                 <div className="fya-about__philosophy-badge-icon">
+//                   <Building2 size={24} />
+//                 </div>
+//                 <div className="fya-about__philosophy-badge-text">
+//                   <span>20+ Years</span>
+//                   <span>Industry Excellence</span>
+//                 </div>
+//               </div>
 //             </div>
 
-
-//             <div className="fiya-about-page-story-content">
-
-//               <span className="fiya-about-page-overline">
-//                 OUR PHILOSOPHY
-//               </span>
-
-//               <h2>
+//             <div className="fya-about__philosophy-content fya-about__animate fya-about__animate--delay-2">
+//               <h2 className="fya-about__philosophy-title">
 //                 Good buildings
 //                 <br />
 //                 begin with
 //                 <br />
-//                 <em>good thinking.</em>
+//                 <span className="fya-about__text-red">good thinking.</span>
 //               </h2>
-
-//               <p>
-//                 Every successful project starts
-//                 long before construction begins.
-//                 It starts with understanding the
-//                 people, purpose and possibilities
+//               <p className="fya-about__philosophy-text">
+//                 Every successful project starts long before construction begins.
+//                 It starts with understanding the people, purpose and possibilities
 //                 behind the space.
 //               </p>
-
-//               <p>
-//                 Our approach combines practical
-//                 planning, engineering discipline
-//                 and careful execution to create
-//                 spaces that remain valuable long
+//               <p className="fya-about__philosophy-text">
+//                 Our approach combines practical planning, engineering discipline
+//                 and careful execution to create spaces that remain valuable long
 //                 after completion.
 //               </p>
-
-//               <a
-//                 href="/services"
-//                 className="fiya-about-page-link"
-//               >
-//                 <span>
-//                   Explore our expertise
-//                 </span>
-
-//                 <span>
-//                   <ArrowUpRight
-//                     size={18}
-//                     strokeWidth={1.6}
-//                   />
-//                 </span>
-
+//               <a href="/services" className="fya-about__link-arrow">
+//                 <span>Explore our expertise</span>
+//                 <ArrowUpRight size={18} />
 //               </a>
-
 //             </div>
-
 //           </div>
-
 //         </div>
-
 //       </section>
 
-
 //       {/* ==================================================
-//           EXPERIENCE
+//           EXPERIENCE — Bold Numbers
 //       ================================================== */}
-
-//       <section className="fiya-about-page-experience">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-experience-header">
-
-//             <div className="fiya-about-page-label dark">
-
-//               <span>
-//                 02
-//               </span>
-
-//               <span>
-//                 EXPERIENCE
-//               </span>
-
-//               <span className="fiya-about-page-line" />
-
+//       <section className="fya-about__experience" ref={experienceRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__experience-top">
+//             <div className="fya-about__section-label fya-about__animate">
+//               <span className="fya-about__label-number">04</span>
+//               <span className="fya-about__label-line" />
+//               <span className="fya-about__label-text">EXPERIENCE</span>
 //             </div>
-
-//             <h2>
-//               Experience that
-//               <br />
-//               <span>builds confidence.</span>
-//             </h2>
-
 //           </div>
 
-
-//           <div className="fiya-about-page-experience-grid">
-
-//             <div className="fiya-about-page-big-number">
-
-//               <span>
-//                 {experience}
-//               </span>
-
-//               <Plus
-//                 size={30}
-//                 strokeWidth={1.4}
-//               />
-
+//           <div className="fya-about__experience-grid">
+//             <div className="fya-about__experience-number fya-about__animate fya-about__animate--delay-1">
+//               <span className="fya-about__number-value">{experience}</span>
+//               <Plus size={32} className="fya-about__number-plus" />
+//               <span className="fya-about__number-label">YEARS</span>
 //             </div>
-
-//             <div className="fiya-about-page-experience-copy">
-
-//               <span>
-//                 YEARS OF EXPERIENCE
-//               </span>
-
-//               <p>
-//                 Over the years, our work has
-//                 been shaped by the lessons,
-//                 challenges and relationships
-//                 built through every project.
+//             <div className="fya-about__experience-content fya-about__animate fya-about__animate--delay-2">
+//               <h2 className="fya-about__experience-title">
+//                 Experience that
+//                 <br />
+//                 <span className="fya-about__text-red">builds confidence.</span>
+//               </h2>
+//               <p className="fya-about__experience-text">
+//                 Over the years, our work has been shaped by the lessons,
+//                 challenges and relationships built through every project.
+//                 We've grown from a small local builder to a respected
+//                 name in construction.
 //               </p>
-
+//               <div className="fya-about__experience-metrics">
+//                 <div className="fya-about__metric">
+//                   <span className="fya-about__metric-value">50+</span>
+//                   <span className="fya-about__metric-label">Ongoing Projects</span>
+//                 </div>
+//                 <div className="fya-about__metric">
+//                   <span className="fya-about__metric-value">1000+</span>
+//                   <span className="fya-about__metric-label">Happy Clients</span>
+//                 </div>
+//                 <div className="fya-about__metric">
+//                   <span className="fya-about__metric-value">15</span>
+//                   <span className="fya-about__metric-label">Awards Won</span>
+//                 </div>
+//               </div>
 //             </div>
-
 //           </div>
-
 //         </div>
-
 //       </section>
 
-
 //       {/* ==================================================
-//           VALUES
+//           VALUES — Premium Cards
 //       ================================================== */}
-
-//       <section className="fiya-about-page-values">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-label">
-
-//             <span>
-//               03
-//             </span>
-
-//             <span>
-//               WHAT WE STAND FOR
-//             </span>
-
-//             <span className="fiya-about-page-line" />
-
-//           </div>
-
-
-//           <div className="fiya-about-page-values-heading">
-
-//             <h2>
+//       <section className="fya-about__values" ref={valuesRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__values-top">
+//             <div className="fya-about__section-label fya-about__animate">
+//               <span className="fya-about__label-number">05</span>
+//               <span className="fya-about__label-line" />
+//               <span className="fya-about__label-text">WHAT WE STAND FOR</span>
+//             </div>
+//             <h2 className="fya-about__values-title fya-about__animate fya-about__animate--delay-1">
 //               Principles behind
 //               <br />
-//               every <span>project.</span>
+//               every <span className="fya-about__text-red">project.</span>
 //             </h2>
-
 //           </div>
 
-
-//           <div className="fiya-about-page-values-list">
-
-//             <div className="fiya-about-page-value">
-
-//               <span>
-//                 01
-//               </span>
-
-//               <div>
-//                 <h3>
-//                   Quality
-//                 </h3>
-
-//                 <p>
-//                   We believe quality is not
-//                   an extra feature. It is the
-//                   foundation of every project.
-//                 </p>
-//               </div>
-
-//             </div>
-
-
-//             <div className="fiya-about-page-value">
-
-//               <span>
-//                 02
-//               </span>
-
-//               <div>
-//                 <h3>
-//                   Integrity
-//                 </h3>
-
-//                 <p>
-//                   Clear communication and
-//                   honest execution define how
-//                   we work with our clients.
-//                 </p>
-//               </div>
-
-//             </div>
-
-
-//             <div className="fiya-about-page-value">
-
-//               <span>
-//                 03
-//               </span>
-
-//               <div>
-//                 <h3>
-//                   Precision
-//                 </h3>
-
-//                 <p>
-//                   From planning to finishing,
-//                   attention to detail remains
-//                   central to our process.
-//                 </p>
-//               </div>
-
-//             </div>
-
-
-//             <div className="fiya-about-page-value">
-
-//               <span>
-//                 04
-//               </span>
-
-//               <div>
-//                 <h3>
-//                   Responsibility
-//                 </h3>
-
-//                 <p>
-//                   We take ownership of every
-//                   stage of a project through
-//                   completion.
-//                 </p>
-//               </div>
-
-//             </div>
-
+//           <div className="fya-about__values-grid">
+//             {values.map((value, index) => {
+//               const Icon = value.icon;
+//               return (
+//                 <div 
+//                   key={index} 
+//                   className={`fya-about__value-card fya-about__animate fya-about__animate--delay-${(index + 1) * 0.1}`}
+//                 >
+//                   <span className="fya-about__value-number">{value.number}</span>
+//                   <div className="fya-about__value-icon">
+//                     <Icon size={24} />
+//                   </div>
+//                   <h3 className="fya-about__value-title">{value.title}</h3>
+//                   <p className="fya-about__value-text">{value.description}</p>
+//                 </div>
+//               );
+//             })}
 //           </div>
-
 //         </div>
-
 //       </section>
 
-
 //       {/* ==================================================
-//           CTA
+//           CTA — Powerful Call to Action
 //       ================================================== */}
-
-//       <section className="fiya-about-page-cta">
-
-//         <div className="public-container">
-
-//           <div className="fiya-about-page-cta-inner">
-
-//             <span>
-//               READY TO BUILD?
-//             </span>
-
-//             <h2>
-//               Let's create
-//               <br />
-//               something
-//               <br />
-//               <em>lasting.</em>
-//             </h2>
-
-//             <a href="/contact">
-
-//               <span>
-//                 Start a conversation
-//               </span>
-
-//               <span>
-//                 <ArrowUpRight
-//                   size={19}
-//                   strokeWidth={1.6}
-//                 />
-//               </span>
-
-//             </a>
-
+//       <section className="fya-about__cta" ref={ctaRef}>
+//         <div className="fya-container">
+//           <div className="fya-about__cta-box fya-about__animate">
+//             <div className="fya-about__cta-bg">
+//               <img
+//                 src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80"
+//                 alt="Construction"
+//               />
+//               <div className="fya-about__cta-overlay" />
+//             </div>
+//             <div className="fya-about__cta-content">
+//               <span className="fya-about__cta-label">READY TO BUILD?</span>
+//               <h2 className="fya-about__cta-title">
+//                 Let's Create Something
+//                 <br />
+//                 <span className="fya-about__text-red">Extraordinary Together</span>
+//               </h2>
+//               <p className="fya-about__cta-text">
+//                 Partner with us for your next project and experience
+//                 the difference of working with industry leaders.
+//               </p>
+//               <div className="fya-about__cta-actions">
+//                 <a href="/contact" className="fya-about__cta-btn fya-about__cta-btn--primary">
+//                   START A CONVERSATION
+//                   <ArrowUpRight size={18} />
+//                 </a>
+//                 <a href="/projects" className="fya-about__cta-btn fya-about__cta-btn--secondary">
+//                   VIEW OUR WORK
+//                 </a>
+//               </div>
+//             </div>
 //           </div>
-
 //         </div>
-
 //       </section>
 
 //     </main>
@@ -512,26 +518,38 @@
 // export default AboutPage;
 
 
-import { useEffect, useState } from "react";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Plus,
-  Award,
-  Building2,
-  Users,
-  Target,
-} from "lucide-react";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// src/pages/About/AboutPage.jsx
+import { useEffect, useState, useRef } from "react";
+import { ArrowDown, ArrowUpRight, Plus, Award, Building2, Users, Target, Quote, Crown } from "lucide-react";
 import api from "../services/api.js";
-
 import "./AboutPage.css";
+import AboutHeroSection from "./AboutPage/AboutHeroSection.jsx";
+import IntroSection from "./AboutPage/IntroSection.jsx";
+import FounderSection from "./AboutPage/FounderSection.jsx";
+import ExperienceSection from "./AboutPage/ExperienceSection.jsx";
+import ValuesSection from "./AboutPage/ValuesSection.jsx";
+import CTASection from "./AboutPage/CTASection.jsx";
 
-const API_URL =
-  import.meta.env.VITE_API_URL?.replace(
-    "/api",
-    ""
-  ) || "http://localhost:5000";
+// Import all sections
+
+
+
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
 
 const AboutPage = () => {
   const [about, setAbout] = useState(null);
@@ -554,445 +572,27 @@ const AboutPage = () => {
 
   const getImageUrl = (image) => {
     if (!image) return "";
-    if (
-      image.startsWith("http://") ||
-      image.startsWith("https://")
-    ) {
+    if (image.startsWith("http://") || image.startsWith("https://")) {
       return image;
     }
     return `${API_URL}${image}`;
   };
 
-  const title =
-    about?.title ||
-    "We don't just build structures. We build what comes next.";
-
-  const subtitle =
-    about?.subtitle ||
-    "ABOUT FIYA BUILDERS";
-
-  const description =
-    about?.description ||
-    "FIYA Builders brings together construction expertise, engineering precision and thoughtful execution to create spaces that are built for today and designed to last.";
-
-  const experience =
-    about?.experience || "10";
-
-  // Default images from Unsplash
   const defaultImages = {
     hero: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80",
     philosophy: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80",
-    team: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
-    project1: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-    project2: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    project3: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    founder: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
   };
-
-  const stats = [
-    { value: "250+", label: "Projects Completed", icon: Building2 },
-    { value: experience + "+", label: "Years Experience", icon: Award },
-    { value: "150+", label: "Team Members", icon: Users },
-    { value: "98%", label: "Client Satisfaction", icon: Target },
-  ];
 
   return (
     <main className="fya-about-page">
-      
-      {/* ==================================================
-          HERO — Premium Blue/Gold
-      ================================================== */}
-      <section className="fya-hero">
-        <div className="fya-hero-bg">
-          <img
-            src={getImageUrl(about?.image) || defaultImages.hero}
-            alt="FIYA Builders Architecture"
-          />
-          <div className="fya-hero-gradient" />
-        </div>
-
-        <div className="fya-container fya-hero-container">
-          <div className="fya-hero-nav">
-            <div className="fya-logo">
-              <span className="fya-logo-blue">FIYA</span>
-              <span className="fya-logo-gold">BUILDERS</span>
-            </div>
-            <div className="fya-hero-tagline">
-              <span className="fya-gold-dot" />
-              CONSTRUCTION • CONSULTANCY • ENGINEERING
-            </div>
-          </div>
-
-          <div className="fya-hero-main">
-            <div className="fya-hero-badge">
-              <span>EST. 2014</span>
-              <span className="fya-badge-line" />
-              <span>PONDICHERRY, INDIA</span>
-            </div>
-            <h1 className="fya-hero-title">
-              BUILDING
-              <span className="fya-title-blue"> EXCELLENCE</span>
-              <br />
-              <span className="fya-title-gold">THAT ENDURES</span>
-            </h1>
-            <p className="fya-hero-subtitle">
-              Premium construction services with unwavering
-              commitment to quality, innovation and integrity.
-            </p>
-            <div className="fya-hero-actions">
-              <a href="/projects" className="fya-btn-primary">
-                EXPLORE PROJECTS
-                <ArrowUpRight size={18} />
-              </a>
-              <a href="/contact" className="fya-btn-secondary">
-                GET CONSULTATION
-              </a>
-            </div>
-          </div>
-
-          <div className="fya-hero-footer">
-            <div className="fya-hero-scroll">
-              <ArrowDown size={16} />
-              <span>SCROLL TO DISCOVER</span>
-            </div>
-            <div className="fya-hero-counter">
-              <span className="fya-counter-current">01</span>
-              <span className="fya-counter-line" />
-              <span className="fya-counter-total">04</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          ABOUT INTRO — Corporate Premium
-      ================================================== */}
-      <section className="fya-intro">
-        <div className="fya-container">
-          <div className="fya-intro-grid">
-            <div className="fya-intro-left">
-              <div className="fya-section-label">
-                <span className="fya-label-number">01</span>
-                <span className="fya-label-line" />
-                <span className="fya-label-text">WHO WE ARE</span>
-              </div>
-              <h2 className="fya-intro-title">
-                {title}
-              </h2>
-            </div>
-            <div className="fya-intro-right">
-              <p className="fya-intro-description">
-                {description}
-              </p>
-              <div className="fya-intro-stats">
-                {stats.map((stat, index) => (
-                  <div key={index} className="fya-stat-item">
-                    <stat.icon size={24} className="fya-stat-icon" />
-                    <div className="fya-stat-value">{stat.value}</div>
-                    <div className="fya-stat-label">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          PHILOSOPHY — Blue Theme
-      ================================================== */}
-      <section className="fya-philosophy">
-        <div className="fya-container">
-          <div className="fya-philosophy-grid">
-            <div className="fya-philosophy-images">
-              <div className="fya-philosophy-main-image">
-                <img
-                  src={getImageUrl(about?.image) || defaultImages.philosophy}
-                  alt="Our Philosophy"
-                />
-                <div className="fya-image-overlay" />
-                <div className="fya-image-caption">
-                  <span className="fya-caption-line" />
-                  <span>OUR APPROACH TO EXCELLENCE</span>
-                </div>
-              </div>
-              <div className="fya-philosophy-accent">
-                <div className="fya-accent-box">
-                  <Award size={32} className="fya-accent-icon" />
-                  <span>ISO Certified</span>
-                  <small>Quality Management</small>
-                </div>
-              </div>
-            </div>
-
-            <div className="fya-philosophy-content">
-              <div className="fya-section-label">
-                <span className="fya-label-number">02</span>
-                <span className="fya-label-line" />
-                <span className="fya-label-text">OUR PHILOSOPHY</span>
-              </div>
-              <h2 className="fya-philosophy-title">
-                Good buildings
-                <br />
-                begin with
-                <br />
-                <span className="fya-text-blue">good thinking.</span>
-              </h2>
-              <p className="fya-philosophy-text">
-                Every successful project starts
-                long before construction begins.
-                It starts with understanding the
-                people, purpose and possibilities
-                behind the space.
-              </p>
-              <p className="fya-philosophy-text">
-                Our approach combines practical
-                planning, engineering discipline
-                and careful execution to create
-                spaces that remain valuable long
-                after completion.
-              </p>
-              <a href="/services" className="fya-link-arrow">
-                <span>Explore our expertise</span>
-                <ArrowUpRight size={18} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          PROJECTS SHOWCASE — Image Gallery
-      ================================================== */}
-      <section className="fya-showcase">
-        <div className="fya-container">
-          <div className="fya-showcase-header">
-            <div className="fya-section-label">
-              <span className="fya-label-number">03</span>
-              <span className="fya-label-line" />
-              <span className="fya-label-text">FEATURED PROJECTS</span>
-            </div>
-            <h2 className="fya-showcase-title">
-              Our Signature <span className="fya-text-gold">Work</span>
-            </h2>
-          </div>
-
-          <div className="fya-showcase-grid">
-            <div className="fya-project-card fya-project-large">
-              <img src={defaultImages.project1} alt="Commercial Building" />
-              <div className="fya-project-info">
-                <span className="fya-project-category">COMMERCIAL</span>
-                <h3>Modern Office Complex</h3>
-                <span className="fya-project-location">Chennai, India</span>
-              </div>
-            </div>
-            <div className="fya-project-card">
-              <img src={defaultImages.project2} alt="Residential Building" />
-              <div className="fya-project-info">
-                <span className="fya-project-category">RESIDENTIAL</span>
-                <h3>Luxury Apartments</h3>
-                <span className="fya-project-location">Pondicherry, India</span>
-              </div>
-            </div>
-            <div className="fya-project-card">
-              <img src={defaultImages.project3} alt="Industrial Project" />
-              <div className="fya-project-info">
-                <span className="fya-project-category">INDUSTRIAL</span>
-                <h3>Manufacturing Facility</h3>
-                <span className="fya-project-location">Bangalore, India</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          EXPERIENCE — Gold Accent
-      ================================================== */}
-      <section className="fya-experience">
-        <div className="fya-container">
-          <div className="fya-experience-grid">
-            <div className="fya-experience-number">
-              <span className="fya-number-value">{experience}</span>
-              <Plus size={32} className="fya-number-plus" />
-              <span className="fya-number-suffix">YEARS</span>
-            </div>
-            <div className="fya-experience-content">
-              <div className="fya-section-label">
-                <span className="fya-label-number">04</span>
-                <span className="fya-label-line" />
-                <span className="fya-label-text">EXPERIENCE</span>
-              </div>
-              <h2 className="fya-experience-title">
-                Experience that
-                <br />
-                <span className="fya-text-gold">builds confidence.</span>
-              </h2>
-              <p className="fya-experience-text">
-                Over the years, our work has been shaped by the lessons,
-                challenges and relationships built through every project.
-                We've grown from a small local builder to a respected
-                name in construction.
-              </p>
-              <div className="fya-experience-metrics">
-                <div className="fya-metric">
-                  <span className="fya-metric-value">50+</span>
-                  <span className="fya-metric-label">Ongoing Projects</span>
-                </div>
-                <div className="fya-metric">
-                  <span className="fya-metric-value">1000+</span>
-                  <span className="fya-metric-label">Happy Clients</span>
-                </div>
-                <div className="fya-metric">
-                  <span className="fya-metric-value">15</span>
-                  <span className="fya-metric-label">Awards Won</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          VALUES — Blue & White
-      ================================================== */}
-      <section className="fya-values">
-        <div className="fya-container">
-          <div className="fya-values-header">
-            <div className="fya-section-label">
-              <span className="fya-label-number">05</span>
-              <span className="fya-label-line" />
-              <span className="fya-label-text">WHAT WE STAND FOR</span>
-            </div>
-            <h2 className="fya-values-title">
-              Principles behind
-              <br />
-              every <span className="fya-text-blue">project.</span>
-            </h2>
-          </div>
-
-          <div className="fya-values-grid">
-            <div className="fya-value-card">
-              <div className="fya-value-icon">
-                <Target size={24} />
-              </div>
-              <span className="fya-value-number">01</span>
-              <h3 className="fya-value-title">Quality</h3>
-              <p className="fya-value-text">
-                We believe quality is not an extra feature.
-                It is the foundation of every project we undertake.
-              </p>
-            </div>
-
-            <div className="fya-value-card">
-              <div className="fya-value-icon">
-                <Award size={24} />
-              </div>
-              <span className="fya-value-number">02</span>
-              <h3 className="fya-value-title">Integrity</h3>
-              <p className="fya-value-text">
-                Clear communication and honest execution
-                define how we work with our clients.
-              </p>
-            </div>
-
-            <div className="fya-value-card">
-              <div className="fya-value-icon">
-                <Building2 size={24} />
-              </div>
-              <span className="fya-value-number">03</span>
-              <h3 className="fya-value-title">Precision</h3>
-              <p className="fya-value-text">
-                From planning to finishing, attention to
-                detail remains central to our process.
-              </p>
-            </div>
-
-            <div className="fya-value-card">
-              <div className="fya-value-icon">
-                <Users size={24} />
-              </div>
-              <span className="fya-value-number">04</span>
-              <h3 className="fya-value-title">Responsibility</h3>
-              <p className="fya-value-text">
-                We take ownership of every stage of
-                a project through completion.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          TEAM SECTION — Premium
-      ================================================== */}
-      <section className="fya-team">
-        <div className="fya-container">
-          <div className="fya-team-grid">
-            <div className="fya-team-content">
-              <div className="fya-section-label">
-                <span className="fya-label-number">06</span>
-                <span className="fya-label-line" />
-                <span className="fya-label-text">OUR TEAM</span>
-              </div>
-              <h2 className="fya-team-title">
-                The Minds Behind
-                <br />
-                <span className="fya-text-blue">Our Success</span>
-              </h2>
-              <p className="fya-team-text">
-                Our team of engineers, architects, and project
-                managers brings decades of combined experience
-                to every project.
-              </p>
-              <a href="/team" className="fya-link-arrow">
-                <span>Meet our team</span>
-                <ArrowUpRight size={18} />
-              </a>
-            </div>
-            <div className="fya-team-image">
-              <img src={defaultImages.team} alt="FIYA Builders Team" />
-              <div className="fya-team-overlay" />
-              <div className="fya-team-badge">
-                <Users size={20} />
-                <span>150+ Experts</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================
-          CTA — Premium Gold
-      ================================================== */}
-      <section className="fya-cta">
-        <div className="fya-container">
-          <div className="fya-cta-box">
-            <div className="fya-cta-pattern" />
-            <div className="fya-cta-content">
-              <span className="fya-cta-label">READY TO BUILD?</span>
-              <h2 className="fya-cta-title">
-                Let's Create Something
-                <br />
-                <span className="fya-text-gold">Extraordinary Together</span>
-              </h2>
-              <p className="fya-cta-text">
-                Partner with us for your next project and experience
-                the difference of working with industry leaders.
-              </p>
-              <div className="fya-cta-actions">
-                <a href="/contact" className="fya-btn-gold">
-                  START A CONVERSATION
-                  <ArrowUpRight size={18} />
-                </a>
-                <a href="/projects" className="fya-btn-outline">
-                  VIEW OUR WORK
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <AboutHeroSection about={about} getImageUrl={getImageUrl} defaultImages={defaultImages} />
+      <IntroSection about={about} />
+      <FounderSection about={about} defaultImages={defaultImages} />
+     
+      <ExperienceSection about={about} />
+      <ValuesSection />
+      <CTASection />
     </main>
   );
 };

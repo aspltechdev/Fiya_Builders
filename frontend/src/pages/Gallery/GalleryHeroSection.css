@@ -1,0 +1,455 @@
+/* ================================================================
+   FIYA BUILDERS - GALLERY HERO SECTION
+   Unique Class Prefix: fya-gallery-hero
+   Brand Colors: Red #D71920, Gold #C9972B, Blue #3D5D96
+   Matching About Page Hero Pattern
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-gallery-hero-red: #D71920;
+  --fya-gallery-hero-red-dark: #B81218;
+  --fya-gallery-hero-gold: #C9972B;
+  --fya-gallery-hero-blue: #3D5D96;
+  --fya-gallery-hero-black: #111111;
+  --fya-gallery-hero-white: #FFFFFF;
+  --fya-gallery-hero-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+
+.fya-gallery-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+  background: var(--fya-gallery-hero-black);
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+
+.fya-gallery-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fya-gallery-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fyaGalleryHeroZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes fyaGalleryHeroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.fya-gallery-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 17, 17, 0.85) 0%,
+    rgba(17, 17, 17, 0.3) 40%,
+    rgba(17, 17, 17, 0.7) 100%
+  );
+}
+
+/* ================================================================
+   OVERLAY TEXT
+   ================================================================ */
+
+.fya-gallery-hero__overlay-text {
+  position: absolute;
+  right: -50px;
+  bottom: 50%;
+  transform: translateY(50%) rotate(-90deg);
+  display: flex;
+  gap: 20px;
+  opacity: 0.03;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fya-gallery-hero__overlay-letter {
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 100px;
+  font-weight: 900;
+  color: var(--fya-gallery-hero-white);
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-gallery-hero__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================================================================
+   HERO TOP - LABEL
+   ================================================================ */
+
+.fya-gallery-hero__top {
+  margin-bottom: 60px;
+}
+
+.fya-gallery-hero__label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-gallery-hero__number {
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-gallery-hero-red);
+  letter-spacing: 1px;
+}
+
+.fya-gallery-hero__label-text {
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-gallery-hero__line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  max-width: 120px;
+}
+
+/* ================================================================
+   HERO MAIN - TITLE & CONTENT
+   ================================================================ */
+
+.fya-gallery-hero__main {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.fya-gallery-hero__title {
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--fya-gallery-hero-white);
+  line-height: 1.02;
+  margin: 0 0 20px;
+  letter-spacing: -2px;
+}
+
+.fya-gallery-hero__highlight {
+  color: var(--fya-gallery-hero-blue);
+  position: relative;
+}
+
+.fya-gallery-hero__highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-gallery-hero-blue);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-gallery-hero__highlight-gold {
+  color: var(--fya-gallery-hero-gold);
+  position: relative;
+}
+
+.fya-gallery-hero__highlight-gold::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-gallery-hero-gold);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-gallery-hero__subtitle {
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+/* ================================================================
+   HERO BOTTOM - SCROLL & COUNTER
+   ================================================================ */
+
+.fya-gallery-hero__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fya-gallery-hero__scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fya-gallery-hero__scroll svg {
+  animation: fyaGalleryHeroScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes fyaGalleryHeroScrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.fya-gallery-hero__counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-gallery-hero-font);
+  font-size: 13px;
+}
+
+.fya-gallery-hero__counter-current {
+  color: var(--fya-gallery-hero-white);
+  font-weight: 600;
+}
+
+.fya-gallery-hero__counter-line {
+  width: 30px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fya-gallery-hero__counter-total {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-gallery-hero__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-gallery-hero__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-gallery-hero__animate--delay-1 { transition-delay: 0.1s; }
+.fya-gallery-hero__animate--delay-2 { transition-delay: 0.2s; }
+.fya-gallery-hero__animate--delay-3 { transition-delay: 0.3s; }
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-gallery-hero__container {
+    padding: 0 32px;
+  }
+
+  .fya-gallery-hero__title {
+    font-size: 56px;
+  }
+
+  .fya-gallery-hero__overlay-text {
+    display: none;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-gallery-hero {
+    min-height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .fya-gallery-hero__container {
+    padding: 0 20px;
+  }
+
+  .fya-gallery-hero__top {
+    margin-bottom: 40px;
+  }
+
+  .fya-gallery-hero__main {
+    margin-bottom: 40px;
+  }
+
+  .fya-gallery-hero__title {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .fya-gallery-hero__subtitle {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .fya-gallery-hero__bottom {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .fya-gallery-hero__overlay-text {
+    display: none;
+  }
+
+  .fya-gallery-hero__number {
+    font-size: 12px;
+  }
+
+  .fya-gallery-hero__label-text {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-gallery-hero__container {
+    padding: 0 16px;
+  }
+
+  .fya-gallery-hero__title {
+    font-size: 30px;
+  }
+
+  .fya-gallery-hero__subtitle {
+    font-size: 14px;
+  }
+
+  .fya-gallery-hero__overlay-text {
+    display: none;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-gallery-hero__image {
+    animation: none;
+  }
+
+  .fya-gallery-hero__scroll svg {
+    animation: none;
+  }
+
+  .fya-gallery-hero__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-gallery-hero__animate--delay-1,
+  .fya-gallery-hero__animate--delay-2,
+  .fya-gallery-hero__animate--delay-3 {
+    transition-delay: 0s;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-gallery-hero {
+    background: var(--fya-gallery-hero-black);
+  }
+
+  .fya-gallery-hero__gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-gallery-hero {
+    min-height: auto;
+    padding: 40px 0;
+    background: #111111 !important;
+  }
+
+  .fya-gallery-hero__bg {
+    display: none !important;
+  }
+
+  .fya-gallery-hero__gradient {
+    display: none !important;
+  }
+
+  .fya-gallery-hero__overlay-text {
+    display: none !important;
+  }
+
+  .fya-gallery-hero__title {
+    color: #FFFFFF !important;
+  }
+
+  .fya-gallery-hero__scroll {
+    display: none !important;
+  }
+
+  .fya-gallery-hero__counter {
+    display: none !important;
+  }
+
+  .fya-gallery-hero__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

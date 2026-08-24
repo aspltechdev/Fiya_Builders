@@ -1,646 +1,963 @@
-/* =====================================================
-   FIYA CONTACT PAGE — Production Level Design
-===================================================== */
+/* ================================================================
+   FIYA BUILDERS - CONTACT PAGE
+   Unique Class Prefix: fya-contact
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
 :root {
-  --fya-blue: #1E3A8A;
-  --fya-blue-light: #2563EB;
-  --fya-navy: #0F172A;
-  --fya-white: #FFFFFF;
-  --fya-off-white: #F8FAFC;
-  --fya-gray: #F1F5F9;
-  --fya-gray-light: #E2E8F0;
-  --fya-gold: #C9972B;
-  --fya-gold-light: #E5B84B;
-  --fya-gold-dark: #A67C1E;
-  --fya-text: #1E293B;
-  --fya-text-muted: #64748B;
-  --fya-text-light: #94A3B8;
-  --fya-border: #E2E8F0;
-  --fya-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
-  --fya-shadow-lg: 0 20px 40px rgba(30, 58, 138, 0.15);
+  --fya-contact-red: #D71920;
+  --fya-contact-red-dark: #B81218;
+  --fya-contact-red-light: rgba(215, 25, 32, 0.08);
+  --fya-contact-gold: #C9972B;
+  --fya-contact-blue: #3D5D96;
+  --fya-contact-black: #111111;
+  --fya-contact-charcoal: #1A1A1A;
+  --fya-contact-white: #FFFFFF;
+  --fya-contact-gray: #777777;
+  --fya-contact-gray-light: #E5E5E3;
+  --fya-contact-gray-lighter: #F5F5F3;
+  --fya-contact-bg: #FAFAF8;
+  --fya-contact-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-contact-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-contact-radius: 12px;
+  --fya-contact-radius-lg: 16px;
 }
 
-.fya-contact-page {
-  font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
-  background: var(--fya-white);
-  color: var(--fya-text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ================================================================
+   CONTAINER
+   ================================================================ */
 
-.fya-container {
-  max-width: 1280px;
+.fya-contact-container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 40px;
 }
 
-/* Section Labels */
-.fya-section-label {
+/* ================================================================
+   LABEL
+   ================================================================ */
+
+.fya-contact-label {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 16px;
+  margin-bottom: 12px;
 }
 
-.fya-label-number {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--fya-gold);
-  letter-spacing: 0.1em;
+.fya-contact-label-number {
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-contact-red);
+  letter-spacing: 1px;
 }
 
-.fya-label-line {
-  width: 60px;
+.fya-contact-label-line {
+  width: 30px;
   height: 2px;
-  background: var(--fya-gold);
+  background: var(--fya-contact-red);
+  opacity: 0.3;
+  border-radius: 2px;
 }
 
-.fya-label-text {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--fya-text-muted);
-  font-weight: 500;
+.fya-contact-label-text {
+  font-family: var(--fya-contact-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-contact-gray);
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* =====================================================
+/* ================================================================
+   TEXT STYLES
+   ================================================================ */
+
+.fya-contact-text-blue {
+  color: var(--fya-contact-blue);
+}
+
+.fya-contact-text-gold {
+  color: var(--fya-contact-gold);
+}
+
+/* ================================================================
    HERO SECTION
-===================================================== */
+   ================================================================ */
+
 .fya-contact-hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--fya-navy);
   overflow: hidden;
+  padding: 80px 0;
+  background: var(--fya-contact-black);
 }
 
-.fya-hero-background {
+.fya-contact-hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
-.fya-hero-background img {
+.fya-contact-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.4;
+  animation: fyaContactZoom 25s ease-in-out infinite alternate;
 }
 
-.fya-hero-overlay {
+@keyframes fyaContactZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.fya-contact-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.95) 0%,
-    rgba(30, 58, 138, 0.85) 50%,
-    rgba(201, 151, 43, 0.3) 100%
-  );
+  background: linear-gradient(135deg, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.3) 40%, rgba(17,17,17,0.7) 100%);
+}
+
+.fya-contact-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(circle at 20% 50%, #FFFFFF 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 
 .fya-contact-hero-container {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.fya-hero-top-bar {
+.fya-contact-hero-top {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 60px;
 }
 
-.fya-logo {
-  font-size: 1.8rem;
+.fya-contact-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.fya-contact-logo-primary {
+  font-family: var(--fya-contact-font);
+  font-size: 28px;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  color: var(--fya-contact-white);
+  letter-spacing: -0.5px;
 }
 
-.fya-logo-white {
-  color: var(--fya-white);
+.fya-contact-logo-secondary {
+  font-family: var(--fya-contact-font);
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--fya-contact-gold);
+  letter-spacing: -0.5px;
 }
 
-.fya-logo-gold {
-  color: var(--fya-gold-light);
-}
-
-.fya-hero-tagline {
+.fya-contact-hero-tagline {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.6);
+  gap: 10px;
+  font-family: var(--fya-contact-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
 }
 
-.fya-gold-line {
-  width: 40px;
-  height: 2px;
-  background: var(--fya-gold);
+.fya-contact-tagline-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--fya-contact-gold);
+  border-radius: 50%;
+}
+
+.fya-contact-hero-content {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.fya-contact-hero-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.fya-contact-hero-number {
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-contact-red);
+  letter-spacing: 1px;
+}
+
+.fya-contact-hero-label-text {
+  font-family: var(--fya-contact-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-contact-hero-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  max-width: 120px;
 }
 
 .fya-contact-hero-title {
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--fya-white);
-  margin-bottom: 2rem;
+  font-family: var(--fya-contact-font);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--fya-contact-white);
+  line-height: 1.02;
+  margin: 0 0 20px;
+  letter-spacing: -2px;
 }
 
-.fya-text-blue {
-  color: #60A5FA;
+.fya-contact-hero-highlight {
+  color: var(--fya-contact-blue);
+  position: relative;
 }
 
-.fya-text-gold {
-  color: var(--fya-gold-light);
+.fya-contact-hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-contact-blue);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-contact-hero-highlight-gold {
+  color: var(--fya-contact-gold);
+  position: relative;
+}
+
+.fya-contact-hero-highlight-gold::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-contact-gold);
+  opacity: 0.2;
+  border-radius: 4px;
 }
 
 .fya-contact-hero-subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  max-width: 600px;
+  font-family: var(--fya-contact-font);
+  font-size: 18px;
   font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 32px;
 }
 
-/* =====================================================
-   CONTACT INFO SECTION
-===================================================== */
+.fya-contact-hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.fya-contact-hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-contact-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fya-contact-hero-scroll svg {
+  animation: fyaContactScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes fyaContactScrollBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.fya-contact-hero-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-contact-font);
+  font-size: 13px;
+}
+
+.fya-contact-counter-current {
+  color: var(--fya-contact-white);
+  font-weight: 600;
+}
+
+.fya-contact-counter-line {
+  width: 30px;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.fya-contact-counter-total {
+  color: rgba(255,255,255,0.3);
+}
+
+/* ================================================================
+   INFO SECTION
+   ================================================================ */
+
 .fya-contact-info {
-  padding: 8rem 0;
-  background: var(--fya-white);
+  padding: 80px 0;
+  background: var(--fya-contact-white);
+}
+
+.fya-contact-info-header {
+  margin-bottom: 40px;
 }
 
 .fya-contact-info-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 24px;
 }
 
-.fya-contact-card {
-  padding: 2rem;
-  background: var(--fya-off-white);
-  border-radius: 8px;
+.fya-contact-info-card {
+  padding: 28px 24px;
+  background: var(--fya-contact-bg);
+  border-radius: var(--fya-contact-radius);
+  border: 1px solid var(--fya-contact-gray-light);
   text-align: center;
-  transition: all 0.3s;
-  border: 1px solid var(--fya-border);
+  transition: all var(--fya-contact-transition);
 }
 
-.fya-contact-card:hover {
+.fya-contact-info-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--fya-shadow-lg);
-  border-color: var(--fya-blue);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  border-color: var(--fya-contact-red);
 }
 
-.fya-contact-card-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1rem;
-  background: linear-gradient(135deg, var(--fya-blue) 0%, var(--fya-blue-light) 100%);
-  border-radius: 12px;
+.fya-contact-info-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--fya-contact-red-light);
+  color: var(--fya-contact-red);
+  margin: 0 auto 12px;
 }
 
-.fya-contact-card-label {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: var(--fya-text-muted);
-  margin-bottom: 0.5rem;
+.fya-contact-info-label {
+  font-family: var(--fya-contact-font);
+  font-size: 10px;
   font-weight: 600;
+  color: var(--fya-contact-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
 }
 
-.fya-contact-card-value {
-  display: block;
-  font-size: 1.1rem;
+.fya-contact-info-value {
+  font-family: var(--fya-contact-font);
+  font-size: 16px;
   font-weight: 600;
-  color: var(--fya-navy);
+  color: var(--fya-contact-black);
+  display: block;
+  margin: 4px 0;
   text-decoration: none;
-  margin-bottom: 0.25rem;
+  transition: color var(--fya-contact-transition);
 }
 
-a.fya-contact-card-value:hover {
-  color: var(--fya-blue);
+.fya-contact-info-value:hover {
+  color: var(--fya-contact-red);
 }
 
-.fya-contact-card-detail {
-  font-size: 0.85rem;
-  color: var(--fya-text-light);
+.fya-contact-info-detail {
+  font-family: var(--fya-contact-font);
+  font-size: 12px;
+  color: var(--fya-contact-gray);
+  display: block;
 }
 
-/* =====================================================
+/* ================================================================
    FORM SECTION
-===================================================== */
+   ================================================================ */
+
 .fya-contact-form-section {
-  padding: 8rem 0;
-  background: var(--fya-off-white);
+  padding: 80px 0;
+  background: var(--fya-contact-bg);
 }
 
-.fya-form-wrapper {
+.fya-contact-form-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  background: var(--fya-white);
-  border-radius: 12px;
-  padding: 4rem;
-  box-shadow: var(--fya-shadow-lg);
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.fya-form-heading {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.fya-form-description {
-  color: var(--fya-text-muted);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.fya-form-benefits {
+.fya-contact-form-left {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
-.fya-benefit {
+.fya-contact-form-heading {
+  font-family: var(--fya-contact-font);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--fya-contact-black);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.fya-contact-form-description {
+  font-family: var(--fya-contact-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fya-contact-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fya-contact-form-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.fya-contact-benefit {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  color: var(--fya-text);
-  font-weight: 500;
+  gap: 10px;
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fya-contact-black);
 }
 
-.fya-benefit svg {
-  color: var(--fya-gold);
+.fya-contact-benefit-icon {
+  color: var(--fya-contact-red);
 }
+
+/* ================================================================
+   FORM
+   ================================================================ */
 
 .fya-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 18px;
 }
 
-.fya-form-row {
+.fya-contact-form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 18px;
 }
 
-.fya-form-group {
+.fya-contact-form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 6px;
 }
 
-.fya-form-group label {
-  font-size: 0.85rem;
+.fya-contact-form-label {
+  font-family: var(--fya-contact-font);
+  font-size: 13px;
   font-weight: 600;
-  color: var(--fya-text);
-  letter-spacing: 0.05em;
+  color: var(--fya-contact-black);
 }
 
-.fya-form-group input,
-.fya-form-group select,
-.fya-form-group textarea {
-  padding: 1rem;
-  border: 1px solid var(--fya-border);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  color: var(--fya-text);
-  background: var(--fya-white);
-  transition: all 0.3s;
-  font-family: inherit;
+.fya-contact-required {
+  color: var(--fya-contact-red);
 }
 
-.fya-form-group input:focus,
-.fya-form-group select:focus,
-.fya-form-group textarea:focus {
-  outline: none;
-  border-color: var(--fya-blue);
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
-}
-
-.fya-form-group input::placeholder,
-.fya-form-group textarea::placeholder {
-  color: var(--fya-text-light);
-}
-
-.fya-form-success {
+.fya-contact-input-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: #10B981;
-  color: white;
-  border-radius: 4px;
-  font-weight: 500;
+  background: var(--fya-contact-white);
+  border: 2px solid var(--fya-contact-gray-light);
+  border-radius: var(--fya-contact-radius);
+  transition: all var(--fya-contact-transition);
+  position: relative;
 }
 
-.fya-form-error {
-  padding: 1rem;
-  background: #EF4444;
-  color: white;
-  border-radius: 4px;
-  font-weight: 500;
+.fya-contact-input-wrapper:hover {
+  border-color: var(--fya-contact-gray);
 }
 
-.fya-form-submit-btn {
+.fya-contact-input-wrapper:focus-within {
+  border-color: var(--fya-contact-red);
+  box-shadow: 0 0 0 4px rgba(215,25,32,0.08);
+}
+
+.fya-contact-textarea-wrapper {
+  align-items: flex-start;
+  padding-top: 12px;
+}
+
+.fya-contact-input-icon {
+  color: var(--fya-contact-gray);
+  margin: 0 12px 0 14px;
+  flex-shrink: 0;
+}
+
+.fya-contact-input-wrapper:focus-within .fya-contact-input-icon {
+  color: var(--fya-contact-red);
+}
+
+.fya-contact-input {
+  flex: 1;
+  padding: 12px 12px 12px 0;
+  border: none;
+  background: transparent;
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  color: var(--fya-contact-black);
+  outline: none;
+  min-width: 0;
+}
+
+.fya-contact-input::placeholder {
+  color: var(--fya-contact-gray);
+}
+
+.fya-contact-select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.fya-contact-textarea {
+  resize: vertical;
+  min-height: 100px;
+  padding: 0 12px 12px 0;
+  line-height: 1.6;
+}
+
+/* ================================================================
+   FORM STATES
+   ================================================================ */
+
+.fya-contact-form-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #DCFCE7;
+  color: #16A34A;
+  border-radius: var(--fya-contact-radius);
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  border-left: 3px solid #16A34A;
+}
+
+.fya-contact-form-error {
+  padding: 12px 16px;
+  background: #FEE2E2;
+  color: #DC2626;
+  border-radius: var(--fya-contact-radius);
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
+  border-left: 3px solid #DC2626;
+}
+
+.fya-contact-submit-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1.2rem 2rem;
-  background: var(--fya-gold);
-  color: var(--fya-navy);
-  border: 2px solid var(--fya-gold);
+  gap: 10px;
+  padding: 14px 32px;
+  background: var(--fya-contact-red);
+  color: var(--fya-contact-white);
+  border: none;
+  border-radius: var(--fya-contact-radius);
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
   font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 4px;
+  transition: all var(--fya-contact-transition);
+  margin-top: 4px;
 }
 
-.fya-form-submit-btn:hover {
-  background: transparent;
-  color: var(--fya-gold);
+.fya-contact-submit-btn:hover:not(:disabled) {
+  background: var(--fya-contact-red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(201, 151, 43, 0.3);
+  box-shadow: 0 8px 24px rgba(215,25,32,0.25);
 }
 
-.fya-form-submit-btn:disabled {
+.fya-contact-submit-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* =====================================================
-   LOCATION SECTION
-===================================================== */
-.fya-contact-location {
-  padding: 8rem 0;
-  background: var(--fya-white);
+.fya-contact-submit-icon {
+  transition: transform var(--fya-contact-transition);
 }
 
-.fya-location-wrapper {
+.fya-contact-submit-btn:hover:not(:disabled) .fya-contact-submit-icon {
+  transform: translateX(4px);
+}
+
+/* ================================================================
+   LOCATION SECTION
+   ================================================================ */
+
+.fya-contact-location {
+  padding: 80px 0;
+  background: var(--fya-contact-white);
+}
+
+.fya-contact-location-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
   align-items: center;
 }
 
-.fya-location-heading {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+.fya-contact-location-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.fya-location-address {
-  color: var(--fya-text-muted);
-  font-size: 1.1rem;
+.fya-contact-location-heading {
+  font-family: var(--fya-contact-font);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--fya-contact-black);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.fya-contact-location-address {
+  font-family: var(--fya-contact-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fya-contact-gray);
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin: 0;
 }
 
-.fya-location-link {
+.fya-contact-location-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--fya-blue);
-  color: var(--fya-blue);
-  text-decoration: none;
+  gap: 8px;
+  font-family: var(--fya-contact-font);
+  font-size: 14px;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  transition: all 0.3s;
+  color: var(--fya-contact-black);
+  text-decoration: none;
+  transition: all var(--fya-contact-transition);
+  margin-top: 4px;
 }
 
-.fya-location-link:hover {
-  gap: 1rem;
-  color: var(--fya-gold);
-  border-color: var(--fya-gold);
+.fya-contact-location-link:hover {
+  color: var(--fya-contact-red);
 }
 
-.fya-location-map {
+.fya-contact-location-link svg {
+  transition: transform var(--fya-contact-transition);
+}
+
+.fya-contact-location-link:hover svg {
+  transform: translateX(4px);
+}
+
+.fya-contact-location-map {
   position: relative;
-  height: 500px;
-  border-radius: 8px;
+  border-radius: var(--fya-contact-radius-lg);
   overflow: hidden;
-  box-shadow: var(--fya-shadow-lg);
+  aspect-ratio: 4/3;
+  background: var(--fya-contact-gray-lighter);
 }
 
-.fya-location-map img {
+.fya-contact-map-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.fya-map-overlay {
+.fya-contact-map-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(30, 58, 138, 0.2),
-    rgba(15, 23, 42, 0.8)
-  );
+  background: linear-gradient(135deg, rgba(215,25,32,0.05) 0%, transparent 60%);
 }
 
-.fya-map-marker {
+.fya-contact-map-marker {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 28px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-radius: var(--fya-contact-radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
   text-align: center;
-  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-.fya-map-marker svg {
-  color: var(--fya-gold);
-  margin-bottom: 0.5rem;
+.fya-contact-marker-icon {
+  color: var(--fya-contact-red);
+  margin-bottom: 6px;
 }
 
-.fya-map-marker span {
-  display: block;
-  font-size: 1.2rem;
+.fya-contact-marker-text {
+  font-family: var(--fya-contact-font);
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  color: var(--fya-contact-black);
 }
 
-.fya-map-marker small {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.15em;
+.fya-contact-marker-sub {
+  font-family: var(--fya-contact-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fya-contact-gray);
+  letter-spacing: 1px;
 }
 
-/* =====================================================
+/* ================================================================
    FINAL CTA SECTION
-===================================================== */
+   ================================================================ */
+
 .fya-contact-final {
-  padding: 8rem 0;
-  background: var(--fya-off-white);
+  padding: 80px 0;
+  background: var(--fya-contact-bg);
 }
 
-.fya-final-wrapper {
+.fya-contact-final-wrapper {
   position: relative;
-  padding: 5rem;
-  background: linear-gradient(135deg, var(--fya-navy) 0%, var(--fya-blue) 100%);
-  border-radius: 12px;
+  padding: 60px 80px;
+  background: var(--fya-contact-black);
+  border-radius: var(--fya-contact-radius-lg);
   overflow: hidden;
-  text-align: center;
 }
 
-.fya-final-pattern {
+.fya-contact-final-pattern {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(201, 151, 43, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%);
+  opacity: 0.03;
+  background-image: radial-gradient(circle at 20% 50%, #FFFFFF 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 
-.fya-final-content {
+.fya-contact-final-content {
   position: relative;
   z-index: 1;
+  max-width: 700px;
 }
 
-.fya-final-logo {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 0.3em;
-  color: var(--fya-gold-light);
-  margin-bottom: 1.5rem;
+.fya-contact-final-logo {
+  font-family: var(--fya-contact-font);
+  font-size: 11px;
   font-weight: 600;
+  color: var(--fya-contact-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.fya-final-heading {
-  color: white;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  line-height: 1.2;
-  margin-bottom: 2.5rem;
+.fya-contact-final-heading {
+  font-family: var(--fya-contact-font);
+  font-size: 42px;
   font-weight: 700;
+  color: var(--fya-contact-white);
+  line-height: 1.05;
+  margin: 8px 0 20px;
+  letter-spacing: -1.5px;
 }
 
-.fya-final-actions {
+.fya-contact-final-actions {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 
-.fya-btn-gold {
+.fya-contact-final-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1.2rem 2.5rem;
-  background: var(--fya-gold);
-  color: var(--fya-navy);
-  text-decoration: none;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: var(--fya-contact-radius);
+  font-family: var(--fya-contact-font);
+  font-size: 13px;
   font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  transition: all 0.3s;
-  border: 2px solid var(--fya-gold);
-  border-radius: 4px;
-}
-
-.fya-btn-gold:hover {
-  background: transparent;
-  color: var(--fya-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(201, 151, 43, 0.3);
-}
-
-.fya-btn-outline {
-  display: inline-flex;
-  align-items: center;
-  padding: 1.2rem 2.5rem;
-  background: transparent;
-  color: var(--fya-white);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  transition: all 0.3s;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+  transition: all var(--fya-contact-transition);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.fya-btn-outline:hover {
-  border-color: var(--fya-white);
-  background: rgba(255, 255, 255, 0.1);
+.fya-contact-final-btn--primary {
+  background: var(--fya-contact-red);
+  color: var(--fya-contact-white);
+  box-shadow: 0 4px 24px rgba(215,25,32,0.3);
 }
 
-/* =====================================================
-   RESPONSIVE DESIGN
-===================================================== */
+.fya-contact-final-btn--primary:hover {
+  background: var(--fya-contact-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(215,25,32,0.4);
+}
+
+.fya-contact-final-btn--secondary {
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--fya-contact-white);
+}
+
+.fya-contact-final-btn--secondary:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
 @media (max-width: 1024px) {
-  .fya-contact-info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .fya-form-wrapper {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  
-  .fya-location-wrapper {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+  .fya-contact-container { padding: 0 32px; }
+  .fya-contact-hero-title { font-size: 56px; }
+  .fya-contact-info-grid { grid-template-columns: repeat(2, 1fr); }
+  .fya-contact-form-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .fya-contact-location-wrapper { grid-template-columns: 1fr; gap: 40px; }
+  .fya-contact-final-wrapper { padding: 40px 48px; }
+  .fya-contact-final-heading { font-size: 34px; }
 }
 
 @media (max-width: 768px) {
-  .fya-container {
-    padding: 0 1.5rem;
-  }
-  
-  .fya-contact-hero {
-    min-height: auto;
-    padding: 6rem 0;
-  }
-  
-  .fya-hero-top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 3rem;
-  }
-  
-  .fya-contact-hero-title {
-    font-size: 3rem;
-  }
-  
-  .fya-contact-info-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .fya-form-wrapper {
-    padding: 2rem;
-  }
-  
-  .fya-form-row {
-    grid-template-columns: 1fr;
-  }
-  
-  .fya-cta-wrapper,
-  .fya-final-wrapper {
-    padding: 3rem 1.5rem;
-  }
-  
-  .fya-final-actions {
-    flex-direction: column;
-  }
-  
-  .fya-btn-gold,
-  .fya-btn-outline {
-    justify-content: center;
-  }
+  .fya-contact-container { padding: 0 20px; }
+  .fya-contact-hero { min-height: auto; padding: 60px 0 40px; }
+  .fya-contact-hero-title { font-size: 38px; }
+  .fya-contact-hero-top { flex-direction: column; gap: 16px; }
+  .fya-contact-hero-content { margin-bottom: 40px; }
+  .fya-contact-hero-bottom { flex-direction: column; gap: 16px; }
+  .fya-contact-info { padding: 60px 0; }
+  .fya-contact-info-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fya-contact-info-card { padding: 20px 16px; }
+  .fya-contact-form-section { padding: 60px 0; }
+  .fya-contact-form-row { grid-template-columns: 1fr; }
+  .fya-contact-form-heading { font-size: 32px; }
+  .fya-contact-location { padding: 60px 0; }
+  .fya-contact-location-heading { font-size: 32px; }
+  .fya-contact-final { padding: 60px 0; }
+  .fya-contact-final-wrapper { padding: 32px 24px; }
+  .fya-contact-final-heading { font-size: 28px; }
+  .fya-contact-final-actions { flex-direction: column; width: 100%; }
+  .fya-contact-final-btn { width: 100%; justify-content: center; }
+  .fya-contact-location-map { aspect-ratio: 3/2; }
+  .fya-contact-map-marker { padding: 14px 20px; }
+  .fya-contact-marker-text { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .fya-contact-container { padding: 0 16px; }
+  .fya-contact-hero-title { font-size: 30px; }
+  .fya-contact-info-grid { grid-template-columns: 1fr; }
+  .fya-contact-hero-subtitle { font-size: 15px; }
+  .fya-contact-form-heading { font-size: 26px; }
+  .fya-contact-location-heading { font-size: 26px; }
+  .fya-contact-final-heading { font-size: 24px; }
+  .fya-contact-map-marker { padding: 10px 14px; }
+  .fya-contact-marker-text { font-size: 13px; }
+  .fya-contact-marker-sub { font-size: 9px; }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-contact-hero-image { animation: none; }
+  .fya-contact-hero-scroll svg { animation: none; }
+  .fya-contact-info-card { transition: none !important; }
+  .fya-contact-submit-btn { transition: none !important; }
+  .fya-contact-submit-icon { transition: none !important; }
+  .fya-contact-location-link { transition: none !important; }
+  .fya-contact-location-link svg { transition: none !important; }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-contact-info { background: var(--fya-contact-charcoal); }
+  .fya-contact-info-value { color: #FFFFFF; }
+  .fya-contact-info-value:hover { color: var(--fya-contact-red); }
+  .fya-contact-info-card { background: var(--fya-contact-black); border-color: rgba(255,255,255,0.04); }
+  .fya-contact-form-section { background: var(--fya-contact-black); }
+  .fya-contact-form-heading { color: #FFFFFF; }
+  .fya-contact-form-description { color: #999999; }
+  .fya-contact-form-label { color: #FFFFFF; }
+  .fya-contact-input-wrapper { background: var(--fya-contact-charcoal); border-color: rgba(255,255,255,0.04); }
+  .fya-contact-input { color: #FFFFFF; }
+  .fya-contact-input::placeholder { color: #666666; }
+  .fya-contact-benefit { color: #FFFFFF; }
+  .fya-contact-location { background: var(--fya-contact-charcoal); }
+  .fya-contact-location-heading { color: #FFFFFF; }
+  .fya-contact-location-address { color: #999999; }
+  .fya-contact-location-link { color: #FFFFFF; }
+  .fya-contact-location-link:hover { color: var(--fya-contact-red); }
+  .fya-contact-final { background: var(--fya-contact-black); }
+  .fya-contact-final-wrapper { background: var(--fya-contact-charcoal); }
+  .fya-contact-final-heading { color: #FFFFFF; }
+  .fya-contact-map-marker { background: rgba(26,26,26,0.92); color: #FFFFFF; }
+  .fya-contact-marker-text { color: #FFFFFF; }
+  .fya-contact-marker-sub { color: #999999; }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-contact-hero { min-height: auto; padding: 40px 0; background: #111111 !important; }
+  .fya-contact-hero-bg { display: none !important; }
+  .fya-contact-hero-overlay { display: none !important; }
+  .fya-contact-hero-title { color: #FFFFFF !important; }
+  .fya-contact-info-card { border: 1px solid #E5E5E3 !important; }
+  .fya-contact-submit-btn { display: none !important; }
+  .fya-contact-hero-scroll { display: none !important; }
+  .fya-contact-hero-counter { display: none !important; }
+  .fya-contact-final-wrapper { background: #111111 !important; }
 }

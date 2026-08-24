@@ -1,0 +1,511 @@
+/* ================================================================
+   FIYA BUILDERS - HERO SECTION
+   Unique Class Prefix: fya-about
+   Brand Colors: Red #D71920, White, Black, Gray
+   Cinematic Design with Scroll Animations
+   ================================================================ */
+
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+
+.fya-about__hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0 60px;
+  background: var(--fya-about-black, #111111);
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+
+.fya-about__hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fya-about__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fyaAboutZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes fyaAboutZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.fya-about__hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 17, 17, 0.85) 0%,
+    rgba(17, 17, 17, 0.3) 40%,
+    rgba(17, 17, 17, 0.7) 100%
+  );
+}
+
+/* ================================================================
+   OVERLAY TEXT
+   ================================================================ */
+
+.fya-about__hero-overlay-text {
+  position: absolute;
+  right: -50px;
+  bottom: 50%;
+  transform: translateY(50%) rotate(-90deg);
+  display: flex;
+  gap: 20px;
+  opacity: 0.03;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fya-about__hero-overlay-letter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-about__hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================================================================
+   HERO TOP - LABEL
+   ================================================================ */
+
+.fya-about__hero-top {
+  margin-bottom: 60px;
+}
+
+.fya-about__hero-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-about__hero-number {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #D71920;
+  letter-spacing: 1px;
+}
+
+.fya-about__hero-label-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-about__hero-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  max-width: 120px;
+}
+
+/* ================================================================
+   HERO MAIN - TITLE & CONTENT
+   ================================================================ */
+
+.fya-about__hero-main {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.fya-about__hero-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 82px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.02;
+  margin: 0 0 20px;
+  letter-spacing: -3px;
+}
+
+.fya-about__hero-highlight {
+  color: #D71920;
+  position: relative;
+}
+
+.fya-about__hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: #D71920;
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-about__hero-subtitle {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+/* ================================================================
+   HERO ACTIONS - BUTTONS
+   ================================================================ */
+
+.fya-about__hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.fya-about__hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fya-about__hero-btn--primary {
+  background: #D71920;
+  color: #FFFFFF;
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.3);
+}
+
+.fya-about__hero-btn--primary:hover {
+  background: #B81218;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.4);
+}
+
+.fya-about__hero-btn--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.fya-about__hero-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   HERO BOTTOM - SCROLL & COUNTER
+   ================================================================ */
+
+.fya-about__hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fya-about__hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fya-about__hero-scroll svg {
+  animation: fyaAboutScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes fyaAboutScrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.fya-about__hero-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+}
+
+.fya-about__counter-current {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.fya-about__counter-line {
+  width: 30px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fya-about__counter-total {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-about__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-about__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-about__animate--delay-1 { transition-delay: 0.1s; }
+.fya-about__animate--delay-2 { transition-delay: 0.2s; }
+.fya-about__animate--delay-3 { transition-delay: 0.3s; }
+.fya-about__animate--delay-4 { transition-delay: 0.4s; }
+.fya-about__animate--delay-5 { transition-delay: 0.5s; }
+.fya-about__animate--delay-6 { transition-delay: 0.6s; }
+.fya-about__animate--delay-7 { transition-delay: 0.7s; }
+.fya-about__animate--delay-8 { transition-delay: 0.8s; }
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-about__hero-container {
+    padding: 0 32px;
+  }
+
+  .fya-about__hero-title {
+    font-size: 62px;
+  }
+
+  .fya-about__hero-overlay-text {
+    display: none;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-about__hero {
+    min-height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .fya-about__hero-container {
+    padding: 0 20px;
+  }
+
+  .fya-about__hero-top {
+    margin-bottom: 40px;
+  }
+
+  .fya-about__hero-main {
+    margin-bottom: 40px;
+  }
+
+  .fya-about__hero-title {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .fya-about__hero-subtitle {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .fya-about__hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fya-about__hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fya-about__hero-bottom {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .fya-about__hero-overlay-text {
+    display: none;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-about__hero-container {
+    padding: 0 16px;
+  }
+
+  .fya-about__hero-title {
+    font-size: 34px;
+  }
+
+  .fya-about__hero-number {
+    font-size: 12px;
+  }
+
+  .fya-about__hero-label-text {
+    font-size: 10px;
+  }
+
+  .fya-about__hero-subtitle {
+    font-size: 14px;
+  }
+
+  .fya-about__hero-btn {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
+  .fya-about__hero-counter {
+    font-size: 12px;
+  }
+
+  .fya-about__hero-overlay-text {
+    display: none;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-about__hero-image {
+    animation: none;
+  }
+
+  .fya-about__hero-scroll svg {
+    animation: none;
+  }
+
+  .fya-about__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-about__animate--delay-1,
+  .fya-about__animate--delay-2,
+  .fya-about__animate--delay-3,
+  .fya-about__animate--delay-4,
+  .fya-about__animate--delay-5,
+  .fya-about__animate--delay-6,
+  .fya-about__animate--delay-7,
+  .fya-about__animate--delay-8 {
+    transition-delay: 0s;
+  }
+}
+
+/* ================================================================
+   DARK MODE SUPPORT
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-about__hero {
+    background: var(--fya-about-black, #111111);
+  }
+
+  .fya-about__hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-about__hero {
+    min-height: auto;
+    padding: 40px 0;
+    background: #111111;
+  }
+
+  .fya-about__hero-bg {
+    display: none;
+  }
+
+  .fya-about__hero-gradient {
+    display: none;
+  }
+
+  .fya-about__hero-overlay-text {
+    display: none;
+  }
+
+  .fya-about__hero-title {
+    color: #FFFFFF;
+  }
+
+  .fya-about__hero-btn {
+    background: #D71920 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+  }
+
+  .fya-about__hero-scroll {
+    display: none !important;
+  }
+
+  .fya-about__hero-counter {
+    display: none !important;
+  }
+}

@@ -1,0 +1,620 @@
+/* ================================================================
+   FIYA BUILDERS - GALLERY GRID SECTION
+   Unique Prefix: fya-grid
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-grid-red: #D71920;
+  --fya-grid-red-dark: #B81218;
+  --fya-grid-dark: #111111;
+  --fya-grid-dark-soft: #1A1A1A;
+  --fya-grid-white: #FFFFFF;
+  --fya-grid-gray: #777777;
+  --fya-grid-border: #E5E5E3;
+  --fya-grid-bg-soft: #F5F5F3;
+  --fya-grid-bg: #FAFAF8;
+  --fya-grid-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-grid-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ================================================================
+   SECTION
+   ================================================================ */
+
+.fya-grid-section {
+  padding: 80px 0;
+  background: var(--fya-grid-bg);
+  position: relative;
+}
+
+.fya-grid-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+
+.fya-grid-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ================================================================
+   LABEL
+   ================================================================ */
+
+.fya-grid-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-grid-label-num {
+  font-family: var(--fya-grid-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-grid-red);
+  letter-spacing: 1px;
+}
+
+.fya-grid-label-line {
+  width: 30px;
+  height: 2px;
+  background: var(--fya-grid-red);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.fya-grid-label-text {
+  font-family: var(--fya-grid-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-grid-gray);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ================================================================
+   FILTERS
+   ================================================================ */
+
+.fya-grid-filters {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  background: var(--fya-grid-white);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--fya-grid-border);
+}
+
+.fya-grid-filter-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-family: var(--fya-grid-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fya-grid-gray);
+  cursor: pointer;
+  transition: all var(--fya-grid-transition);
+}
+
+.fya-grid-filter-btn:hover {
+  color: var(--fya-grid-dark);
+  background: var(--fya-grid-bg-soft);
+}
+
+.fya-grid-filter-btn--active {
+  background: var(--fya-grid-red);
+  color: var(--fya-grid-white);
+}
+
+.fya-grid-filter-btn--active:hover {
+  background: var(--fya-grid-red-dark);
+}
+
+/* ================================================================
+   LOADING
+   ================================================================ */
+
+.fya-grid-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 300px;
+  font-family: var(--fya-grid-font);
+  color: var(--fya-grid-gray);
+}
+
+.fya-grid-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--fya-grid-border);
+  border-top-color: var(--fya-grid-red);
+  border-radius: 50%;
+  animation: fyaGridSpin 0.8s linear infinite;
+}
+
+@keyframes fyaGridSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ================================================================
+   EMPTY
+   ================================================================ */
+
+.fya-grid-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.fya-grid-empty-label {
+  font-family: var(--fya-grid-font);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fya-grid-gray);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-grid-empty-text {
+  font-family: var(--fya-grid-font);
+  font-size: 16px;
+  color: var(--fya-grid-gray);
+  margin: 8px 0 0;
+}
+
+/* ================================================================
+   GRID WRAPPER
+   ================================================================ */
+
+.fya-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 280px;
+  gap: 16px;
+}
+
+/* ================================================================
+   CARD
+   ================================================================ */
+
+.fya-grid-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.fya-grid-card--tall {
+  grid-row: span 2;
+}
+
+.fya-grid-card--wide {
+  grid-column: span 2;
+}
+
+/* ================================================================
+   CARD MEDIA
+   ================================================================ */
+
+.fya-grid-card-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--fya-grid-bg-soft);
+}
+
+.fya-grid-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--fya-grid-transition);
+}
+
+.fya-grid-card:hover .fya-grid-card-img {
+  transform: scale(1.05);
+}
+
+.fya-grid-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--fya-grid-bg-soft);
+  color: var(--fya-grid-gray);
+  font-family: var(--fya-grid-font);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ================================================================
+   CARD OVERLAY
+   ================================================================ */
+
+.fya-grid-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(17, 17, 17, 0.7) 100%);
+  opacity: 0;
+  transition: opacity var(--fya-grid-transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.fya-grid-card:hover .fya-grid-card-overlay {
+  opacity: 1;
+}
+
+.fya-grid-card-info {
+  transform: translateY(20px);
+  transition: transform var(--fya-grid-transition);
+}
+
+.fya-grid-card:hover .fya-grid-card-info {
+  transform: translateY(0);
+}
+
+.fya-grid-card-cat {
+  font-family: var(--fya-grid-font);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--fya-grid-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fya-grid-card-title {
+  font-family: var(--fya-grid-font);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--fya-grid-white);
+  margin: 4px 0 2px;
+}
+
+.fya-grid-card-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--fya-grid-font);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-grid-card-loc-icon {
+  color: var(--fya-grid-red);
+}
+
+.fya-grid-card-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  color: var(--fya-grid-white);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--fya-grid-transition);
+}
+
+.fya-grid-card:hover .fya-grid-card-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================================================================
+   LIGHTBOX
+   ================================================================ */
+
+.fya-grid-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.fya-grid-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--fya-grid-white);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--fya-grid-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fya-grid-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(90deg);
+}
+
+.fya-grid-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--fya-grid-white);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--fya-grid-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fya-grid-lightbox-nav:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.fya-grid-lightbox-nav:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.fya-grid-lightbox-nav--prev {
+  left: 24px;
+}
+
+.fya-grid-lightbox-nav--next {
+  right: 24px;
+}
+
+.fya-grid-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fya-grid-lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.fya-grid-lightbox-info {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--fya-grid-white);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 16px 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.fya-grid-lightbox-cat {
+  font-family: var(--fya-grid-font);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--fya-grid-red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.fya-grid-lightbox-title {
+  font-family: var(--fya-grid-font);
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  margin: 4px 0;
+}
+
+.fya-grid-lightbox-location {
+  font-family: var(--fya-grid-font);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.fya-grid-lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10;
+  font-family: var(--fya-grid-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.fya-grid-lightbox-counter-div {
+  margin: 0 6px;
+}
+
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+
+.fya-grid-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-grid-animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-grid-animate--delay1 { transition-delay: 0.05s; }
+.fya-grid-animate--delay2 { transition-delay: 0.1s; }
+.fya-grid-animate--delay3 { transition-delay: 0.15s; }
+.fya-grid-animate--delay4 { transition-delay: 0.2s; }
+.fya-grid-animate--delay5 { transition-delay: 0.25s; }
+.fya-grid-animate--delay6 { transition-delay: 0.3s; }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  .fya-grid-section { padding: 60px 0; }
+  .fya-grid-container { padding: 0 32px; }
+  .fya-grid-wrapper { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 240px; gap: 12px; }
+  .fya-grid-card--wide { grid-column: span 2; }
+  .fya-grid-card--tall { grid-row: span 2; }
+}
+
+@media (max-width: 768px) {
+  .fya-grid-section { padding: 40px 0; }
+  .fya-grid-container { padding: 0 20px; }
+  .fya-grid-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .fya-grid-filters { width: 100%; justify-content: flex-start; }
+  .fya-grid-wrapper { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; gap: 10px; }
+  .fya-grid-card--wide { grid-column: span 2; }
+  .fya-grid-card--tall { grid-row: span 1; }
+  .fya-grid-filter-btn { font-size: 12px; padding: 6px 14px; }
+  .fya-grid-card-title { font-size: 15px; }
+  .fya-grid-lightbox { padding: 20px; }
+  .fya-grid-lightbox-info { bottom: -80px; padding: 12px 16px; }
+  .fya-grid-lightbox-nav { width: 40px; height: 40px; }
+  .fya-grid-lightbox-nav--prev { left: 12px; }
+  .fya-grid-lightbox-nav--next { right: 12px; }
+  .fya-grid-lightbox-close { width: 40px; height: 40px; top: 16px; right: 16px; }
+}
+
+@media (max-width: 480px) {
+  .fya-grid-section { padding: 30px 0; }
+  .fya-grid-container { padding: 0 16px; }
+  .fya-grid-wrapper { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 8px; }
+  .fya-grid-card--wide { grid-column: span 2; }
+  .fya-grid-card-title { font-size: 13px; }
+  .fya-grid-card-cat { font-size: 8px; }
+  .fya-grid-card-location { font-size: 10px; }
+  .fya-grid-card-overlay { padding: 14px; }
+  .fya-grid-filter-btn { font-size: 10px; padding: 4px 10px; }
+  .fya-grid-label-num { font-size: 12px; }
+  .fya-grid-label-text { font-size: 9px; }
+  .fya-grid-label-line { width: 20px; }
+  .fya-grid-lightbox-info { bottom: -70px; padding: 10px 12px; }
+  .fya-grid-lightbox-title { font-size: 15px; }
+  .fya-grid-lightbox-counter { bottom: 12px; right: 16px; font-size: 12px; }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-grid-animate { opacity: 1; transform: none; transition: none; }
+  .fya-grid-animate--delay1,
+  .fya-grid-animate--delay2,
+  .fya-grid-animate--delay3,
+  .fya-grid-animate--delay4,
+  .fya-grid-animate--delay5,
+  .fya-grid-animate--delay6 { transition-delay: 0s; }
+  .fya-grid-card-img { transition: none !important; }
+  .fya-grid-card-overlay { transition: none !important; }
+  .fya-grid-card-info { transition: none !important; }
+  .fya-grid-card-arrow { transition: none !important; }
+  .fya-grid-filter-btn { transition: none !important; }
+  .fya-grid-spinner { animation: none !important; }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-grid-section { background: var(--fya-grid-dark); }
+  .fya-grid-section::before { background: radial-gradient(circle, rgba(215, 25, 32, 0.04) 0%, transparent 70%); }
+  .fya-grid-filter-btn { color: #999999; }
+  .fya-grid-filter-btn:hover { color: #FFFFFF; background: rgba(255, 255, 255, 0.04); }
+  .fya-grid-filter-btn--active { background: var(--fya-grid-red); color: #FFFFFF; }
+  .fya-grid-filter-btn--active:hover { background: var(--fya-grid-red-dark); }
+  .fya-grid-filters { background: var(--fya-grid-dark-soft); border-color: rgba(255, 255, 255, 0.04); }
+  .fya-grid-label-text { color: #999999; }
+  .fya-grid-empty-text { color: #999999; }
+  .fya-grid-empty-label { color: #999999; }
+  .fya-grid-card-placeholder { background: #2D2D2D; color: #666666; }
+}
+
+/* ================================================================
+   PRINT
+   ================================================================ */
+
+@media print {
+  .fya-grid-section { padding: 40px 0; background: #FFFFFF !important; }
+  .fya-grid-card-overlay { display: none !important; }
+  .fya-grid-card-arrow { display: none !important; }
+  .fya-grid-lightbox { display: none !important; }
+  .fya-grid-animate { opacity: 1; transform: none; }
+}

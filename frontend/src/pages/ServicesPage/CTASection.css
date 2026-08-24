@@ -1,0 +1,376 @@
+/* ================================================================
+   FIYA BUILDERS - CTA SECTION
+   Unique Class Prefix: fya-services
+   Exact Match to About Page CTA
+   Brand Colors: Red #D71920, White, Black, Gray
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-services-red: #D71920;
+  --fya-services-red-dark: #B81218;
+  --fya-services-black: #111111;
+  --fya-services-white: #FFFFFF;
+  --fya-services-gray: #777777;
+  --fya-services-bg: #FAFAF8;
+  --fya-services-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-services-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-services-radius-lg: 16px;
+}
+
+/* ================================================================
+   CTA SECTION
+   ================================================================ */
+
+.fya-services__cta {
+  padding: 80px 0;
+  background: var(--fya-services-bg);
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-services__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================================================================
+   TEXT STYLES
+   ================================================================ */
+
+.fya-services__text-red {
+  color: var(--fya-services-red);
+}
+
+/* ================================================================
+   CTA BOX
+   ================================================================ */
+
+.fya-services__cta-box {
+  position: relative;
+  border-radius: var(--fya-services-radius-lg);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+
+.fya-services__cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.fya-services__cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fya-services__cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 17, 17, 0.88) 0%,
+    rgba(17, 17, 17, 0.5) 50%,
+    rgba(17, 17, 17, 0.75) 100%
+  );
+}
+
+/* ================================================================
+   CONTENT
+   ================================================================ */
+
+.fya-services__cta-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 80px;
+  max-width: 700px;
+}
+
+.fya-services__cta-label {
+  font-family: var(--fya-services-font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-services-red);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-services__cta-title {
+  font-family: var(--fya-services-font);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--fya-services-white);
+  line-height: 1.05;
+  margin: 8px 0 16px;
+  letter-spacing: -1.5px;
+}
+
+.fya-services__cta-text {
+  font-family: var(--fya-services-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  margin: 0 0 28px;
+  max-width: 500px;
+}
+
+/* ================================================================
+   CTA ACTIONS - BUTTONS
+   ================================================================ */
+
+.fya-services__cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-services__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: var(--fya-services-font);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fya-services__cta-btn--primary {
+  background: var(--fya-services-red);
+  color: var(--fya-services-white);
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.3);
+}
+
+.fya-services__cta-btn--primary:hover {
+  background: var(--fya-services-red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.4);
+}
+
+.fya-services__cta-btn--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--fya-services-white);
+}
+
+.fya-services__cta-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-services__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-services__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-services__animate--delay-1 { transition-delay: 0.1s; }
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-services__container {
+    padding: 0 32px;
+  }
+
+  .fya-services__cta-content {
+    padding: 40px 48px;
+  }
+
+  .fya-services__cta-title {
+    font-size: 34px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-services__cta {
+    padding: 60px 0;
+  }
+
+  .fya-services__container {
+    padding: 0 20px;
+  }
+
+  .fya-services__cta-box {
+    min-height: auto;
+  }
+
+  .fya-services__cta-content {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+
+  .fya-services__cta-title {
+    font-size: 28px;
+  }
+
+  .fya-services__cta-text {
+    font-size: 14px;
+  }
+
+  .fya-services__cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fya-services__cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+
+  .fya-services__cta-label {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-services__cta {
+    padding: 40px 0;
+  }
+
+  .fya-services__container {
+    padding: 0 16px;
+  }
+
+  .fya-services__cta-content {
+    padding: 24px 16px;
+  }
+
+  .fya-services__cta-title {
+    font-size: 24px;
+  }
+
+  .fya-services__cta-text {
+    font-size: 13px;
+  }
+
+  .fya-services__cta-btn {
+    font-size: 11px;
+    padding: 10px 20px;
+  }
+
+  .fya-services__cta-label {
+    font-size: 9px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-services__animate--delay-1 {
+    transition-delay: 0s;
+  }
+
+  .fya-services__cta-btn {
+    transition: none !important;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-services__cta {
+    background: var(--fya-services-black);
+  }
+
+  .fya-services__cta-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-services__cta {
+    padding: 40px 0;
+    background: #111111 !important;
+  }
+
+  .fya-services__cta-bg {
+    display: none !important;
+  }
+
+  .fya-services__cta-overlay {
+    display: none !important;
+  }
+
+  .fya-services__cta-box {
+    border: 1px solid #333333 !important;
+  }
+
+  .fya-services__cta-title {
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__cta-text {
+    color: #999999 !important;
+  }
+
+  .fya-services__cta-btn--primary {
+    background: #D71920 !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__cta-btn--secondary {
+    border: 1px solid #FFFFFF !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__cta-label {
+    color: #D71920 !important;
+  }
+
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

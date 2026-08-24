@@ -1,0 +1,534 @@
+/* ================================================================
+   FIYA BUILDERS - SERVICES HERO SECTION
+   Unique Class Prefix: fya-services
+   Exact Match to About Page Hero
+   Brand Colors: Red #D71920, Gold #C9972B, Blue #3D5D96
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-services-red: #D71920;
+  --fya-services-red-dark: #B81218;
+  --fya-services-gold: #C9972B;
+  --fya-services-blue: #3D5D96;
+  --fya-services-black: #111111;
+  --fya-services-white: #FFFFFF;
+  --fya-services-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ================================================================
+   HERO SECTION
+   ================================================================ */
+
+.fya-services__hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+  background: var(--fya-services-black);
+}
+
+/* ================================================================
+   BACKGROUND
+   ================================================================ */
+
+.fya-services__hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fya-services__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fyaServicesZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes fyaServicesZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.fya-services__hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(17, 17, 17, 0.85) 0%,
+    rgba(17, 17, 17, 0.3) 40%,
+    rgba(17, 17, 17, 0.7) 100%
+  );
+}
+
+.fya-services__hero-overlay-text {
+  position: absolute;
+  right: -50px;
+  bottom: 50%;
+  transform: translateY(50%) rotate(-90deg);
+  display: flex;
+  gap: 20px;
+  opacity: 0.03;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.fya-services__hero-overlay-letter {
+  font-family: var(--fya-services-font);
+  font-size: 100px;
+  font-weight: 900;
+  color: var(--fya-services-white);
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-services__hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================================================================
+   HERO TOP - LABEL
+   ================================================================ */
+
+.fya-services__hero-top {
+  margin-bottom: 60px;
+}
+
+.fya-services__hero-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-services__hero-number {
+  font-family: var(--fya-services-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-services-red);
+  letter-spacing: 1px;
+}
+
+.fya-services__hero-label-text {
+  font-family: var(--fya-services-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fya-services__hero-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  max-width: 120px;
+}
+
+/* ================================================================
+   HERO MAIN - TITLE & CONTENT
+   ================================================================ */
+
+.fya-services__hero-main {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.fya-services__hero-title {
+  font-family: var(--fya-services-font);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--fya-services-white);
+  line-height: 1.02;
+  margin: 0 0 20px;
+  letter-spacing: -2px;
+}
+
+.fya-services__hero-highlight {
+  color: var(--fya-services-blue);
+  position: relative;
+}
+
+.fya-services__hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-services-blue);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-services__hero-highlight-gold {
+  color: var(--fya-services-gold);
+  position: relative;
+}
+
+.fya-services__hero-highlight-gold::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--fya-services-gold);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.fya-services__hero-subtitle {
+  font-family: var(--fya-services-font);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+/* ================================================================
+   HERO ACTIONS - BUTTONS
+   ================================================================ */
+
+.fya-services__hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fya-services__hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: var(--fya-services-font);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.fya-services__hero-btn--primary {
+  background: var(--fya-services-red);
+  color: var(--fya-services-white);
+  box-shadow: 0 4px 24px rgba(215, 25, 32, 0.3);
+}
+
+.fya-services__hero-btn--primary:hover {
+  background: var(--fya-services-red-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(215, 25, 32, 0.4);
+}
+
+.fya-services__hero-btn--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--fya-services-white);
+}
+
+.fya-services__hero-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ================================================================
+   HERO BOTTOM - SCROLL & COUNTER
+   ================================================================ */
+
+.fya-services__hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fya-services__hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-services-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fya-services__hero-scroll svg {
+  animation: fyaServicesScrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes fyaServicesScrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+.fya-services__hero-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--fya-services-font);
+  font-size: 13px;
+}
+
+.fya-services__counter-current {
+  color: var(--fya-services-white);
+  font-weight: 600;
+}
+
+.fya-services__counter-line {
+  width: 30px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fya-services__counter-total {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-services__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-services__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-services__animate--delay-1 { transition-delay: 0.1s; }
+.fya-services__animate--delay-2 { transition-delay: 0.2s; }
+.fya-services__animate--delay-3 { transition-delay: 0.3s; }
+.fya-services__animate--delay-4 { transition-delay: 0.4s; }
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-services__hero-container {
+    padding: 0 32px;
+  }
+
+  .fya-services__hero-title {
+    font-size: 56px;
+  }
+
+  .fya-services__hero-overlay-text {
+    display: none;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-services__hero {
+    min-height: auto;
+    padding: 60px 0 40px;
+  }
+
+  .fya-services__hero-container {
+    padding: 0 20px;
+  }
+
+  .fya-services__hero-top {
+    margin-bottom: 40px;
+  }
+
+  .fya-services__hero-main {
+    margin-bottom: 40px;
+  }
+
+  .fya-services__hero-title {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .fya-services__hero-subtitle {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .fya-services__hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fya-services__hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .fya-services__hero-bottom {
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+  }
+
+  .fya-services__hero-overlay-text {
+    display: none;
+  }
+
+  .fya-services__hero-number {
+    font-size: 12px;
+  }
+
+  .fya-services__hero-label-text {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-services__hero-container {
+    padding: 0 16px;
+  }
+
+  .fya-services__hero-title {
+    font-size: 30px;
+  }
+
+  .fya-services__hero-subtitle {
+    font-size: 14px;
+  }
+
+  .fya-services__hero-btn {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
+  .fya-services__hero-overlay-text {
+    display: none;
+  }
+
+  .fya-services__hero-counter {
+    font-size: 12px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-services__hero-image {
+    animation: none;
+  }
+
+  .fya-services__hero-scroll svg {
+    animation: none;
+  }
+
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-services__animate--delay-1,
+  .fya-services__animate--delay-2,
+  .fya-services__animate--delay-3,
+  .fya-services__animate--delay-4 {
+    transition-delay: 0s;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-services__hero {
+    background: var(--fya-services-black);
+  }
+
+  .fya-services__hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.4) 40%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-services__hero {
+    min-height: auto;
+    padding: 40px 0;
+    background: #111111 !important;
+  }
+
+  .fya-services__hero-bg {
+    display: none !important;
+  }
+
+  .fya-services__hero-gradient {
+    display: none !important;
+  }
+
+  .fya-services__hero-overlay-text {
+    display: none !important;
+  }
+
+  .fya-services__hero-title {
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__hero-btn--primary {
+    background: #D71920 !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__hero-btn--secondary {
+    border: 1px solid #FFFFFF !important;
+    color: #FFFFFF !important;
+  }
+
+  .fya-services__hero-scroll {
+    display: none !important;
+  }
+
+  .fya-services__hero-counter {
+    display: none !important;
+  }
+
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

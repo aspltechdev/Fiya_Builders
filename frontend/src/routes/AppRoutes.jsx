@@ -46,6 +46,7 @@ import ServicesPage from "../pages/Services.jsx";
 import ProjectsPage from "../pages/Projects.jsx";
 import GalleryPage from "../pages/Gallery.jsx";
 import ContactPage from "../pages/Contact.jsx";
+import TestimonialForm from "../admin/pages/TestimonialForm.jsx";
 
 const AppRoutes = () => {
   return (
@@ -54,6 +55,11 @@ const AppRoutes = () => {
       {/* ======================================
           PUBLIC WEBSITE
       ====================================== */}
+<Route
+  path="/testimonialform"
+  element={<TestimonialForm />}
+/>
+
  <Route element={<PublicLayout />}>
       <Route
         path="/"

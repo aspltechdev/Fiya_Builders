@@ -1,0 +1,759 @@
+/* ================================================================
+   FIYA BUILDERS - LOGIN PAGE
+   Unique Class Prefix: fya-
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-login-bg: #F3F3F1;
+  --fya-login-card-bg: #FFFFFF;
+  --fya-login-text-primary: #111111;
+  --fya-login-text-secondary: #777777;
+  --fya-login-text-muted: #999999;
+  --fya-login-border: #E5E5E3;
+  --fya-login-radius: 16px;
+  --fya-login-radius-sm: 10px;
+  --fya-login-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --fya-login-transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-color-red: #D71920;
+  --fya-color-red-hover: #B81218;
+  --fya-color-red-light: #FEE2E2;
+}
+
+/* ================================================================
+   LOGIN PAGE CONTAINER
+   ================================================================ */
+
+.fya-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fya-login-bg);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================================
+   BACKGROUND DECORATIONS
+   ================================================================ */
+
+.fya-login__bg-decoration {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.fya-login__bg-decoration--1 {
+  width: 400px;
+  height: 400px;
+  background: var(--fya-color-red);
+  top: -100px;
+  right: -100px;
+}
+
+.fya-login__bg-decoration--2 {
+  width: 300px;
+  height: 300px;
+  background: var(--fya-color-red);
+  bottom: -80px;
+  left: -80px;
+}
+
+.fya-login__bg-decoration--3 {
+  width: 200px;
+  height: 200px;
+  background: var(--fya-color-red);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.02;
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-login__container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  max-width: 1000px;
+  width: 100%;
+  background: var(--fya-login-card-bg);
+  border-radius: var(--fya-login-radius);
+  box-shadow: var(--fya-login-shadow);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================================================
+   LEFT - BRANDING SECTION
+   ================================================================ */
+
+.fya-login__brand {
+  background: linear-gradient(135deg, #111111 0%, #1A1A1A 100%);
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-login__brand::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fya-login__brand-content {
+  position: relative;
+  z-index: 1;
+  max-width: 320px;
+}
+
+.fya-login__brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.fya-login__brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(215, 25, 32, 0.15);
+  color: var(--fya-color-red);
+}
+
+.fya-login__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.fya-login__brand-primary {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.fya-login__brand-secondary {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.fya-login__brand-tagline {
+  margin-bottom: 32px;
+}
+
+.fya-login__brand-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--fya-color-red);
+  margin-bottom: 12px;
+  border-radius: 2px;
+}
+
+.fya-login__brand-tagline p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.fya-login__brand-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fya-login__brand-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fya-login__brand-feature svg {
+  color: var(--fya-color-red);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   RIGHT - FORM SECTION
+   ================================================================ */
+
+.fya-login__form-wrapper {
+  padding: 48px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fya-login__form-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ================================================================
+   FORM HEADER
+   ================================================================ */
+
+.fya-login__form-header {
+  margin-bottom: 32px;
+}
+
+.fya-login__form-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--fya-login-text-primary);
+  margin: 0 0 6px;
+}
+
+.fya-login__form-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--fya-login-text-secondary);
+  margin: 0;
+}
+
+/* ================================================================
+   ERROR & SUCCESS MESSAGES
+   ================================================================ */
+
+.fya-login__error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--fya-color-red-light);
+  color: #DC2626;
+  border-radius: var(--fya-login-radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border-left: 3px solid #DC2626;
+}
+
+.fya-login__success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #DCFCE7;
+  color: #16A34A;
+  border-radius: var(--fya-login-radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border-left: 3px solid #16A34A;
+}
+
+/* ================================================================
+   FORM FIELDS
+   ================================================================ */
+
+.fya-login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fya-login__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fya-login__field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fya-login__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fya-login-text-primary);
+}
+
+.fya-login__forgot {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fya-color-red);
+  text-decoration: none;
+  transition: color var(--fya-login-transition);
+}
+
+.fya-login__forgot:hover {
+  color: var(--fya-color-red-hover);
+  text-decoration: underline;
+}
+
+/* ================================================================
+   INPUT WRAPPER
+   ================================================================ */
+
+.fya-login__input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #F8F8F6;
+  border: 2px solid transparent;
+  border-radius: var(--fya-login-radius-sm);
+  transition: all var(--fya-login-transition);
+  position: relative;
+}
+
+.fya-login__input-wrapper:hover {
+  border-color: #E5E5E3;
+}
+
+.fya-login__input-wrapper:focus-within {
+  border-color: var(--fya-color-red);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.08);
+}
+
+.fya-login__input-wrapper--error {
+  border-color: #DC2626 !important;
+  background: #FFFFFF !important;
+}
+
+.fya-login__input-wrapper--error:focus-within {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.fya-login__input-icon {
+  color: var(--fya-login-text-muted);
+  margin: 0 12px 0 14px;
+  flex-shrink: 0;
+}
+
+.fya-login__input {
+  flex: 1;
+  padding: 12px 12px 12px 0;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--fya-login-text-primary);
+  outline: none;
+  min-width: 0;
+}
+
+.fya-login__input::placeholder {
+  color: var(--fya-login-text-muted);
+}
+
+.fya-login__toggle-password {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  color: var(--fya-login-text-muted);
+  cursor: pointer;
+  transition: color var(--fya-login-transition);
+  flex-shrink: 0;
+}
+
+.fya-login__toggle-password:hover {
+  color: var(--fya-login-text-primary);
+}
+
+/* ================================================================
+   OPTIONS
+   ================================================================ */
+
+.fya-login__options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2px 0;
+}
+
+.fya-login__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--fya-login-text-secondary);
+  cursor: pointer;
+}
+
+.fya-login__checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--fya-color-red);
+  cursor: pointer;
+}
+
+/* ================================================================
+   SUBMIT BUTTON
+   ================================================================ */
+
+.fya-login__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--fya-color-red);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--fya-login-radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--fya-login-transition);
+  margin-top: 4px;
+}
+
+.fya-login__submit:hover:not(:disabled) {
+  background: var(--fya-color-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(215, 25, 32, 0.25);
+}
+
+.fya-login__submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.fya-login__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fya-login__submit svg {
+  transition: transform var(--fya-login-transition);
+}
+
+.fya-login__submit:hover:not(:disabled) svg {
+  transform: translateX(4px);
+}
+
+/* Spinner */
+.fya-login__spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: fyaSpin 0.7s linear infinite;
+}
+
+@keyframes fyaSpin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================================================
+   DEMO CREDENTIALS
+   ================================================================ */
+
+.fya-login__demo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #F8F8F6;
+  border-radius: var(--fya-login-radius-sm);
+  margin-top: 4px;
+}
+
+.fya-login__demo-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-login-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fya-login__demo-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--fya-color-red);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--fya-login-transition);
+}
+
+.fya-login__demo-btn:hover {
+  background: var(--fya-color-red-light);
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+.fya-login__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--fya-login-border);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--fya-login-text-muted);
+}
+
+.fya-login__footer-dot {
+  color: var(--fya-login-border);
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .fya-login__container {
+    grid-template-columns: 1fr 1.3fr;
+  }
+
+  .fya-login__brand {
+    padding: 36px 28px;
+  }
+
+  .fya-login__form-wrapper {
+    padding: 36px 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .fya-login__container {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  .fya-login__brand {
+    padding: 32px 28px;
+    min-height: 200px;
+  }
+
+  .fya-login__brand-content {
+    max-width: 100%;
+  }
+
+  .fya-login__brand-features {
+    display: none;
+  }
+
+  .fya-login__brand-tagline {
+    margin-bottom: 0;
+  }
+
+  .fya-login__form-wrapper {
+    padding: 32px 24px;
+  }
+
+  .fya-login__form-title {
+    font-size: 22px;
+  }
+
+  .fya-login__bg-decoration {
+    display: none;
+  }
+
+  .fya-login__brand-primary {
+    font-size: 24px;
+  }
+
+  .fya-login__brand-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fya-login__brand-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .fya-login {
+    padding: 12px;
+  }
+
+  .fya-login__form-wrapper {
+    padding: 24px 16px;
+  }
+
+  .fya-login__brand {
+    padding: 24px 20px;
+    min-height: 160px;
+  }
+
+  .fya-login__brand-primary {
+    font-size: 20px;
+  }
+
+  .fya-login__brand-secondary {
+    font-size: 11px;
+  }
+
+  .fya-login__brand-tagline p {
+    font-size: 11px;
+  }
+
+  .fya-login__form-title {
+    font-size: 20px;
+  }
+
+  .fya-login__form-subtitle {
+    font-size: 13px;
+  }
+
+  .fya-login__input {
+    font-size: 13px;
+    padding: 10px 10px 10px 0;
+  }
+
+  .fya-login__submit {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .fya-login__demo {
+    flex-wrap: wrap;
+  }
+
+  .fya-login__footer {
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-login__submit,
+  .fya-login__submit svg,
+  .fya-login__input-wrapper,
+  .fya-login__forgot,
+  .fya-login__demo-btn {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .fya-login__spinner {
+    animation: none !important;
+    border-top-color: #FFFFFF;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fya-login-bg: #1A1A1A;
+    --fya-login-card-bg: #242424;
+    --fya-login-text-primary: #FFFFFF;
+    --fya-login-text-secondary: #999999;
+    --fya-login-text-muted: #666666;
+    --fya-login-border: #2D2D2D;
+  }
+
+  .fya-login__brand {
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+  }
+
+  .fya-login__input-wrapper {
+    background: #2D2D2D;
+  }
+
+  .fya-login__input-wrapper:hover {
+    border-color: #3D3D3D;
+  }
+
+  .fya-login__input-wrapper:focus-within {
+    border-color: var(--fya-color-red);
+    background: #2D2D2D;
+  }
+
+  .fya-login__input {
+    color: #FFFFFF;
+  }
+
+  .fya-login__input::placeholder {
+    color: #666666;
+  }
+
+  .fya-login__demo {
+    background: #2D2D2D;
+  }
+
+  .fya-login__demo-btn:hover {
+    background: rgba(215, 25, 32, 0.15);
+  }
+
+  .fya-login__error {
+    background: rgba(220, 38, 38, 0.15);
+  }
+
+  .fya-login__success {
+    background: rgba(22, 163, 74, 0.15);
+  }
+
+  .fya-login__footer {
+    border-top-color: #2D2D2D;
+  }
+
+  .fya-login__footer-dot {
+    color: #2D2D2D;
+  }
+
+  .fya-login__checkbox input[type="checkbox"] {
+    accent-color: var(--fya-color-red);
+  }
+}

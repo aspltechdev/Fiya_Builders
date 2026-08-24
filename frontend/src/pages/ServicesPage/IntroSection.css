@@ -1,0 +1,384 @@
+/* ================================================================
+   FIYA BUILDERS - SERVICES INTRO SECTION
+   Unique Class Prefix: fya-services
+   Exact Match to About Page Intro
+   Brand Colors: Red #D71920, White, Black, Gray
+   ================================================================ */
+
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
+:root {
+  --fya-services-red: #D71920;
+  --fya-services-red-light: rgba(215, 25, 32, 0.08);
+  --fya-services-black: #111111;
+  --fya-services-white: #FFFFFF;
+  --fya-services-gray: #777777;
+  --fya-services-gray-light: #E5E5E3;
+  --fya-services-bg: #FAFAF8;
+  --fya-services-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fya-services-transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-services-radius: 12px;
+}
+
+/* ================================================================
+   INTRO SECTION
+   ================================================================ */
+
+.fya-services__intro {
+  padding: 100px 0;
+  background: var(--fya-services-white);
+}
+
+/* ================================================================
+   CONTAINER
+   ================================================================ */
+
+.fya-services__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================================================================
+   INTRO GRID
+   ================================================================ */
+
+.fya-services__intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ================================================================
+   INTRO LEFT
+   ================================================================ */
+
+.fya-services__intro-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fya-services__intro-number {
+  font-family: var(--fya-services-font);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fya-services-red);
+  letter-spacing: 1px;
+}
+
+.fya-services__intro-title {
+  font-family: var(--fya-services-font);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--fya-services-black);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.fya-services__text-red {
+  color: var(--fya-services-red);
+}
+
+/* ================================================================
+   INTRO RIGHT
+   ================================================================ */
+
+.fya-services__intro-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fya-services__intro-description {
+  font-family: var(--fya-services-font);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fya-services-gray);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ================================================================
+   INTRO STATS
+   ================================================================ */
+
+.fya-services__intro-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ================================================================
+   STAT ITEM
+   ================================================================ */
+
+.fya-services__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  background: var(--fya-services-bg);
+  border-radius: var(--fya-services-radius);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.fya-services__stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  border-color: var(--fya-services-red);
+}
+
+.fya-services__stat-icon {
+  color: var(--fya-services-red);
+  margin-bottom: 4px;
+  width: 24px;
+  height: 24px;
+}
+
+.fya-services__stat-value {
+  font-family: var(--fya-services-font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fya-services-black);
+}
+
+.fya-services__stat-label {
+  font-family: var(--fya-services-font);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--fya-services-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-services__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-services__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-services__animate--delay-1 { transition-delay: 0.1s; }
+.fya-services__animate--delay-2 { transition-delay: 0.2s; }
+.fya-services__animate--delay-3 { transition-delay: 0.3s; }
+.fya-services__animate--delay-4 { transition-delay: 0.4s; }
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-services__container {
+    padding: 0 32px;
+  }
+
+  .fya-services__intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fya-services__intro-title {
+    font-size: 36px;
+  }
+
+  .fya-services__intro-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-services__intro {
+    padding: 60px 0;
+  }
+
+  .fya-services__container {
+    padding: 0 20px;
+  }
+
+  .fya-services__intro-title {
+    font-size: 28px;
+  }
+
+  .fya-services__intro-description {
+    font-size: 14px;
+  }
+
+  .fya-services__intro-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .fya-services__stat-item {
+    padding: 16px 12px;
+  }
+
+  .fya-services__stat-value {
+    font-size: 20px;
+  }
+
+  .fya-services__stat-label {
+    font-size: 10px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-services__intro {
+    padding: 40px 0;
+  }
+
+  .fya-services__container {
+    padding: 0 16px;
+  }
+
+  .fya-services__intro-title {
+    font-size: 24px;
+  }
+
+  .fya-services__intro-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .fya-services__stat-item {
+    padding: 12px 8px;
+  }
+
+  .fya-services__stat-value {
+    font-size: 16px;
+  }
+
+  .fya-services__stat-label {
+    font-size: 9px;
+  }
+
+  .fya-services__stat-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .fya-services__intro-number {
+    font-size: 12px;
+  }
+
+  .fya-services__intro-description {
+    font-size: 13px;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-services__animate--delay-1,
+  .fya-services__animate--delay-2,
+  .fya-services__animate--delay-3,
+  .fya-services__animate--delay-4 {
+    transition-delay: 0s;
+  }
+
+  .fya-services__stat-item {
+    transition: none !important;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-services__intro {
+    background: var(--fya-services-black);
+  }
+
+  .fya-services__intro-title {
+    color: #FFFFFF;
+  }
+
+  .fya-services__intro-description {
+    color: #999999;
+  }
+
+  .fya-services__stat-item {
+    background: #1A1A1A;
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .fya-services__stat-item:hover {
+    border-color: var(--fya-services-red);
+  }
+
+  .fya-services__stat-value {
+    color: #FFFFFF;
+  }
+
+  .fya-services__stat-label {
+    color: #999999;
+  }
+
+  .fya-services__stat-icon {
+    color: var(--fya-services-red);
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-services__intro {
+    padding: 40px 0;
+    background: #FFFFFF !important;
+  }
+
+  .fya-services__intro-title {
+    color: #111111 !important;
+  }
+
+  .fya-services__intro-description {
+    color: #777777 !important;
+  }
+
+  .fya-services__stat-item {
+    background: #F5F5F5 !important;
+    border: 1px solid #E5E5E3 !important;
+  }
+
+  .fya-services__stat-value {
+    color: #111111 !important;
+  }
+
+  .fya-services__stat-label {
+    color: #777777 !important;
+  }
+
+  .fya-services__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

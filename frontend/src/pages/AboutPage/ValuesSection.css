@@ -1,0 +1,517 @@
+/* ================================================================
+   FIYA BUILDERS - VALUES SECTION
+   Unique Class Prefix: fya-about
+   Brand Colors: Red #D71920, White, Black, Gray
+   ================================================================ */
+
+/* ================================================================
+   VALUES SECTION
+   ================================================================ */
+
+.fya-about__values {
+  padding: 100px 0;
+  background: var(--fya-about-white, #FFFFFF);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================================================================
+   BACKGROUND DECORATION
+   ================================================================ */
+
+.fya-about__values-bg {
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(215, 25, 32, 0.02) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ================================================================
+   VALUES TOP
+   ================================================================ */
+
+.fya-about__values-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.fya-about__values-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--fya-about-black, #111111);
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.fya-about__text-red {
+  color: #D71920;
+}
+
+/* ================================================================
+   VALUES GRID
+   ================================================================ */
+
+.fya-about__values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ================================================================
+   VALUE CARD
+   ================================================================ */
+
+.fya-about__value-card {
+  padding: 32px 24px;
+  background: var(--fya-about-bg, #FAFAF8);
+  border-radius: 16px;
+  border: 1px solid var(--fya-about-gray-light, #E5E5E3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.fya-about__value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #D71920;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.fya-about__value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.04);
+  border-color: #D71920;
+}
+
+.fya-about__value-card:hover::before {
+  opacity: 1;
+}
+
+/* ================================================================
+   VALUE HEADER
+   ================================================================ */
+
+.fya-about__value-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.fya-about__value-number {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--fya-about-gray-light, #E5E5E3);
+  line-height: 1;
+}
+
+.fya-about__value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.fya-about__value-card:hover .fya-about__value-icon {
+  transform: scale(1.05) rotate(-5deg);
+}
+
+/* ================================================================
+   VALUE CONTENT
+   ================================================================ */
+
+.fya-about__value-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fya-about-black, #111111);
+  margin: 0 0 8px;
+}
+
+.fya-about__value-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fya-about-gray, #777777);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ================================================================
+   VALUE LINE
+   ================================================================ */
+
+.fya-about__value-line {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  margin-top: 16px;
+  transition: width 0.3s ease;
+}
+
+.fya-about__value-card:hover .fya-about__value-line {
+  width: 50px;
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+
+.fya-about__animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fya-about__animate--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fya-about__animate--delay-1 { transition-delay: 0.1s; }
+.fya-about__animate--delay-2 { transition-delay: 0.2s; }
+.fya-about__animate--delay-3 { transition-delay: 0.3s; }
+.fya-about__animate--delay-4 { transition-delay: 0.4s; }
+.fya-about__animate--delay-5 { transition-delay: 0.5s; }
+.fya-about__animate--delay-6 { transition-delay: 0.6s; }
+.fya-about__animate--delay-7 { transition-delay: 0.7s; }
+.fya-about__animate--delay-8 { transition-delay: 0.8s; }
+
+/* ================================================================
+   SECTION LABEL
+   ================================================================ */
+
+.fya-about__section-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.fya-about__label-number {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #D71920;
+  letter-spacing: 1px;
+}
+
+.fya-about__label-line {
+  width: 30px;
+  height: 2px;
+  background: #D71920;
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.fya-about__label-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fya-about-gray, #777777);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ================================================================
+   RESPONSIVE BREAKPOINTS
+   ================================================================ */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .fya-about__values {
+    padding: 80px 0;
+  }
+
+  .fya-about__values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .fya-about__values-title {
+    font-size: 36px;
+  }
+
+  .fya-about__value-card {
+    padding: 28px 20px;
+  }
+}
+
+/* Mobile - 768px */
+@media (max-width: 768px) {
+  .fya-about__values {
+    padding: 60px 0;
+  }
+
+  .fya-about__values-top {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .fya-about__values-title {
+    font-size: 28px;
+  }
+
+  .fya-about__values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .fya-about__value-card {
+    padding: 24px 18px;
+  }
+
+  .fya-about__value-title {
+    font-size: 17px;
+  }
+
+  .fya-about__value-text {
+    font-size: 13px;
+  }
+
+  .fya-about__value-number {
+    font-size: 24px;
+  }
+
+  .fya-about__value-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fya-about__value-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small Mobile - 480px */
+@media (max-width: 480px) {
+  .fya-about__values {
+    padding: 40px 0;
+  }
+
+  .fya-about__values-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .fya-about__values-title {
+    font-size: 24px;
+  }
+
+  .fya-about__value-card {
+    padding: 20px 16px;
+  }
+
+  .fya-about__value-title {
+    font-size: 16px;
+  }
+
+  .fya-about__value-text {
+    font-size: 13px;
+  }
+
+  .fya-about__value-number {
+    font-size: 20px;
+  }
+
+  .fya-about__value-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .fya-about__value-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .fya-about__value-line {
+    width: 24px;
+    height: 2px;
+  }
+
+  .fya-about__value-card:hover .fya-about__value-line {
+    width: 36px;
+  }
+
+  .fya-about__label-number {
+    font-size: 12px;
+  }
+
+  .fya-about__label-text {
+    font-size: 9px;
+  }
+
+  .fya-about__label-line {
+    width: 20px;
+  }
+
+  .fya-about__values-bg {
+    display: none;
+  }
+}
+
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fya-about__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fya-about__animate--delay-1,
+  .fya-about__animate--delay-2,
+  .fya-about__animate--delay-3,
+  .fya-about__animate--delay-4,
+  .fya-about__animate--delay-5,
+  .fya-about__animate--delay-6,
+  .fya-about__animate--delay-7,
+  .fya-about__animate--delay-8 {
+    transition-delay: 0s;
+  }
+
+  .fya-about__value-card {
+    transition: none !important;
+  }
+
+  .fya-about__value-card::before {
+    transition: none !important;
+  }
+
+  .fya-about__value-line {
+    transition: none !important;
+  }
+
+  .fya-about__value-icon {
+    transition: none !important;
+  }
+}
+
+/* ================================================================
+   DARK MODE
+   ================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  .fya-about__values {
+    background: var(--fya-about-black, #111111);
+  }
+
+  .fya-about__values-bg {
+    background: radial-gradient(circle, rgba(215, 25, 32, 0.04) 0%, transparent 70%);
+  }
+
+  .fya-about__values-title {
+    color: #FFFFFF;
+  }
+
+  .fya-about__value-card {
+    background: var(--fya-about-charcoal, #1A1A1A);
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .fya-about__value-card:hover {
+    border-color: #D71920;
+  }
+
+  .fya-about__value-card::before {
+    background: #D71920;
+  }
+
+  .fya-about__value-title {
+    color: #FFFFFF;
+  }
+
+  .fya-about__value-text {
+    color: #999999;
+  }
+
+  .fya-about__value-number {
+    color: rgba(255, 255, 255, 0.04);
+  }
+
+  .fya-about__label-text {
+    color: #999999;
+  }
+
+  .fya-about__label-number {
+    color: #D71920;
+  }
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  .fya-about__values {
+    padding: 40px 0;
+    background: #FFFFFF !important;
+  }
+
+  .fya-about__values-title {
+    color: #111111 !important;
+  }
+
+  .fya-about__value-card {
+    background: #F5F5F5 !important;
+    border: 1px solid #E5E5E3 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .fya-about__value-card::before {
+    display: none !important;
+  }
+
+  .fya-about__value-title {
+    color: #111111 !important;
+  }
+
+  .fya-about__value-text {
+    color: #777777 !important;
+  }
+
+  .fya-about__value-number {
+    color: #E5E5E3 !important;
+  }
+
+  .fya-about__value-line {
+    background: #D71920 !important;
+  }
+
+  .fya-about__label-text {
+    color: #777777 !important;
+  }
+
+  .fya-about__values-bg {
+    display: none !important;
+  }
+
+  .fya-about__animate {
+    opacity: 1;
+    transform: none;
+  }
+}

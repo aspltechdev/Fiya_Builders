@@ -1,452 +1,417 @@
-/* AdminLayout.css - Production Level Design */
+/* ================================================================
+   FIYA BUILDERS - ADMIN LAYOUT
+   Unique Class Prefix: fya-
+   ================================================================ */
 
-/* CSS Variables */
+/* ================================================================
+   VARIABLES
+   ================================================================ */
+
 :root {
-  --layout-bg: #f8fafc;
-  --layout-bg-dark: #0f172a;
-  --content-padding: 1.5rem;
-  --content-padding-tablet: 1.25rem;
-  --content-padding-mobile: 1rem;
-  --content-padding-sm: 0.875rem;
-  --sidebar-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --overlay-bg: rgba(0, 0, 0, 0.5);
-  --overlay-bg-dark: rgba(0, 0, 0, 0.7);
-  --z-sidebar: 50;
-  --z-overlay: 45;
-  --z-menu-btn: 60;
-  --z-scroll-btn: 55;
-  --z-close-btn: 65;
+  --fya-sidebar-width: 260px;
+  --fya-sidebar-collapsed-width: 72px;
+  --fya-header-height: 72px;
+  --fya-header-height-mobile: 64px;
+  --fya-transition-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --fya-shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --fya-radius-lg: 12px;
+  --fya-radius-full: 9999px;
 }
 
-/* Admin Layout Container */
-.admin-layout {
+/* ================================================================
+   LAYOUT CONTAINER
+   ================================================================ */
+
+.fya-admin-layout {
   display: flex;
   min-height: 100vh;
-  min-height: 100dvh;
-  background: var(--layout-bg);
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-}
-
-/* Main Content Area */
-.admin-main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-  min-height: 100vh;
-  min-height: 100dvh;
-  transition: margin-left var(--sidebar-transition);
+  background: #F3F3F1;
   position: relative;
 }
 
-/* Admin Content Section */
-.admin-content {
-  flex: 1;
-  padding: var(--content-padding);
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: var(--layout-bg);
-  position: relative;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  transition: padding 0.3s ease, background-color 0.3s ease;
-}
+/* ================================================================
+   OVERLAY
+   ================================================================ */
 
-/* Scrolling state - subtle visual feedback */
-.admin-content.is-scrolling {
-  scroll-behavior: auto;
-}
-
-/* Custom Scrollbar */
-.admin-content::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.admin-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.admin-content::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-  transition: background 0.2s ease;
-}
-
-.admin-content::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Firefox Scrollbar */
-.admin-content {
-  scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
-}
-
-/* Sidebar Overlay */
-.sidebar-overlay {
+.fya-admin-layout__overlay {
   position: fixed;
   inset: 0;
-  background: var(--overlay-bg);
+  z-index: 199;
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  z-index: var(--z-overlay);
-  animation: overlayFadeIn 0.2s ease;
-  cursor: pointer;
+  animation: fyaOverlayFade 0.3s ease;
 }
 
-/* Sidebar Wrapper */
-.admin-sidebar-wrapper {
+@keyframes fyaOverlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================================================================
+   SIDEBAR WRAPPER
+   ================================================================ */
+
+.fya-admin-layout__sidebar-wrapper {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  height: 100dvh;
-  z-index: var(--z-sidebar);
-  transform: translateX(0);
-  transition: transform var(--sidebar-transition);
-  will-change: transform;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
 }
 
-/* Sidebar Close Button */
-.sidebar-close-btn {
-  position: absolute;
-  top: 1rem;
-  right: -3.5rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #1e293b;
-  border: none;
-  cursor: pointer;
-  display: flex;
+.fya-admin-layout__sidebar-wrapper--open {
+  /* Mobile open state handled by child component */;
+}
+
+/* ================================================================
+   SIDEBAR CLOSE BUTTON (Mobile)
+   ================================================================ */
+
+.fya-admin-layout__sidebar-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 201;
+  display: none;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: var(--z-close-btn);
-  -webkit-tap-highlight-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--fya-radius-lg);
+  background: #D71920;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(215, 25, 32, 0.3);
 }
 
-.sidebar-close-btn:hover {
-  background: #f1f5f9;
+.fya-admin-layout__sidebar-close:hover {
+  background: #B81218;
   transform: scale(1.05);
 }
 
-.sidebar-close-btn:active {
+/* ================================================================
+   MAIN CONTENT
+   ================================================================ */
+
+.fya-admin-layout__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--fya-sidebar-width);
+  min-height: 100vh;
+  transition: margin-left var(--fya-transition-smooth);
+}
+
+/* ================================================================
+   MOBILE TOGGLE BUTTON
+   ================================================================ */
+
+.fya-admin-layout__mobile-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #D71920;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(215, 25, 32, 0.35);
+}
+
+.fya-admin-layout__mobile-toggle:hover {
+  background: #B81218;
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(215, 25, 32, 0.4);
+}
+
+.fya-admin-layout__mobile-toggle:active {
   transform: scale(0.95);
 }
 
-.sidebar-close-btn:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+/* ================================================================
+   CONTENT AREA
+   ================================================================ */
+
+.fya-admin-layout__content {
+  flex: 1;
+  padding: 24px 32px 32px;
+  overflow-y: auto;
+  height: calc(100vh - var(--fya-header-height));
+  scroll-behavior: smooth;
+  transition: opacity 0.3s ease;
 }
 
-/* Mobile Menu Toggle Button */
-.mobile-menu-btn {
+/* Content Scrollbar */
+.fya-admin-layout__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.fya-admin-layout__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fya-admin-layout__content::-webkit-scrollbar-thumb {
+  background: #DEDEDC;
+  border-radius: 3px;
+}
+
+.fya-admin-layout__content::-webkit-scrollbar-thumb:hover {
+  background: #C5C5C3;
+}
+
+/* Scrolling state */
+.fya-admin-layout__content--scrolling {
+  transition: none;
+}
+
+/* ================================================================
+   SCROLL TO TOP BUTTON
+   ================================================================ */
+
+.fya-admin-layout__scroll-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: #ffffff;
+  bottom: 32px;
+  right: 32px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-  z-index: var(--z-menu-btn);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-menu-btn:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
-  transform: translateY(-2px);
-}
-
-.mobile-menu-btn:active {
-  transform: translateY(0) scale(0.95);
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-}
-
-.mobile-menu-btn:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Scroll to Top Button */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
   border-radius: 50%;
-  background: #ffffff;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
+  background: #FFFFFF;
+  color: #2A2A2A;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: var(--z-scroll-btn);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: slideUp 0.3s ease;
-  -webkit-tap-highlight-color: transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #F0F0F0;
+  animation: fyaScrollFadeIn 0.3s ease;
 }
 
-.scroll-top-btn:hover {
-  background: #f8fafc;
-  color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+.fya-admin-layout__scroll-top:hover {
+  background: #D71920;
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(215, 25, 32, 0.3);
 }
 
-.scroll-top-btn:active {
-  transform: translateY(0) scale(0.95);
+.fya-admin-layout__scroll-top:active {
+  transform: scale(0.9);
 }
 
-.scroll-top-btn:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Animations */
-@keyframes overlayFadeIn {
+@keyframes fyaScrollFadeIn {
   from {
     opacity: 0;
+    transform: translateY(20px) scale(0.8);
   }
   to {
     opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
 
-/* Responsive Breakpoints */
+/* Tablet */
 @media (max-width: 1024px) {
-  :root {
-    --content-padding: var(--content-padding-tablet);
+  .fya-admin-layout__content {
+    padding: 20px 24px 28px;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  :root {
-    --content-padding: var(--content-padding-mobile);
-  }
-  
-  .admin-sidebar-wrapper {
-    transform: translateX(-100%);
-  }
-  
-  .admin-sidebar-wrapper.open {
-    transform: translateX(0);
-  }
-  
-  .admin-main {
+  .fya-admin-layout__main {
     margin-left: 0;
   }
-  
-  .mobile-menu-btn {
-    bottom: 1.5rem;
-    right: 1.5rem;
+
+  .fya-admin-layout__sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform var(--fya-transition-smooth);
   }
-  
-  .scroll-top-btn {
-    bottom: 5.5rem;
-    right: 1.5rem;
+
+  .fya-admin-layout__sidebar-wrapper--open {
+    transform: translateX(0);
+  }
+
+  .fya-admin-layout__sidebar-close {
+    display: flex;
+  }
+
+  .fya-admin-layout__mobile-toggle {
+    display: flex;
+  }
+
+  .fya-admin-layout__content {
+    padding: 16px 16px 24px;
+    height: calc(100vh - var(--fya-header-height-mobile));
+  }
+
+  .fya-admin-layout__scroll-top {
+    bottom: 80px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .fya-admin-layout__scroll-top svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
-  :root {
-    --content-padding: var(--content-padding-sm);
+  .fya-admin-layout__content {
+    padding: 12px 12px 20px;
   }
-  
-  .mobile-menu-btn {
-    bottom: 1rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
+
+  .fya-admin-layout__mobile-toggle {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
   }
-  
-  .scroll-top-btn {
-    bottom: 5rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
+
+  .fya-admin-layout__mobile-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .fya-admin-layout__sidebar-close {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .fya-admin-layout__sidebar-close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fya-admin-layout__scroll-top {
+    bottom: 72px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .fya-admin-layout__scroll-top svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
-@media (min-width: 769px) {
-  .mobile-menu-btn,
-  .sidebar-close-btn,
-  .sidebar-overlay {
-    display: none;
-  }
-  
-  .admin-sidebar-wrapper {
-    position: sticky;
-    height: 100vh;
-    height: 100dvh;
-  }
-  
-  .scroll-top-btn {
-    bottom: 2rem;
-    right: 2rem;
-  }
-}
+/* ================================================================
+   REDUCED MOTION
+   ================================================================ */
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .admin-layout,
-  .admin-content {
-    background: var(--layout-bg-dark);
-  }
-  
-  .admin-content::-webkit-scrollbar-thumb {
-    background: #475569;
-  }
-  
-  .admin-content::-webkit-scrollbar-thumb:hover {
-    background: #64748b;
-  }
-  
-  .admin-content {
-    scrollbar-color: #475569 transparent;
-  }
-  
-  .sidebar-close-btn {
-    background: #1e293b;
-    color: #f1f5f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  }
-  
-  .sidebar-close-btn:hover {
-    background: #334155;
-  }
-  
-  .sidebar-overlay {
-    background: var(--overlay-bg-dark);
-  }
-  
-  .scroll-top-btn {
-    background: #1e293b;
-    border-color: #334155;
-    color: #94a3b8;
-  }
-  
-  .scroll-top-btn:hover {
-    background: #334155;
-    color: #60a5fa;
-  }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) {
-  .mobile-menu-btn:hover,
-  .scroll-top-btn:hover,
-  .sidebar-close-btn:hover {
-    transform: none;
-  }
-  
-  .mobile-menu-btn:active,
-  .scroll-top-btn:active,
-  .sidebar-close-btn:active {
-    transform: scale(0.95);
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  .sidebar-overlay {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  .mobile-menu-btn,
-  .scroll-top-btn,
-  .sidebar-close-btn {
-    border: 2px solid #ffffff;
-  }
-}
-
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .admin-sidebar-wrapper,
-  .mobile-menu-btn,
-  .scroll-top-btn,
-  .sidebar-close-btn,
-  .sidebar-overlay,
-  .admin-content {
-    transition: none;
-    animation: none;
+  .fya-admin-layout__sidebar-wrapper,
+  .fya-admin-layout__main,
+  .fya-admin-layout__overlay,
+  .fya-admin-layout__mobile-toggle,
+  .fya-admin-layout__scroll-top,
+  .fya-admin-layout__sidebar-close {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .fya-admin-layout__content {
     scroll-behavior: auto;
   }
 }
 
-/* Print Styles */
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
 @media print {
-  .admin-layout {
-    display: block;
-  }
-  
-  .admin-sidebar-wrapper,
-  .mobile-menu-btn,
-  .scroll-top-btn,
-  .sidebar-close-btn,
-  .sidebar-overlay {
+  .fya-admin-layout__sidebar-wrapper {
     display: none !important;
   }
-  
-  .admin-main {
-    margin-left: 0;
+
+  .fya-admin-layout__overlay {
+    display: none !important;
   }
-  
-  .admin-content {
-    padding: 0;
-    overflow: visible;
+
+  .fya-admin-layout__mobile-toggle {
+    display: none !important;
+  }
+
+  .fya-admin-layout__scroll-top {
+    display: none !important;
+  }
+
+  .fya-admin-layout__main {
+    margin-left: 0 !important;
+  }
+
+  .fya-admin-layout__content {
+    height: auto !important;
+    padding: 20px !important;
+    overflow: visible !important;
   }
 }
 
-/* Safe Area Insets for iOS */
-@supports (padding: max(0px)) {
-  .admin-content {
-    padding-bottom: max(var(--content-padding), env(safe-area-inset-bottom));
-  }
-  
-  .mobile-menu-btn {
-    bottom: max(1rem, env(safe-area-inset-bottom));
-  }
-}
+/* ================================================================
+   DARK MODE
+   ================================================================ */
 
-/* Landscape Mode for Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .mobile-menu-btn {
-    bottom: 1rem;
-    right: 1rem;
+@media (prefers-color-scheme: dark) {
+  .fya-admin-layout {
+    background: #1A1A1A;
   }
-  
-  .admin-content {
-    padding-top: 0.75rem;
+
+  .fya-admin-layout__overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .fya-admin-layout__scroll-top {
+    background: #2A2A2A;
+    color: #E5E5E5;
+    border-color: #3D3D3D;
+  }
+
+  .fya-admin-layout__scroll-top:hover {
+    background: #D71920;
+    color: #FFFFFF;
+  }
+
+  .fya-admin-layout__content::-webkit-scrollbar-thumb {
+    background: #3D3D3D;
+  }
+
+  .fya-admin-layout__content::-webkit-scrollbar-thumb:hover {
+    background: #4D4D4D;
+  }
+
+  .fya-admin-layout__mobile-toggle {
+    box-shadow: 0 4px 20px rgba(215, 25, 32, 0.25);
   }
 }
