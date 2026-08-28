@@ -50,7 +50,7 @@
 
 import { useRef, useEffect } from "react";
 import { Building2, Award, Users, Target } from "lucide-react";
-import "./Introsection.css";
+import "./IntroSection.css";
 
 const IntroSection = ({ about }) => {
   const introRef = useRef(null);
