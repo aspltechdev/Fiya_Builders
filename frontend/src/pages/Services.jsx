@@ -860,7 +860,7 @@
 // // //   import.meta.env.VITE_API_URL?.replace(
 // // //     "/api",
 // // //     ""
-// // //   ) || "http://localhost:5000";
+// // //   ) || "http://localhost:5041";
 
 // // // const defaultServices = [
 // // //   {
@@ -1232,7 +1232,7 @@
 // // // import api from "../services/api.js";
 // // // import "./ServicesPage.css";
 
-// // // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// // // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // // // const defaultServices = [
 // // //   {
@@ -1634,7 +1634,7 @@
 // // // // Import all sections
 
 
-// // // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// // // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // // // const ServicesPage = () => {
 // // //   const [services, setServices] = useState([]);
@@ -1772,7 +1772,7 @@
 // // import ProcessSection from "./ServicesPage/ProcessSection.jsx";
 // // import CTASection from "./ServicesPage/CTASection.jsx";
 
-// // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // // const ServicesPage = () => {
 // //   const [services, setServices] = useState([]);
@@ -1931,7 +1931,7 @@
 // // import ProcessSection from "./ServicesPage/ProcessSection.jsx";
 // // import CTASection from "./ServicesPage/CTASection.jsx";
 
-// // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// // const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // // const ServicesPage = () => {
 // //   const [services, setServices] = useState([]);
@@ -2103,7 +2103,7 @@
 // import ProcessSection from "./ServicesPage/ProcessSection.jsx";
 // import CTASection from "./ServicesPage/CTASection.jsx";
 
-// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // const ServicesPage = () => {
 //   const [services, setServices] = useState([]);
@@ -2334,7 +2334,7 @@ import ServicesGridSection from "./ServicesPage/ServicesGridSection.jsx";
 import ProcessSection from "./ServicesPage/ProcessSection.jsx";
 import CTASection from "./ServicesPage/CTASection.jsx";
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);

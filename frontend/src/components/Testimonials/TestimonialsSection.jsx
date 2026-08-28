@@ -825,7 +825,7 @@
 // import "./TestimonialsSection.css";
 
 // // API URL for images
-// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // const TestimonialsSection = () => {
 //   const [testimonials, setTestimonials] = useState([]);
@@ -1134,7 +1134,7 @@ import { getTestimonials } from "../../services/testimonial.api.js";
 import "./TestimonialsSection.css";
 
 // API URL for images
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const TestimonialsSection = () => {
   const [testimonials, setTestimonials] = useState([]);

@@ -6,7 +6,7 @@
 
 // // const API_URL =
 // //   import.meta.env.VITE_API_URL?.replace("/api", "") ||
-// //   "http://localhost:5000";
+// //   "http://localhost:5041";
 
 // // const HeroSection = () => {
 // //   const [hero, setHero] = useState(null);
@@ -147,7 +147,7 @@
 
 // const API_URL =
 //   import.meta.env.VITE_API_URL?.replace("/api", "") ||
-//   "http://localhost:5000";
+//   "http://localhost:5041";
 
 // const HeroSection = () => {
 //   const [hero, setHero] = useState(null);
@@ -311,7 +311,7 @@ import "./HeroSection.css";
 
 const API_URL =
   import.meta.env.VITE_API_URL?.replace("/api", "") ||
-  "http://localhost:5000";
+  "http://localhost:5041";
 
 const HeroSection = () => {
   const [hero, setHero] = useState(null);

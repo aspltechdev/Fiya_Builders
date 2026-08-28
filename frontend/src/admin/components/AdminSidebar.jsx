@@ -232,6 +232,12 @@ const menu = [
     icon: Mail,
     description: "Enquiries"
   },
+  { 
+    label: "Social Media", 
+    path: "/admin/socialmedia", 
+    icon: Mail,
+    description: "Enquiries"
+  },
 ];
 
 const AdminSidebar = ({ isOpen, onClose }) => {

@@ -65,7 +65,7 @@
 // // //         "/api",
 // // //         ""
 // // //       ) ||
-// // //       "http://localhost:5000";
+// // //       "http://localhost:5041";
 
 // // //     return `${API_URL}${image}`;
 // // //   };
@@ -335,7 +335,7 @@
 // //     }
 // //     const API_URL =
 // //       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-// //       "http://localhost:5000";
+// //       "http://localhost:5041";
 // //     return `${API_URL}${image}`;
 // //   };
 
@@ -552,7 +552,7 @@
 //     }
 //     const API_URL =
 //       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-//       "http://localhost:5000";
+//       "http://localhost:5041";
 //     return `${API_URL}${image}`;
 //   };
 
@@ -737,7 +737,7 @@ import {
 import api from "../../services/api.js";
 import "./FeaturedProjects.css";
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const FeaturedProjects = () => {
   const [projects, setProjects] = useState([]);

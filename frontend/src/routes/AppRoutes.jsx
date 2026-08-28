@@ -47,6 +47,7 @@ import ProjectsPage from "../pages/Projects.jsx";
 import GalleryPage from "../pages/Gallery.jsx";
 import ContactPage from "../pages/Contact.jsx";
 import TestimonialForm from "../admin/pages/TestimonialForm.jsx";
+import SocialMediaManagement from "../admin/pages/SocialMediaManagement.jsx";
 
 const AppRoutes = () => {
   return (
@@ -194,6 +195,13 @@ const AppRoutes = () => {
             path="enquiries"
             element={
               <Enquiries />
+            }
+          />
+
+          <Route
+            path="socialMedia"
+            element={
+              <SocialMediaManagement />
             }
           />
 

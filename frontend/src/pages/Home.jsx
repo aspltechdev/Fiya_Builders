@@ -9,6 +9,7 @@ import ServicesSection from "../components/Services/ServicesSection";
 import StatsSection from "../components/Stats/StatsSection";
 import TestimonialsSection from "../components/Testimonials/TestimonialsSection";
 import WhyChooseUs from "../components/Whychooseus/WhyChooseUs";
+import SocialWall from "./SocialWall";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
 <StatsSection/>
 <GallerySection/>
 <TestimonialsSection/>
+<SocialWall/>
 <ConsultationCTA/>
     </main>
   );

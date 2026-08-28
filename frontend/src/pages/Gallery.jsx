@@ -13,7 +13,7 @@
 // //   import.meta.env.VITE_API_URL?.replace(
 // //     "/api",
 // //     ""
-// //   ) || "http://localhost:5000";
+// //   ) || "http://localhost:5041";
 
 // // const GalleryPage = () => {
 // //   const [gallery, setGallery] = useState([]);
@@ -576,7 +576,7 @@
 // //   import.meta.env.VITE_API_URL?.replace(
 // //     "/api",
 // //     ""
-// //   ) || "http://localhost:5000";
+// //   ) || "http://localhost:5041";
 
 // // const defaultGallery = [
 // //   {
@@ -1071,7 +1071,7 @@
 // import GalleryPhilosophySection from "./sections/GalleryPhilosophySection";
 // import GalleryCTASection from "./sections/GalleryCTASection";
 
-// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+// const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 // const GalleryPage = () => {
 //   const [gallery, setGallery] = useState([]);
@@ -1237,7 +1237,7 @@ import GalleryCTASection from "./Gallery/GalleryCTASection.jsx";
 
 // Import all sections
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const GalleryPage = () => {
   const [gallery, setGallery] = useState([]);

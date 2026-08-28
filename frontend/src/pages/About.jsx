@@ -28,7 +28,7 @@
 
 // const API_URL =
 //   import.meta.env.VITE_API_URL?.replace("/api", "") ||
-//   "http://localhost:5000";
+//   "http://localhost:5041";
 
 // const AboutPage = () => {
 //   const [about, setAbout] = useState(null);
@@ -549,7 +549,7 @@ import CTASection from "./AboutPage/CTASection.jsx";
 
 
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const AboutPage = () => {
   const [about, setAbout] = useState(null);

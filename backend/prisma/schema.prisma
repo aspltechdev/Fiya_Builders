@@ -26,6 +26,7 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+
 model Hero {
   id          Int      @id @default(autoincrement())
   title       String
@@ -152,4 +153,31 @@ model WebsiteSetting {
   website      String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+model SocialMedia {
+  id         Int      @id @default(autoincrement())
+  platform   String   // facebook, instagram, youtube, linkedin, twitter
+  url        String   // Full URL to the social media page
+  icon       String?  // Optional custom icon name
+  label      String?  // Display label
+  isActive   Boolean  @default(true)
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([platform])
 }

@@ -976,7 +976,7 @@ import {
 import { getDashboard } from "../../services/dashboard.api.js";
 import "./Dashboard.css";
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const Dashboard = () => {
   const [fyaDashboard, setFyaDashboard] = useState(null);

@@ -46,7 +46,7 @@
 // //       import.meta.env.VITE_API_URL?.replace(
 // //         "/api",
 // //         ""
-// //       ) || "http://localhost:5000";
+// //       ) || "http://localhost:5041";
 
 // //     return `${API_URL}${image}`;
 // //   };
@@ -312,7 +312,7 @@
 //     }
 //     const API_URL =
 //       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-//       "http://localhost:5000";
+//       "http://localhost:5041";
 //     return `${API_URL}${image}`;
 //   };
 
@@ -498,6 +498,227 @@
 
 
 
+// // src/components/sections/ServicesSection/ServicesSection.jsx
+// import { useEffect, useState } from "react";
+// import { 
+//   FaArrowRight, 
+//   FaHardHat, 
+//   FaBuilding, 
+//   FaDraftingCompass, 
+//   FaHome, 
+//   FaTools, 
+//   FaCheckCircle,
+//   FaRulerCombined,
+//   FaWarehouse,
+// } from "react-icons/fa";
+
+// import api from "../../services/api.js";
+// import "./ServicesSection.css";
+
+// const ServicesSection = () => {
+//   const [services, setServices] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     loadServices();
+//   }, []);
+
+//   const loadServices = async () => {
+//     try {
+//       const response = await api.get("/services");
+//       setServices(response.data?.data || response.data || []);
+//     } catch (error) {
+//       console.error("Services Load Error:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const getImageUrl = (image) => {
+//     if (!image) return "";
+//     if (image.startsWith("http://") || image.startsWith("https://")) {
+//       return image;
+//     }
+//     const API_URL =
+//       import.meta.env.VITE_API_URL?.replace("/api", "") ||
+//       "http://localhost:5041";
+//     return `${API_URL}${image}`;
+//   };
+
+//   const defaultServices = [
+//     {
+//       id: 1,
+//       title: "Residential Construction",
+//       description: "Thoughtfully planned homes built around quality, functionality and lasting value.",
+//       icon: FaHome,
+//       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+//       features: ["Custom Homes", "Villa Projects", "Apartments"],
+//     },
+//     {
+//       id: 2,
+//       title: "Commercial Construction",
+//       description: "Purpose-built commercial spaces designed for performance, efficiency and growth.",
+//       icon: FaBuilding,
+//       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+//       features: ["Office Buildings", "Retail Spaces", "Corporate Campuses"],
+//     },
+//     {
+//       id: 3,
+//       title: "Civil Engineering",
+//       description: "Engineering solutions driven by precision, safety and technical expertise.",
+//       icon: FaDraftingCompass,
+//       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+//       features: ["Structural Design", "Infrastructure", "Site Development"],
+//     },
+//     {
+//       id: 4,
+//       title: "Renovation & Remodeling",
+//       description: "Transforming existing spaces through intelligent planning and refined execution.",
+//       icon: FaTools,
+//       image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&q=80",
+//       features: ["Structural Upgrades", "Facade Restoration", "Modernization"],
+//     },
+//     {
+//       id: 5,
+//       title: "Turnkey Solutions",
+//       description: "Complete project execution from initial concept to final handover.",
+//       icon: FaHardHat,
+//       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+//       features: ["Project Management", "Complete Execution", "Timely Delivery"],
+//     },
+//   ];
+
+//   const displayServices = services.length > 0 ? services : defaultServices;
+
+//   return (
+//     <section className="fya-services" id="services">
+//       <div className="fya-container">
+        
+//         {/* =========================================
+//             HEADER
+//         ========================================= */}
+//         <div className="fya-services__header">
+//           <div className="fya-services__label">
+//             <span className="fya-services__number">02</span>
+//             <span className="fya-services__label-text">OUR EXPERTISE</span>
+//             <span className="fya-services__line" />
+//           </div>
+
+//           <div className="fya-services__heading">
+//             <h2 className="fya-services__title">
+//               Built With <span className="fya-services__highlight">Purpose</span>
+//             </h2>
+//             <p className="fya-services__subtitle">
+//               From foundations to finished spaces, our expertise brings
+//               together construction, engineering and execution.
+//             </p>
+//           </div>
+//         </div>
+
+//         {/* =========================================
+//             SERVICES GRID
+//         ========================================= */}
+//         {loading ? (
+//           <div className="fya-services__loading">
+//             <div className="fya-services__spinner" />
+//             <span>Loading services...</span>
+//           </div>
+//         ) : (
+//           <div className="fya-services__grid">
+//             {displayServices.map((service, index) => {
+//               const ServiceIcon = service.icon || FaHardHat;
+              
+//               return (
+//                 <article className="fya-services__card" key={service.id || index}>
+//                   {/* Image */}
+//                   <div className="fya-services__card-image">
+//                     {service.image ? (
+//                       <img
+//                         src={getImageUrl(service.image)}
+//                         alt={service.title}
+//                         className="fya-services__card-img"
+//                       />
+//                     ) : (
+//                       <div className="fya-services__card-placeholder">
+//                         <ServiceIcon />
+//                       </div>
+//                     )}
+//                     <div className="fya-services__card-overlay" />
+                    
+//                     {/* Icon Badge */}
+//                     <div className="fya-services__card-badge">
+//                       <ServiceIcon />
+//                     </div>
+//                   </div>
+
+//                   {/* Content */}
+//                   <div className="fya-services__card-content">
+//                     <span className="fya-services__card-number">
+//                       {String(index + 1).padStart(2, "0")}
+//                     </span>
+                    
+//                     <h3 className="fya-services__card-title">
+//                       {service.title}
+//                     </h3>
+                    
+//                     <p className="fya-services__card-description">
+//                       {service.description}
+//                     </p>
+
+//                     {/* Features */}
+//                     {service.features && (
+//                       <ul className="fya-services__card-features">
+//                         {service.features.map((feature, idx) => (
+//                           <li key={idx} className="fya-services__card-feature">
+//                             <FaCheckCircle className="fya-services__feature-icon" />
+//                             <span>{feature}</span>
+//                           </li>
+//                         ))}
+//                       </ul>
+//                     )}
+
+//                     {/* Link */}
+//                     <a
+//                       href="/services"
+//                       className="fya-services__card-link"
+//                       aria-label={`Explore ${service.title}`}
+//                     >
+//                       <span className="fya-services__card-link-text">Learn More</span>
+//                       <FaArrowRight className="fya-services__card-arrow" />
+//                     </a>
+//                   </div>
+//                 </article>
+//               );
+//             })}
+//           </div>
+//         )}
+
+//         {/* =========================================
+//             FOOTER
+//         ========================================= */}
+//         <div className="fya-services__footer">
+//           <div className="fya-services__footer-content">
+//             <p className="fya-services__footer-text">
+//               One partner.
+//               <br />
+//               <span className="fya-services__footer-highlight">Complete construction expertise.</span>
+//             </p>
+            
+//             <a href="/services" className="fya-services__footer-link">
+//               <span>View All Services</span>
+//               <FaArrowRight />
+//             </a>
+//           </div>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default ServicesSection;
+
+
 // src/components/sections/ServicesSection/ServicesSection.jsx
 import { useEffect, useState } from "react";
 import { 
@@ -518,6 +739,20 @@ import "./ServicesSection.css";
 const ServicesSection = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Icon mapping for string-based icons from API
+  const iconMap = {
+    'FaHardHat': FaHardHat,
+    'FaBuilding': FaBuilding,
+    'FaDraftingCompass': FaDraftingCompass,
+    'FaHome': FaHome,
+    'FaTools': FaTools,
+    'FaRulerCombined': FaRulerCombined,
+    'FaWarehouse': FaWarehouse,
+    'FaCheckCircle': FaCheckCircle,
+    'FaArrowRight': FaArrowRight,
+  };
 
   useEffect(() => {
     loadServices();
@@ -525,13 +760,65 @@ const ServicesSection = () => {
 
   const loadServices = async () => {
     try {
+      setError(null);
       const response = await api.get("/services");
-      setServices(response.data?.data || response.data || []);
+      console.log("API Response:", response.data);
+      
+      // Extract data from response
+      let servicesData = response.data?.data || response.data || [];
+      
+      // Validate and transform the data
+      if (Array.isArray(servicesData) && servicesData.length > 0) {
+        const validatedServices = servicesData.map((service, index) => ({
+          id: service.id || index + 1,
+          title: service.title || "Service",
+          description: service.description || "Professional construction services",
+          icon: getIconComponent(service.icon),
+          image: service.image || "",
+          features: Array.isArray(service.features) ? service.features : [],
+        }));
+        
+        setServices(validatedServices);
+      } else {
+        // Use default services if no data from API
+        console.log("No services from API, using defaults");
+        setServices(defaultServices);
+      }
     } catch (error) {
       console.error("Services Load Error:", error);
+      setError("Failed to load services. Using default services.");
+      // Use default services on error
+      setServices(defaultServices);
     } finally {
       setLoading(false);
     }
+  };
+
+  // Helper function to get the correct icon component
+  const getIconComponent = (icon) => {
+    // If icon is already a React component (function)
+    if (typeof icon === 'function') {
+      return icon;
+    }
+    
+    // If icon is a string, look it up in the map
+    if (typeof icon === 'string') {
+      const mappedIcon = iconMap[icon];
+      if (mappedIcon) {
+        return mappedIcon;
+      }
+      
+      // Try to find by checking if the string is a key in iconMap (case insensitive)
+      const lowerIcon = icon.toLowerCase();
+      for (const [key, value] of Object.entries(iconMap)) {
+        if (key.toLowerCase() === lowerIcon) {
+          return value;
+        }
+      }
+    }
+    
+    // Default icon if no match found
+    return FaHardHat;
   };
 
   const getImageUrl = (image) => {
@@ -541,7 +828,7 @@ const ServicesSection = () => {
     }
     const API_URL =
       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-      "http://localhost:5000";
+      "http://localhost:5041";
     return `${API_URL}${image}`;
   };
 
@@ -624,73 +911,88 @@ const ServicesSection = () => {
             <span>Loading services...</span>
           </div>
         ) : (
-          <div className="fya-services__grid">
-            {displayServices.map((service, index) => {
-              const ServiceIcon = service.icon || FaHardHat;
-              
-              return (
-                <article className="fya-services__card" key={service.id || index}>
-                  {/* Image */}
-                  <div className="fya-services__card-image">
-                    {service.image ? (
-                      <img
-                        src={getImageUrl(service.image)}
-                        alt={service.title}
-                        className="fya-services__card-img"
-                      />
-                    ) : (
-                      <div className="fya-services__card-placeholder">
+          <>
+            {error && (
+              <div className="fya-services__error">
+                <p>{error}</p>
+              </div>
+            )}
+            
+            <div className="fya-services__grid">
+              {displayServices.map((service, index) => {
+                // Ensure we have a valid icon component
+                const ServiceIcon = getIconComponent(service.icon);
+                
+                return (
+                  <article className="fya-services__card" key={service.id || index}>
+                    {/* Image */}
+                    <div className="fya-services__card-image">
+                      {service.image ? (
+                        <img
+                          src={getImageUrl(service.image)}
+                          alt={service.title || "Service"}
+                          className="fya-services__card-img"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.parentElement.querySelector('.fya-services__card-placeholder').style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      
+                      {/* Placeholder if no image or image fails to load */}
+                      <div className="fya-services__card-placeholder" style={{ display: service.image ? 'none' : 'flex' }}>
                         <ServiceIcon />
                       </div>
-                    )}
-                    <div className="fya-services__card-overlay" />
-                    
-                    {/* Icon Badge */}
-                    <div className="fya-services__card-badge">
-                      <ServiceIcon />
+                      
+                      <div className="fya-services__card-overlay" />
+                      
+                      {/* Icon Badge */}
+                      <div className="fya-services__card-badge">
+                        <ServiceIcon />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="fya-services__card-content">
-                    <span className="fya-services__card-number">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    
-                    <h3 className="fya-services__card-title">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="fya-services__card-description">
-                      {service.description}
-                    </p>
+                    {/* Content */}
+                    <div className="fya-services__card-content">
+                      <span className="fya-services__card-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      
+                      <h3 className="fya-services__card-title">
+                        {service.title || "Service"}
+                      </h3>
+                      
+                      <p className="fya-services__card-description">
+                        {service.description || "Professional construction services"}
+                      </p>
 
-                    {/* Features */}
-                    {service.features && (
-                      <ul className="fya-services__card-features">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="fya-services__card-feature">
-                            <FaCheckCircle className="fya-services__feature-icon" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                      {/* Features */}
+                      {service.features && service.features.length > 0 && (
+                        <ul className="fya-services__card-features">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="fya-services__card-feature">
+                              <FaCheckCircle className="fya-services__feature-icon" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                    {/* Link */}
-                    <a
-                      href="/services"
-                      className="fya-services__card-link"
-                      aria-label={`Explore ${service.title}`}
-                    >
-                      <span className="fya-services__card-link-text">Learn More</span>
-                      <FaArrowRight className="fya-services__card-arrow" />
-                    </a>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+                      {/* Link */}
+                      <a
+                        href="/services"
+                        className="fya-services__card-link"
+                        aria-label={`Explore ${service.title || 'service'}`}
+                      >
+                        <span className="fya-services__card-link-text">Learn More</span>
+                        <FaArrowRight className="fya-services__card-arrow" />
+                      </a>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </>
         )}
 
         {/* =========================================

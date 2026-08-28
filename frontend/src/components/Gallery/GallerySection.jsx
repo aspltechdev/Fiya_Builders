@@ -33,7 +33,7 @@
 //     }
 //     const API_URL =
 //       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-//       "http://localhost:5000";
+//       "http://localhost:5041";
 //     return `${API_URL}${image}`;
 //   };
 
@@ -231,7 +231,7 @@ const GallerySection = () => {
     }
     const API_URL =
       import.meta.env.VITE_API_URL?.replace("/api", "") ||
-      "http://localhost:5000";
+      "http://localhost:5041";
     return `${API_URL}${image}`;
   };
 

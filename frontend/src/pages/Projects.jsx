@@ -13,7 +13,7 @@
 // //   import.meta.env.VITE_API_URL?.replace(
 // //     "/api",
 // //     ""
-// //   ) || "http://localhost:5000";
+// //   ) || "http://localhost:5041";
 
 // // const ProjectsPage = () => {
 // //   const [projects, setProjects] = useState([]);
@@ -528,7 +528,7 @@
 //   import.meta.env.VITE_API_URL?.replace(
 //     "/api",
 //     ""
-//   ) || "http://localhost:5000";
+//   ) || "http://localhost:5041";
 
 // const defaultProjects = [
 //   {
@@ -975,7 +975,7 @@ import ProjectsCTASection from "./Projects/ProjectsCTASection.jsx";
 // Import all sections
 
 
-const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5041";
 
 const defaultProjects = [
   {
