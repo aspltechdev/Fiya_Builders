@@ -13,6 +13,7 @@ import projectRoutes from "./routes/project.routes.js";
 import galleryRoutes from "./routes/gallery.routes.js";
 import testimonialRoutes from "./routes/testimonial.routes.js";
 import enquiryRoutes from "./routes/enquiry.routes.js";
+import socialMediaRoutes from "./routes/socialMedia.routes.js";
 
 dotenv.config();
 
@@ -148,6 +149,8 @@ app.use(
   "/api/enquiries",
   enquiryRoutes
 );
+
+app.use("/api/social-media", socialMediaRoutes);
 
 /*
 |--------------------------------------------------------------------------
