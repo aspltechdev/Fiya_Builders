@@ -297,7 +297,7 @@ const Footer = () => {
       {/* =================================================
           NEWSLETTER SECTION
       ================================================= */}
-      <div className="fya-footer__newsletter">
+      {/* <div className="fya-footer__newsletter">
         <div className="fya-footer__container">
           <div className="fya-footer__newsletter-content">
             <div className="fya-footer__newsletter-left">
@@ -323,7 +323,7 @@ const Footer = () => {
             </form>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* =================================================
           MAIN FOOTER
@@ -440,8 +440,8 @@ const Footer = () => {
                     </div>
                     <div>
                       <span className="fya-footer__contact-label">Phone</span>
-                      <a href="tel:+919999999999" className="fya-footer__contact-value">
-                        +91 99999 99999
+                      <a href="tel:+9188077 55674" className="fya-footer__contact-value">
+                        +91 88077 55674
                       </a>
                     </div>
                   </li>
