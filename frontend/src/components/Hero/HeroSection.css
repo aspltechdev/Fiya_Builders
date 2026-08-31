@@ -738,3 +738,193 @@
     animation: none !important;
   }
 }
+
+
+/* ============================================================
+   HERO SLIDER ARROWS
+============================================================ */
+
+.fya-hero-cinematic__index-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  background: rgba(0, 0, 0, 0.18);
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* Hover */
+
+.fya-hero-cinematic__index-arrow:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: rgba(255, 255, 255, 0.65);
+
+  transform: translateY(-2px);
+}
+
+
+/* Active */
+
+.fya-hero-cinematic__index-arrow:active:not(:disabled) {
+  transform: translateY(0) scale(0.94);
+}
+
+
+/* Disabled */
+
+.fya-hero-cinematic__index-arrow:disabled {
+  opacity: 0.25;
+
+  cursor: not-allowed;
+
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Focus */
+
+.fya-hero-cinematic__index-arrow:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.8);
+
+  outline-offset: 4px;
+}
+
+
+/* ============================================================
+   SLIDER INDEX CONTAINER
+============================================================ */
+
+.fya-hero-cinematic__index {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* ============================================================
+   CURRENT NUMBER
+============================================================ */
+
+.fya-hero-cinematic__index-current {
+  min-width: 24px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   TOTAL NUMBER
+============================================================ */
+
+.fya-hero-cinematic__index-total {
+  min-width: 24px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   PROGRESS LINE
+============================================================ */
+
+.fya-hero-cinematic__index-line {
+  position: relative;
+
+  width: 80px;
+  height: 1px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+.fya-hero-cinematic__index-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+
+  display: block;
+
+  background: #ffffff;
+
+  transition: width 0.5s ease;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 768px) {
+
+  .fya-hero-cinematic__index {
+    gap: 9px;
+  }
+
+
+  .fya-hero-cinematic__index-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 16px;
+  }
+
+
+  .fya-hero-cinematic__index-line {
+    width: 50px;
+  }
+
+
+  .fya-hero-cinematic__index-current,
+  .fya-hero-cinematic__index-total {
+    font-size: 10px;
+  }
+
+}
