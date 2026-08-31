@@ -154,16 +154,103 @@
 // export default api;
 
 
-// backend/src/services/hero.api.js
+// // backend/src/services/hero.api.js
+// import api from "./api.js";
+
+// /*
+// |--------------------------------------------------------------------------
+// | Get Active Hero
+// |--------------------------------------------------------------------------
+// */
+
+// export const getHero = async () => {
+//     const response = await api.get("/hero");
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Get All Heroes - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const getAllHeroes = async () => {
+//     const response = await api.get("/hero/admin/all");
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Get Hero By ID - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const getHeroById = async (id) => {
+//     const response = await api.get(`/hero/admin/${id}`);
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Create Hero - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const createHero = async (formData) => {
+//     const response = await api.post("/hero", formData, {
+//         headers: {
+//             'Content-Type': 'multipart/form-data',
+//         },
+//     });
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Update Hero - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const updateHero = async (id, formData) => {
+//     const response = await api.put(`/hero/${id}`, formData, {
+//         headers: {
+//             'Content-Type': 'multipart/form-data',
+//         },
+//     });
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Toggle Hero - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const toggleHero = async (id) => {
+//     const response = await api.patch(`/hero/${id}/toggle`);
+//     return response.data;
+// };
+
+// /*
+// |--------------------------------------------------------------------------
+// | Delete Hero - Admin
+// |--------------------------------------------------------------------------
+// */
+
+// export const deleteHero = async (id) => {
+//     const response = await api.delete(`/hero/${id}`);
+//     return response.data;
+// };
+
 import api from "./api.js";
 
 /*
 |--------------------------------------------------------------------------
-| Get Active Hero
+| Get Active Hero Slides - Public
 |--------------------------------------------------------------------------
 */
 
-export const getHero = async () => {
+export const getActiveHeroes = async () => {
     const response = await api.get("/hero");
     return response.data;
 };
@@ -199,9 +286,10 @@ export const getHeroById = async (id) => {
 export const createHero = async (formData) => {
     const response = await api.post("/hero", formData, {
         headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
         },
     });
+
     return response.data;
 };
 
@@ -214,9 +302,10 @@ export const createHero = async (formData) => {
 export const updateHero = async (id, formData) => {
     const response = await api.put(`/hero/${id}`, formData, {
         headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
         },
     });
+
     return response.data;
 };
 
@@ -227,7 +316,10 @@ export const updateHero = async (id, formData) => {
 */
 
 export const toggleHero = async (id) => {
-    const response = await api.patch(`/hero/${id}/toggle`);
+    const response = await api.patch(
+        `/hero/${id}/toggle`
+    );
+
     return response.data;
 };
 
@@ -238,6 +330,9 @@ export const toggleHero = async (id) => {
 */
 
 export const deleteHero = async (id) => {
-    const response = await api.delete(`/hero/${id}`);
+    const response = await api.delete(
+        `/hero/${id}`
+    );
+
     return response.data;
 };
