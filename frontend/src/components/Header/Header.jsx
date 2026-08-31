@@ -721,7 +721,7 @@ const Header = () => {
 
   // Contact info
   const contactInfo = {
-    phone: '+91 99999 99999',
+    phone: '+91 88077 55674',
     email: 'info@fiyabuilders.com',
   };
 
