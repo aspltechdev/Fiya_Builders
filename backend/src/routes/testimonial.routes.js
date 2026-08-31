@@ -268,7 +268,6 @@ import {
   getAllTestimonials,
   getTestimonialById,
   createTestimonial,
-  submitTestimonial,
   updateTestimonial,
   toggleTestimonialStatus,
   deleteTestimonial,
@@ -289,18 +288,19 @@ const router = express.Router();
 |--------------------------------------------------------------------------
 */
 
-// Get active testimonials for website
+// Get active testimonials
 router.get(
   "/",
   getTestimonials
 );
 
 
-// Submit testimonial - Public
+// Submit testimonial
+// Uses existing createTestimonial controller
 router.post(
   "/submit",
   uploadSingle("testimonials", "image"),
-  submitTestimonial
+  createTestimonial
 );
 
 
@@ -348,7 +348,7 @@ router.put(
 );
 
 
-// Toggle active/inactive
+// Toggle testimonial status
 router.patch(
   "/admin/:id/toggle",
   authenticate,
@@ -357,13 +357,12 @@ router.patch(
 );
 
 
-// Delete
+// Delete testimonial
 router.delete(
   "/admin/:id",
   authenticate,
   authorize("ADMIN"),
   deleteTestimonial
 );
-
 
 export default router;
